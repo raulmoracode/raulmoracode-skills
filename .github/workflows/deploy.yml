@@ -19,6 +19,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # The version-bump guard compares against github.event.before, which a
+          # default shallow clone does not contain.
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -27,6 +31,14 @@ jobs:
 
       - name: Validate catalog
         run: node scripts/validate.mjs
+
+      # The PR workflow runs this too, but a push straight to main never opens a
+      # pull request, so without it a changed skill could ship without a version
+      # bump and OpenCode would keep serving the cached copy to every consumer.
+      - name: Check version bumps
+        env:
+          BASE_SHA: ${{ github.event.before }}
+        run: node scripts/check-version-bump.mjs
 
       - name: Build site
         run: node scripts/build-site.mjs
