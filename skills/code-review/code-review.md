@@ -156,3 +156,5 @@ Fix: The smallest concrete change that resolves it. Code sketch if helpful.
 - Do not report a lint catch as critical, or bury a critical issue among nits.
 - Do not leave drive-by comments without an owner or suggested resolution.
 - Do not approve a change you did not understand; ask instead.
+
+<!-- test change for PR workflow verification -->
