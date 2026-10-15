@@ -14,10 +14,19 @@
  *   - list entries include <name>.md or SKILL.md
  *   - every listed file exists at skills/<name>/<file>
  *   - the entry markdown frontmatter contains name and description
+ *   - every directory under skills/ is listed in index.json (no orphans)
+ *   - every listed support file is referenced by an explicit relative path in
+ *     the skill body — OpenCode does not auto-load supporting files, so a file
+ *     nothing points at is dead weight the agent will never read
+ *   - the entry markdown has an "## Interaction with other skills" section
+ *   - the sibling names that section mentions are real skills in the catalog,
+ *     which catches references to renamed or retired skills
+ *   - no long prose block is duplicated across skills, which catches the
+ *     copy-paste drift that shared guidance is prone to
  *
  * Zero dependencies. Run with: node scripts/validate.mjs
  */
-import { existsSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -78,6 +87,37 @@ function readFrontmatterField(frontmatter, field) {
     if (quoted) value = value.slice(1, -1).trim();
   }
   return value;
+}
+
+function readSection(body, heading) {
+  const lines = body.split(/\r?\n/);
+  const start = lines.findIndex((line) => line.trim() === `## ${heading}`);
+  if (start === -1) return null;
+  const collected = [];
+  for (let i = start + 1; i < lines.length; i += 1) {
+    if (/^## /.test(lines[i])) break;
+    collected.push(lines[i]);
+  }
+  return collected.join("\n");
+}
+
+function proseLines(body) {
+  const withoutFrontmatter = body.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, "");
+  const out = [];
+  let fenced = false;
+  for (const raw of withoutFrontmatter.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (line.startsWith("```")) {
+      fenced = !fenced;
+      continue;
+    }
+    if (fenced) continue;
+    if (/^[#|>]/.test(line)) continue;
+    const content = line.replace(/^[-*]\s+/, "").trim();
+    if (content.length < 80) continue;
+    out.push(content);
+  }
+  return out;
 }
 
 function checkFileList(entry) {
@@ -276,6 +316,100 @@ if (skills !== null) {
       fail(`${name}: "files" is a non-empty array`);
     }
   });
+}
+
+if (skills !== null) {
+  section("references and cross-references");
+  const skillNames = new Set(
+    skills
+      .filter((entry) => isPlainObject(entry) && typeof entry.name === "string")
+      .map((entry) => entry.name),
+  );
+  const bodies = new Map();
+
+  for (const entry of skills) {
+    if (!isPlainObject(entry) || typeof entry.name !== "string") continue;
+    const name = entry.name;
+    const files = Array.isArray(entry.files) ? entry.files : [];
+    const entryFile = files.find((file) => file === `${name}.md` || file === "SKILL.md");
+    if (entryFile === undefined) continue;
+
+    const absolute = join(ROOT, "skills", name, entryFile);
+    if (!existsSync(absolute) || !statSync(absolute).isFile()) continue;
+
+    const body = readFileSync(absolute, "utf8");
+    bodies.set(name, body);
+
+    const unreferenced = files.filter(
+      (file) => file !== entryFile && !body.includes(file),
+    );
+    if (unreferenced.length > 0) {
+      fail(
+        `${name}: every listed support file is referenced by path in ${entryFile}`,
+        `never named in the body: ${unreferenced.join(", ")}`,
+      );
+    } else {
+      ok(`${name}: listed support files are referenced by path in the body`);
+    }
+
+    const interaction = readSection(body, "Interaction with other skills");
+    if (interaction === null) {
+      fail(`${name}: entry markdown has an "## Interaction with other skills" section`);
+      continue;
+    }
+
+    const unknown = [];
+    for (const match of interaction.matchAll(/`([a-z0-9]+(?:-[a-z0-9]+)*)`/g)) {
+      const token = match[1];
+      if (!skillNames.has(token) && !unknown.includes(token)) unknown.push(token);
+    }
+    if (unknown.length > 0) {
+      fail(
+        `${name}: sibling names in the interaction section are real skills`,
+        `not in the catalog: ${unknown.map((token) => `"${token}"`).join(", ")}`,
+      );
+    } else {
+      ok(`${name}: interaction section names real sibling skills`);
+    }
+  }
+
+  const skillsDir = join(ROOT, "skills");
+  const onDisk = existsSync(skillsDir)
+    ? readdirSync(skillsDir, { withFileTypes: true })
+        .filter((item) => item.isDirectory())
+        .map((item) => item.name)
+    : [];
+  const orphans = onDisk.filter((name) => !skillNames.has(name));
+  if (orphans.length > 0) {
+    fail(
+      "every directory under skills/ is listed in index.json",
+      `not listed: ${orphans.join(", ")}`,
+    );
+  } else {
+    ok(`every directory under skills/ is listed in index.json (${onDisk.length})`);
+  }
+
+  const lineOwners = new Map();
+  for (const [name, body] of bodies) {
+    for (const line of proseLines(body)) {
+      if (!lineOwners.has(line)) lineOwners.set(line, []);
+      lineOwners.get(line).push(name);
+    }
+  }
+  const duplicated = [...lineOwners.entries()]
+    .map(([line, owners]) => [line, [...new Set(owners)]])
+    .filter(([, owners]) => owners.length > 1);
+  if (duplicated.length > 0) {
+    fail(
+      "no long prose block is duplicated across skills",
+      duplicated
+        .slice(0, 3)
+        .map(([line, owners]) => `[${owners.join(", ")}] ${line.slice(0, 60)}...`)
+        .join("; "),
+    );
+  } else {
+    ok("no long prose block is duplicated across skills");
+  }
 }
 
 section("summary");
