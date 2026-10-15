@@ -29,9 +29,9 @@ Do not use to:
 
 Be concrete about the tools; do not invent capabilities.
 
-- **Subagents** come in two modes: `explore` for read-only searching and answering
-  questions about a repository, and `general` for scoped work that may write files.
-  Neither shares your context, your session history or your unstated knowledge.
+- **Subagents** come in two built-in forms: `explore` for read-only searching and
+  answering questions about a repository, and `general` for scoped work that may write
+  files. Neither shares your context, your session history or your unstated knowledge.
 - **Worktrees** (`worktree_create`, `worktree_remove`) give a parallel task its own
   checkout when the work needs isolated git state.
 - **Nothing runs automatically.** Each subagent starts from the prompt you wrote. Every

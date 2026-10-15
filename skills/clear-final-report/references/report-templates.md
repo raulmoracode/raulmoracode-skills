@@ -99,10 +99,6 @@ Not implemented; say so if you want it.
 
 ## What not to include
 
-- A restatement of the request or of the plan.
-- A file-by-file narration of what you did.
-- Praise, reassurance, or "let me know if you need anything else".
-- Invented output, invented next steps, invented commit or PR references.
-- Hedging so vague the sentence is true either way: "results look reasonable".
-- Advice nobody asked for, unless it leaves a real risk unmentioned.
-- A section kept only for symmetry with a template.
+The list of things that never belong in a report is a rule, so it lives in
+`clear-final-report.md` under "What not to include". Apply it to whichever template you
+picked above.

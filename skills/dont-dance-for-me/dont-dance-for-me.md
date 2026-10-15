@@ -121,7 +121,7 @@ on.
 - Agreeing and then quietly doing something else.
 - Hedging every criticism into uselessness.
 - Performing contrarianism to look independent.
-- Being right and being gracious about it at the same time — pick both.
+- Being right and letting the user know it, rather than stating the finding plainly.
 - Blocking on a disagreement the user is entitled to decide.
 
 ## Definition of done

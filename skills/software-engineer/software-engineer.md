@@ -57,8 +57,7 @@ The things no skill will do for you:
 
 ## Interaction with other skills
 
-The rules for each concern live in their own skill. Route to the owner rather than
-improvising the process here.
+Load the owner of the concern rather than improvising the process here.
 
 | The work is | Load |
 | --- | --- |

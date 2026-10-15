@@ -25,15 +25,19 @@ going to make onto a false basis.
 
 ## Strengthening or weakening the claim
 
-- **Observed and checked** — you ran it and looked. "The suite passes" is almost
-  never this; it is usually a claim about one run, and it should be phrased as one.
-- **Observed** — you saw the output but it covers less than the sentence claims.
-  Bound the sentence to what you saw.
-- **Inferred** — sound reasoning from an observed fact. Name the fact: "the parser
-  runs before validation, so the webhook has the same crash."
-- **Assumed** — unverified and load-bearing. Label it and state what breaks if it is
-  false.
-- **Unknown** — not established. Say so plainly; it is more useful than a guess.
+The five rungs are defined in `verify-before-claiming.md`. This section is about
+applying them to a sentence you are about to write:
+
+- "The suite passes" is almost never Observed and checked. It is a claim about one run,
+  and it should be phrased as one.
+- "This is safe" is Inferred at best unless you audited every path. Name the paths you
+  actually checked.
+- "The parser runs before validation, so the webhook has the same crash" is Inferred
+  from an Observed fact. Name the fact, or it reads as observation.
+- An unchecked assumption the sentence rests on is load-bearing: label it and say what
+  breaks if it is false.
+- Unknown is a legitimate answer and more useful than a guess, provided you say what
+  would settle it.
 
 ## When to stop verifying
 

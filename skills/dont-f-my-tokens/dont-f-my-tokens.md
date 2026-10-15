@@ -49,9 +49,8 @@ Cutting *reading* to save time is almost never a good trade.
   not one turn each. They cost the user roughly one round trip instead of three.
 - **Ask for less output.** Anchor greps and globs to a directory, extension or pattern
   that returns a handful of lines. An unscoped search returns the repository.
-- **Never re-read what you just wrote.** You wrote it; it is already in context. Read
-  it back only after an edit or a tool changed it on disk.
-- **Never re-read what you already read** and nothing has modified since.
+- **Never re-read unchanged content.** Not what you just wrote, not a file you already
+  read. Read it back only after an edit or a tool changed it on disk.
 - **Run the command that answers the question.** A test, a type check or a build is
   cheaper than reasoning about what the output would be.
 - **Derive before you fetch.** Exports, signatures and call sites are cheaper to learn
@@ -93,8 +92,8 @@ Efficiency is never a valid reason to skip any of these.
   tangential. `security-first` gets its full pass at any budget.
 - **Honesty about what you did.** Never claim to have read, run or verified something
   you did not. A short truthful report beats a complete-sounding false one.
-- **The user's own work.** Never skip inspecting the working tree to save a call. That
-  check is `safe-git`.
+- **The user's own work.** Never skip inspecting the working tree to save a call.
+  Reading the tree is `understand-before-acting`; protecting what is in it is `safe-git`.
 
 ## Interaction with other skills
 
