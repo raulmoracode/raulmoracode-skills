@@ -147,6 +147,15 @@ Rules (enforced by `scripts/validate.mjs`):
   filename.
 - Each entry markdown starts with YAML frontmatter containing `name` and
   `description` (at most 1024 characters).
+- No directory under `skills/` is missing from `index.json`.
+- Every listed support file is named by its relative path somewhere in the skill
+  body. OpenCode does not auto-load support files, so an unreferenced one is dead
+  weight the agent will never read.
+- The entry markdown has an `## Interaction with other skills` section, and the
+  sibling names it mentions exist in the catalog. This catches references to
+  renamed or retired skills.
+- No long prose block is duplicated across skills, which catches the copy-paste
+  drift that shared guidance is prone to.
 
 ## Adding or updating a skill
 
