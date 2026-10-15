@@ -121,6 +121,8 @@ to get wrong, in which case investigate or ask before editing.
 - `read-the-f-docs` — owns authoritative version-specific API and tool behavior.
 - `how` — explains a system's mechanism once you are deep in it.
 - `why` — explains the rationale behind code you have just read.
+- `project-structure` — when the task needs a written map of what lives where, rather
+  than context held in your head. It produces the tree; this skill gathers enough to act.
 - `safe-git` — owns protection of uncommitted work and destructive operations.
 - `code` — the implementation craft, once the context is in hand.
 

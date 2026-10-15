@@ -98,8 +98,13 @@ This skill selects; it does not contain the rules of what it selects. The author
 owners of each concern are:
 
 - `understand-before-acting` — inspecting the environment before anything changes.
+- `project-structure` — mapping what lives where, when a repository has to be explained
+  or documented rather than changed.
 - `plan-before-coding` — sequencing a multi-step task and defining acceptance criteria.
 - `software-architect` — whether the design itself is right.
+- `software-engineer` — the day-to-day working posture across implement, debug and
+  maintain. It routes to the specific skills; load it when the task is routine
+  engineering rather than a named concern.
 - `code` — the implementation craft. `minimal-changes` — how much of it there is.
 - `debug-properly` — a defect whose cause is not yet known.
 - `security-first` — untrusted input, auth, secrets, dependencies.

@@ -98,6 +98,9 @@ insecure, do not reproduce it. Say so and call `security-first`.
 - `unslop` — removes the artifacts of generated code, including conventions invented
   because nobody read the repository first.
 - `minimal-changes` — keeps a convention-driven fix from becoming a sweeping cleanup.
+- `project-structure` — exposes the folder organization this skill turns into rules:
+  where a new file belongs, which directory owns what. Use its tree as the input when
+  the layout has to be described rather than changed.
 
 ## Anti-patterns
 

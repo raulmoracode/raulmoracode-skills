@@ -37,19 +37,19 @@ rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.0 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
-| `understand-before-acting` | 1.0.0 | Understanding and planning | Investigates the environment before any change is made |
+| `raulmoracode-mode` | 1.0.1 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `understand-before-acting` | 1.0.1 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.0 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.0 | Understanding and planning | Answers open questions with evidence before a decision is made |
 | `read-the-f-docs` | 1.0.0 | Understanding and planning | Consults authoritative documentation for a specific technology at a specific version |
-| `follow-project-conventions` | 1.0.0 | Understanding and planning +1 ref | Matches the way an existing project already does things |
+| `follow-project-conventions` | 1.0.1 | Understanding and planning +1 ref | Matches the way an existing project already does things |
 | `how-was-last-night` | 1.0.1 | Understanding and planning +1 ref | Reconstructs context from previous work by reading version-control and repository artifacts |
 | `blast-radius` | 1.0.0 | Understanding and planning +1 ref | Evaluates the forward-looking impact of a proposed change before and during it |
 | `project-structure` | 1.0.0 | Understanding and planning +2 ref | Reads the project it is in and produces an annotated directory tree |
-| `how` | 1.0.0 | Understanding and planning | Explains how a system, component or process works |
-| `why` | 1.0.0 | Understanding and planning | Investigates why a decision, implementation or behavior exists |
-| `software-architect` | 1.0.0 | Personas +1 ref | Evaluates system design and architectural decisions before they are built |
-| `software-engineer` | 1.0.1 | Personas | Practical working posture for day-to-day engineering |
+| `how` | 1.0.1 | Understanding and planning | Explains how a system, component or process works |
+| `why` | 1.0.1 | Understanding and planning | Investigates why a decision, implementation or behavior exists |
+| `software-architect` | 1.0.1 | Personas +1 ref | Evaluates system design and architectural decisions before they are built |
+| `software-engineer` | 1.0.2 | Personas | Practical working posture for day-to-day engineering |
 | `dont-dance-for-me` | 1.0.1 | Behavior and efficiency | Agrees with nobody by default |
 | `dont-f-my-tokens` | 1.0.1 | Behavior and efficiency | Spends tokens, time and tool calls deliberately while working |
 | `subagent-task-as-crazy` | 1.0.1 | Behavior and efficiency | Runs independent parts of a task in parallel with subagents instead of one at a time |

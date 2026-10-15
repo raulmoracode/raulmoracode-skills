@@ -2,12 +2,12 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
       "name": "understand-before-acting",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["understand-before-acting.md"]
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "name": "follow-project-conventions",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "follow-project-conventions.md",
         "references/discovery-questions.md"
@@ -54,22 +54,22 @@
     },
     {
       "name": "how",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["how.md"]
     },
     {
       "name": "why",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["why.md"]
     },
     {
       "name": "software-architect",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["software-architect.md", "references/decision-criteria.md"]
     },
     {
       "name": "software-engineer",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["software-engineer.md"]
     },
     {
