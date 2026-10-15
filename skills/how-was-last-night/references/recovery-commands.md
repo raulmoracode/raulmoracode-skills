@@ -22,7 +22,7 @@ working tree. Anything that does is the job of `safe-git`, with authorization.
   separates active threads from abandoned ones.
 - `git reflog -20` — recent HEAD movements, including commits that were made and then
   moved, reset or rebased away. Read-only; it never restores anything.
-- `git log -20 --grep='fix\|revert\|revert' -i` — corrections, which often explain
+- `git log -20 --grep='fix\|revert\|hotfix' -i` — corrections, which often explain
   why the current code looks the way it does.
 - `git log --oneline -- tests/` or the project's test path — whether the recent work
   shipped with tests.

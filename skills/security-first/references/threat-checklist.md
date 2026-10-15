@@ -4,7 +4,7 @@ Threat surfaces to walk when a change touches untrusted input, identity, secrets
 dependency set. For each surface: the question to ask, where to look, and the failure
 that usually shows up there. Read it before implementing the change, not after.
 
-Skip a surface the change cannot reach. Walking all twelve for a stylesheet is waste;
+Skip a surface the change cannot reach. Walking all thirteen for a stylesheet is waste;
 skipping injection on a query builder is negligence.
 
 ## 1. Input validation and boundaries
