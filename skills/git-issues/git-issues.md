@@ -113,7 +113,8 @@ obtain it privately instead of pasting it.
 
 - `git-pr` — owns pull requests; this skill owns issues. Both enforce the same rule: no
   external state change and no status claim without authorization and verification.
-- `safe-git` — owns repository state; issue work that touches branches stays here.
+- `safe-git` — owns repository state and any destructive operation. Issue work never
+  touches branches or history; if it appears to need to, that is a separate task.
 - `debug-properly` — owns reproduction and root cause. A filed bug is the artifact, not
   the investigation.
 - `security-first` — owns vulnerability assessment; this skill owns the private

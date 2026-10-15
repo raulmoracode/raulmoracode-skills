@@ -82,6 +82,7 @@ softened into vagueness.
 - Hedging so vague the sentence survives regardless of the truth.
 - Advice the user did not ask for, unless a real risk is being left unmentioned.
 - Emotional framing about difficulty, effort or the state of the code.
+- A section kept only for symmetry with a template.
 
 ## Interaction with other skills
 

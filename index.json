@@ -35,7 +35,7 @@
     },
     {
       "name": "how-was-last-night",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["how-was-last-night.md", "references/recovery-commands.md"]
     },
     {
@@ -60,22 +60,22 @@
     },
     {
       "name": "software-engineer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["software-engineer.md"]
     },
     {
       "name": "dont-dance-for-me",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["dont-dance-for-me.md"]
     },
     {
       "name": "dont-f-my-tokens",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["dont-f-my-tokens.md"]
     },
     {
       "name": "subagent-task-as-crazy",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["subagent-task-as-crazy.md"]
     },
     {
@@ -157,7 +157,7 @@
     },
     {
       "name": "verify-before-claiming",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "verify-before-claiming.md",
         "references/evidence-standards.md"
@@ -165,7 +165,7 @@
     },
     {
       "name": "clear-final-report",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["clear-final-report.md", "references/report-templates.md"]
     },
     {
@@ -185,7 +185,7 @@
     },
     {
       "name": "git-issues",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["git-issues.md", "references/issue-templates.md"]
     }
   ]

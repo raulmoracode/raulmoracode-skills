@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Corrected defects found in an adversarial read of all 50 catalog files. Eight skills
+  were changed after the initial import and are bumped to `1.0.1`: `clear-final-report`,
+  `verify-before-claiming`, `how-was-last-night`, `git-issues`, `dont-dance-for-me`,
+  `dont-f-my-tokens`, `software-engineer` and `subagent-task-as-crazy`.
+  - `clear-final-report` — the "what not to include" list was duplicated in both the
+    entry and `references/report-templates.md`; the entry now owns it and the
+    reference points at it.
+  - `verify-before-claiming` — `references/evidence-standards.md` redefined the five
+    evidence rungs the entry already defines; it now applies them instead.
+  - `how-was-last-night` — `references/recovery-commands.md` offered an unquoted
+    `git log --format=%h %ad %s` that the shell would split into four arguments, and
+    repeated `revert` twice in a `--grep` pattern.
+  - `git-issues` — the `safe-git` cross-reference routed branch work to itself,
+    contradicting both `safe-git` and `git-branch`.
+  - `dont-dance-for-me` — an "anti-pattern" bullet told the reader to do the thing the
+    section exists to forbid.
+  - `dont-f-my-tokens` — stated the don't-re-read rule twice in adjacent bullets and
+    misrouted working-tree inspection to `safe-git`.
+  - `software-engineer` — repeated one sentence in its intro and interaction section.
+  - `subagent-task-as-crazy` — described `explore` and `general` as "two modes"; they
+    are built-in agents.
+  - `security-first` — `references/threat-checklist.md` described the checklist as
+    having twelve surfaces when it has thirteen. Fixed before the initial import, so
+    no bump was required.
+
 ### Added
 
 - 35 agent-behavior skills (all at `1.0.0`), organized in seven categories:

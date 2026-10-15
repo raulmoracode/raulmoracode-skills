@@ -18,7 +18,7 @@ working tree. Anything that does is the job of `safe-git`, with authorization.
 
 - `git log --oneline -20` — the recent sequence of changes.
 - `git show --stat HEAD` — what the last commit touched, and how large it was.
-- `git log -20 --format=%h %ad %s --date=short` — when the work happened, which
+- `git log -20 --format='%h %ad %s' --date=short` — when the work happened, which
   separates active threads from abandoned ones.
 - `git reflog -20` — recent HEAD movements, including commits that were made and then
   moved, reset or rebased away. Read-only; it never restores anything.

@@ -43,15 +43,15 @@ rest own one responsibility each.
 | `research-first` | 1.0.0 | Understanding and planning | Answers open questions with evidence before a decision is made |
 | `read-the-f-docs` | 1.0.0 | Understanding and planning | Consults authoritative documentation for a specific technology at a specific version |
 | `follow-project-conventions` | 1.0.0 | Understanding and planning +1 ref | Matches the way an existing project already does things |
-| `how-was-last-night` | 1.0.0 | Understanding and planning +1 ref | Reconstructs context from previous work by reading version-control and repository artifacts |
+| `how-was-last-night` | 1.0.1 | Understanding and planning +1 ref | Reconstructs context from previous work by reading version-control and repository artifacts |
 | `blast-radius` | 1.0.0 | Understanding and planning +1 ref | Evaluates the forward-looking impact of a proposed change before and during it |
 | `how` | 1.0.0 | Understanding and planning | Explains how a system, component or process works |
 | `why` | 1.0.0 | Understanding and planning | Investigates why a decision, implementation or behavior exists |
 | `software-architect` | 1.0.0 | Personas +1 ref | Evaluates system design and architectural decisions before they are built |
-| `software-engineer` | 1.0.0 | Personas | Practical working posture for day-to-day engineering |
-| `dont-dance-for-me` | 1.0.0 | Behavior and efficiency | Agrees with nobody by default |
-| `dont-f-my-tokens` | 1.0.0 | Behavior and efficiency | Spends tokens, time and tool calls deliberately while working |
-| `subagent-task-as-crazy` | 1.0.0 | Behavior and efficiency | Runs independent parts of a task in parallel with subagents instead of one at a time |
+| `software-engineer` | 1.0.1 | Personas | Practical working posture for day-to-day engineering |
+| `dont-dance-for-me` | 1.0.1 | Behavior and efficiency | Agrees with nobody by default |
+| `dont-f-my-tokens` | 1.0.1 | Behavior and efficiency | Spends tokens, time and tool calls deliberately while working |
+| `subagent-task-as-crazy` | 1.0.1 | Behavior and efficiency | Runs independent parts of a task in parallel with subagents instead of one at a time |
 | `dont-ask-shit` | 1.0.0 | Behavior and efficiency | Investigates and infers before asking, and asks only when a wrong guess would be expensive |
 | `show-your-work` | 1.0.0 | Behavior and efficiency | Makes important decisions, assumptions, findings and verification results visible while the work happens |
 | `simplify` | 1.0.0 | Behavior and efficiency | Removes unnecessary complexity from the solution and from the way the solution is reached |
@@ -66,12 +66,12 @@ rest own one responsibility each.
 | `break-the-edge` | 1.0.0 | Testing and verification +1 ref | Hunts the edge cases, unusual inputs and failure conditions that could break a change |
 | `review-your-work` | 1.0.0 | Testing and verification +2 ref | Reviews the changes you just made before treating the task as finished |
 | `no-made-up-results` | 1.0.0 | Testing and verification | Forbids fabricating evidence |
-| `verify-before-claiming` | 1.0.0 | Testing and verification +1 ref | Sets the evidence standard a claim must clear before it is stated |
-| `clear-final-report` | 1.0.0 | Testing and verification +1 ref | Produces the final report the user reads |
+| `verify-before-claiming` | 1.0.1 | Testing and verification +1 ref | Sets the evidence standard a claim must clear before it is stated |
+| `clear-final-report` | 1.0.1 | Testing and verification +1 ref | Produces the final report the user reads |
 | `safe-git` | 1.0.0 | Git and repository | Protects repository state and uncommitted work during any Git operation |
 | `git-branch` | 1.0.0 | Git and repository | Manages Git branches according to the repository's own workflow |
 | `git-pr` | 1.0.0 | Git and repository +1 ref | Prepares, opens and manages pull requests |
-| `git-issues` | 1.0.0 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested |
+| `git-issues` | 1.0.1 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested |
 
 `+N ref` marks a skill that ships `references/` lookup files next to its entry markdown.
 The "What it does" column is abbreviated; the full `description` in each skill's
