@@ -32,7 +32,7 @@ OpenCode then:
 
 ## Skills
 
-35 skills, organized in seven categories. `raulmoracode-mode` is the entry point; the
+36 skills, organized in seven categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
@@ -45,6 +45,7 @@ rest own one responsibility each.
 | `follow-project-conventions` | 1.0.0 | Understanding and planning +1 ref | Matches the way an existing project already does things |
 | `how-was-last-night` | 1.0.1 | Understanding and planning +1 ref | Reconstructs context from previous work by reading version-control and repository artifacts |
 | `blast-radius` | 1.0.0 | Understanding and planning +1 ref | Evaluates the forward-looking impact of a proposed change before and during it |
+| `project-structure` | 1.0.0 | Understanding and planning +2 ref | Reads the project it is in and produces an annotated directory tree |
 | `how` | 1.0.0 | Understanding and planning | Explains how a system, component or process works |
 | `why` | 1.0.0 | Understanding and planning | Investigates why a decision, implementation or behavior exists |
 | `software-architect` | 1.0.0 | Personas +1 ref | Evaluates system design and architectural decisions before they are built |

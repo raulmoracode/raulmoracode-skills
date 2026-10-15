@@ -36,12 +36,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- 35 agent-behavior skills (all at `1.0.0`), organized in seven categories:
+- `project-structure` skill (`1.0.0`) — reads the project it is in and produces an
+  annotated directory tree, with an inline `#` comment on every listed folder and file,
+  drawn from evidence rather than from names. Read-only, excludes generated and vendored
+  directories by default, controls depth on large repositories, and never prints secret
+  values. Ships `references/tree-format.md` (root detection, read-only enumeration,
+  exclusion policy, rendering and truncation) and `references/description-guidelines.md`
+  (evidence sources per kind of element, phrasing calibration, and how to state an
+  unknown purpose honestly).
+- 36 agent-behavior skills, organized in seven categories:
   - **Orchestration** — `raulmoracode-mode` (entry point, task classification, skill
     selection), with a `references/skill-selection.md` routing table.
   - **Understanding and planning** — `understand-before-acting`,
     `plan-before-coding`, `research-first`, `read-the-f-docs`,
-    `follow-project-conventions`, `how-was-last-night`, `blast-radius`, `how`, `why`.
+    `follow-project-conventions`, `how-was-last-night`, `blast-radius`,
+    `project-structure`, `how`, `why`.
   - **Personas** — `software-architect`, `software-engineer`.
   - **Behavior, autonomy and efficiency** — `dont-dance-for-me`, `dont-f-my-tokens`,
     `subagent-task-as-crazy`, `dont-ask-shit`, `show-your-work`, `simplify`.
@@ -51,10 +60,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     `test-before-finishing`, `break-the-edge`, `review-your-work`,
     `no-made-up-results`, `verify-before-claiming`, `clear-final-report`.
   - **Git and repository** — `safe-git`, `git-branch`, `git-pr`, `git-issues`.
-- 15 `references/` files for lookup material (skill-selection, discovery questions,
-  recovery commands, impact surfaces, architecture decision criteria, threat checklist,
-  slop catalog, test quality, edge catalog, review passes, severity guide, evidence
-  standards, report templates, PR template, issue templates).
+- 17 `references/` files for lookup material (skill-selection, discovery questions,
+  recovery commands, impact surfaces, tree format, description guidelines, architecture
+  decision criteria, threat checklist, slop catalog, test quality, edge catalog, review
+  passes, severity guide, evidence standards, report templates, PR template, issue
+  templates).
 
 ### Removed
 

@@ -44,6 +44,15 @@
       "files": ["blast-radius.md", "references/impact-surfaces.md"]
     },
     {
+      "name": "project-structure",
+      "version": "1.0.0",
+      "files": [
+        "project-structure.md",
+        "references/tree-format.md",
+        "references/description-guidelines.md"
+      ]
+    },
+    {
       "name": "how",
       "version": "1.0.0",
       "files": ["how.md"]
