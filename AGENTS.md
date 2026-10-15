@@ -38,6 +38,15 @@ published by zero-dependency Node scripts.
 5. **Frontmatter is required** on each entry markdown: `name` (must equal the
    skill name) and a third-person `description` of at most 1024 characters
    describing what the skill does and when to use it.
+6. **Support files must be linked from the skill body.** OpenCode does not
+   auto-load supporting files — for the flat `<name>.md` form it does not even
+   list them — so every file in `files` beyond the entry markdown must be named
+   by its relative path in the skill body, at the point where it is needed.
+   Each skill also needs an `## Interaction with other skills` section naming
+   real sibling skills, so a rename cannot leave a dangling reference behind.
+7. **No duplicated instructions.** A shared rule belongs in one owning skill;
+   the others point at it. `scripts/validate.mjs` fails on a long prose line or
+   bullet repeated across skills, which is how shared guidance drifts.
 
 ## Before committing
 
