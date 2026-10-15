@@ -9,6 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Reworked `raulmoracode-mode` to cut the task down first and then hand it to a single
+  owning skill, and made routing cheap enough to do from the entry alone.
+  - The request-shape routing table moved out of `references/skill-selection.md` and into
+    the entry, so routing no longer requires a second read. The reference keeps the full
+    inventory, risk tiers, uncertainty tiers and overlap pairs, and gains a section for
+    what the table cannot decide.
+  - Simplification is applied inline as the first step rather than by loading `simplify`
+    on every task. `simplify` states that it is "a lens, not a phase" and should not be
+    invoked per task, and loading it unconditionally is measurably more expensive.
+  - One owning skill is now the default; a second is added only when listed risk
+    conditions force it, and the orchestrator must name what it skips.
+  - Measured: routing a task now costs the entry alone, ~2,300 tokens, against ~3,870 for
+    the previous entry-plus-reference path and ~5,570 for loading `simplify`
+    unconditionally. `raulmoracode-mode` bumped to `1.0.2`.
 - Integrated `project-structure` into the skill graph so it is not an orphan. Every link
   is reciprocal: the entry already named six siblings, and each now names it back.
   - `raulmoracode-mode` — added to the interaction list, plus a routing row ("show me

@@ -37,7 +37,7 @@ rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.1 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.2 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.1 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.0 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.0 | Understanding and planning | Answers open questions with evidence before a decision is made |

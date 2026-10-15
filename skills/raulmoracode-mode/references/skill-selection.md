@@ -1,34 +1,26 @@
 # Skill selection
 
-Routing aid for `raulmoracode-mode`. Read it when the task is not obvious, spans several
-concerns, or you are choosing between skills that sound similar.
+The deep lookup for `raulmoracode-mode`. Routing for the common request shapes lives in
+the entry's table, so that routing is cheap; read this file only when that table does not
+decide, or when you need the full inventory, the risk tiers, or the pairs that get
+confused.
 
-## Routing by request shape
+## When the entry's table does not decide
 
-| The request looks like | Load |
-| --- | --- |
-| "Explain how X works" / "walk me through the flow" | `how` |
-| "Why is it done this way?" / "why does this exist?" | `why` |
-| "Show me the project structure" / "what does each folder do" / "document the layout" | `project-structure` |
-| "Fix this bug" / "it is broken" / "it crashes" | `debug-properly`, then `code` |
-| "Add a feature" / "implement X" / "change behavior" | `understand-before-acting`, `code` |
-| "Refactor this" / "clean this up" | `unslop`, `simplify`, `minimal-changes` |
-| "Should we use approach A or B?" / design decision | `software-architect`, `blast-radius` |
-| "What would break if I change this?" | `blast-radius` |
-| "Review my changes" / "is this PR good?" | `review-your-work` |
-| "Write tests" / "how should I test this?" | `dad-always-say-the-same` |
-| "Run the tests" / "does it build?" | `test-before-finishing` |
-| "Find edge cases" / "what could break?" | `break-the-edge` |
-| "Is this safe?" / auth, secrets, untrusted input | `security-first` |
-| "Which library should I use?" / library is unknown or version matters | `research-first`, `read-the-f-docs` |
-| "What does this API do?" / exact flags, config keys, version behavior | `read-the-f-docs` |
-| "Open a PR" / "prepare a pull request" | `git-pr` |
-| "Create an issue" / "file a bug report" | `git-issues` |
-| "Switch branches" / "move this work to a branch" | `git-branch`, `safe-git` |
-| "Reset / rebase / undo / clean up git state" | `safe-git` |
-| "What did we do last time?" / resuming after a break | `how-was-last-night` |
-| "Docs are wrong" / "update the README" | `mom-always-say-the-same` |
-| The request is broad or crosses several of the above | this skill, plus the core ones |
+Work from the shape of the request, not from a skill you already had in mind:
+
+- **It spans several concerns at once.** Find the one that owns the *outcome*, load it,
+  then add others only under the rules in the entry's step 3. Read "Working the pairs that
+  overlap" below before loading two skills that sound similar.
+- **It is a request to build something new that no skill names.** Start with
+  `understand-before-acting`, then `software-engineer`, which routes onward from there.
+- **It is really a question, not a task.** `how` if the answer is in the code, `why` if it
+  is in the history, `research-first` if it is in the world, `read-the-f-docs` if it is in
+  the documentation, `project-structure` if it is in the layout.
+- **It is mostly a conversation.** Explaining, reviewing an idea, answering "what do you
+  think" — do that directly. Not every request needs a skill, and loading one to have an
+  opinion is the failure this catalog is most prone to.
+- **None of it fits.** Say so and do the task. A wrong skill is worse than no skill.
 
 ## Risk tiers
 
