@@ -106,6 +106,8 @@ later change has to cross it.
 - `code` owns the craft of the artifact this design produces.
 - `how` explains the mechanism of the current system; `why` explains its history.
 - `follow-project-conventions` owns matching local layout and idiom.
+- `project-structure` records what the boundaries and layers currently are; this skill
+  judges them. Consume its tree as evidence, not as a verdict.
 - `minimal-changes` decides the size of the diff; a sound design still lands small.
 - `security-first` owns the threat model once a trust boundary exists.
 - `dont-dance-for-me` owns saying plainly when the recommendation is unwelcome.

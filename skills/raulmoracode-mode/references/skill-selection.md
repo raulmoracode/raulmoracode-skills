@@ -9,6 +9,7 @@ concerns, or you are choosing between skills that sound similar.
 | --- | --- |
 | "Explain how X works" / "walk me through the flow" | `how` |
 | "Why is it done this way?" / "why does this exist?" | `why` |
+| "Show me the project structure" / "what does each folder do" / "document the layout" | `project-structure` |
 | "Fix this bug" / "it is broken" / "it crashes" | `debug-properly`, then `code` |
 | "Add a feature" / "implement X" / "change behavior" | `understand-before-acting`, `code` |
 | "Refactor this" / "clean this up" | `unslop`, `simplify`, `minimal-changes` |
@@ -75,6 +76,8 @@ These get confused most often. When two apply, load both — they do different w
 | `simplify` / `dont-f-my-tokens` | Simplify is about complexity in the result and the process. Efficiency is about resources spent getting there. |
 | `show-your-work` / `clear-final-report` | Transparency during the work. The outcome at the end. |
 | `how` / `why` | Mechanism. Rationale. |
+| `project-structure` / `how` | Structure is the map: what lives where. How is the mechanism: what happens, in what order. |
+| `project-structure` / `understand-before-acting` | Both read the repository. Structure ends in an artifact someone reads; understanding ends in readiness to change. |
 
 ## Full inventory
 
@@ -98,6 +101,9 @@ These get confused most often. When two apply, load both — they do different w
   open threads from a previous session or run.
 - **blast-radius** — forward-looking impact: consumers, interfaces, data, operations,
   migrations.
+- **project-structure** — read the project and produce an annotated directory tree, with
+  every listed folder and file described from evidence rather than from its name. The
+  output is the deliverable.
 - **how** — explain mechanism, components and flows.
 - **why** — explain rationale and history; separate documented from inferred.
 

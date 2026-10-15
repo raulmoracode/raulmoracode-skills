@@ -134,6 +134,8 @@ State these when they apply instead of working around them silently:
 - `mom-always-say-the-same` — keeps code, comments and docs agreeing; `why` finds
   the disagreement.
 - `blast-radius` — what changing this decision would break downstream.
+- `project-structure` — maps what exists. A surprising name or directory in that map is
+  usually the `why` question worth asking.
 - `verify-before-claiming` — the evidence standard a "why" answer must meet before you
   assert it.
 

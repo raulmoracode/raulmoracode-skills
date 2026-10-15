@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Integrated `project-structure` into the skill graph so it is not an orphan. Every link
+  is reciprocal: the entry already named six siblings, and each now names it back.
+  - `raulmoracode-mode` — added to the interaction list, plus a routing row ("show me
+    the project structure" / "what does each folder do"), two entries in the overlap
+    table (`project-structure` vs `how`, and vs `understand-before-acting`), and an
+    inventory line in `references/skill-selection.md`.
+  - `understand-before-acting` — names it as the skill that produces a written map when
+    the task needs one, as distinct from holding context in your head.
+  - `how` — the map of what lives where, against `how`'s what happens there; a layout
+    question starts from the tree, a behavior question from a trace.
+  - `software-architect` — consumes the tree as evidence about current boundaries, and
+    must not treat it as a verdict on them.
+  - `follow-project-conventions` — the tree is the input when the layout has to be
+    described rather than changed.
+  - `why` — a surprising name in the map is usually the `why` question worth asking.
+  - All six skills bumped to `1.0.1`.
+
 ### Fixed
 
 - Corrected defects found in an adversarial read of all 50 catalog files. Eight skills

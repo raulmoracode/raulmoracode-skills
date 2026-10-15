@@ -110,6 +110,8 @@ they know.
   mechanism and flow.
 - `understand-before-acting` — the same reading, done to prepare for a change; `how`
   has no change behind it, it ends in an explanation.
+- `project-structure` — the map of what lives where; `how` is what happens there. Start
+  from the tree for a layout question and from a trace for a behavior question.
 - `research-first` — owns open questions that local code cannot settle, and comparing
   alternatives.
 - `read-the-f-docs` — owns authoritative, version-specific behavior of external tools
