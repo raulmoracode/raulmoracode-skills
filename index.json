@@ -1,28 +1,192 @@
 {
   "skills": [
     {
-      "name": "frontend-design",
+      "name": "raulmoracode-mode",
+      "version": "1.0.0",
+      "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
+    },
+    {
+      "name": "understand-before-acting",
+      "version": "1.0.0",
+      "files": ["understand-before-acting.md"]
+    },
+    {
+      "name": "plan-before-coding",
+      "version": "1.0.0",
+      "files": ["plan-before-coding.md"]
+    },
+    {
+      "name": "research-first",
+      "version": "1.0.0",
+      "files": ["research-first.md"]
+    },
+    {
+      "name": "read-the-f-docs",
+      "version": "1.0.0",
+      "files": ["read-the-f-docs.md"]
+    },
+    {
+      "name": "follow-project-conventions",
       "version": "1.0.0",
       "files": [
-        "frontend-design.md",
-        "references/review-checklist.md"
+        "follow-project-conventions.md",
+        "references/discovery-questions.md"
       ]
     },
     {
-      "name": "code-review",
+      "name": "how-was-last-night",
+      "version": "1.0.0",
+      "files": ["how-was-last-night.md", "references/recovery-commands.md"]
+    },
+    {
+      "name": "blast-radius",
+      "version": "1.0.0",
+      "files": ["blast-radius.md", "references/impact-surfaces.md"]
+    },
+    {
+      "name": "how",
+      "version": "1.0.0",
+      "files": ["how.md"]
+    },
+    {
+      "name": "why",
+      "version": "1.0.0",
+      "files": ["why.md"]
+    },
+    {
+      "name": "software-architect",
+      "version": "1.0.0",
+      "files": ["software-architect.md", "references/decision-criteria.md"]
+    },
+    {
+      "name": "software-engineer",
+      "version": "1.0.0",
+      "files": ["software-engineer.md"]
+    },
+    {
+      "name": "dont-dance-for-me",
+      "version": "1.0.0",
+      "files": ["dont-dance-for-me.md"]
+    },
+    {
+      "name": "dont-f-my-tokens",
+      "version": "1.0.0",
+      "files": ["dont-f-my-tokens.md"]
+    },
+    {
+      "name": "subagent-task-as-crazy",
+      "version": "1.0.0",
+      "files": ["subagent-task-as-crazy.md"]
+    },
+    {
+      "name": "dont-ask-shit",
+      "version": "1.0.0",
+      "files": ["dont-ask-shit.md"]
+    },
+    {
+      "name": "show-your-work",
+      "version": "1.0.0",
+      "files": ["show-your-work.md"]
+    },
+    {
+      "name": "simplify",
+      "version": "1.0.0",
+      "files": ["simplify.md"]
+    },
+    {
+      "name": "code",
+      "version": "1.0.0",
+      "files": ["code.md"]
+    },
+    {
+      "name": "minimal-changes",
+      "version": "1.0.0",
+      "files": ["minimal-changes.md"]
+    },
+    {
+      "name": "debug-properly",
+      "version": "1.0.0",
+      "files": ["debug-properly.md"]
+    },
+    {
+      "name": "security-first",
+      "version": "1.0.0",
+      "files": ["security-first.md", "references/threat-checklist.md"]
+    },
+    {
+      "name": "mom-always-say-the-same",
+      "version": "1.0.0",
+      "files": ["mom-always-say-the-same.md"]
+    },
+    {
+      "name": "unslop",
+      "version": "1.0.0",
+      "files": ["unslop.md", "references/slop-catalog.md"]
+    },
+    {
+      "name": "dad-always-say-the-same",
       "version": "1.0.0",
       "files": [
-        "code-review.md",
+        "dad-always-say-the-same.md",
+        "references/test-quality.md"
+      ]
+    },
+    {
+      "name": "test-before-finishing",
+      "version": "1.0.0",
+      "files": ["test-before-finishing.md"]
+    },
+    {
+      "name": "break-the-edge",
+      "version": "1.0.0",
+      "files": ["break-the-edge.md", "references/edge-catalog.md"]
+    },
+    {
+      "name": "review-your-work",
+      "version": "1.0.0",
+      "files": [
+        "review-your-work.md",
+        "references/review-passes.md",
         "references/severity-guide.md"
       ]
     },
     {
-      "name": "create-component",
+      "name": "no-made-up-results",
+      "version": "1.0.0",
+      "files": ["no-made-up-results.md"]
+    },
+    {
+      "name": "verify-before-claiming",
       "version": "1.0.0",
       "files": [
-        "create-component.md",
-        "references/discovery-questions.md"
+        "verify-before-claiming.md",
+        "references/evidence-standards.md"
       ]
+    },
+    {
+      "name": "clear-final-report",
+      "version": "1.0.0",
+      "files": ["clear-final-report.md", "references/report-templates.md"]
+    },
+    {
+      "name": "safe-git",
+      "version": "1.0.0",
+      "files": ["safe-git.md"]
+    },
+    {
+      "name": "git-branch",
+      "version": "1.0.0",
+      "files": ["git-branch.md"]
+    },
+    {
+      "name": "git-pr",
+      "version": "1.0.0",
+      "files": ["git-pr.md", "references/pr-template.md"]
+    },
+    {
+      "name": "git-issues",
+      "version": "1.0.0",
+      "files": ["git-issues.md", "references/issue-templates.md"]
     }
   ]
 }
