@@ -90,9 +90,9 @@ frontmatter is the authoritative text and the activation surface.
 ├── scripts/
 │   ├── validate.mjs            # Catalog validation (zero dependencies)
 │   ├── build-site.mjs          # Builds _site/ for GitHub Pages
-│   └── check-version-bump.mjs  # PR guard: changed skill => version bump
+│   └── check-version-bump.mjs  # Guard: a changed skill must bump its version
 └── .github/workflows/
-    ├── deploy.yml              # Validate + build + deploy to Pages on push to main
+    ├── deploy.yml              # Validate + version guard + build + deploy on push
     └── validate.yml            # PR validation + version-bump guard
 ```
 
@@ -165,8 +165,11 @@ Rules (enforced by `scripts/validate.mjs`):
 3. Run `node scripts/validate.mjs` locally and fix anything it reports.
 4. Open a pull request. CI runs the same validation plus a version-bump guard
    that fails if a skill changed without a version bump.
-5. Merge to `main`. The deploy workflow validates, builds `_site/` and publishes
-   it to GitHub Pages automatically.
+5. Merge to `main`. The deploy workflow validates, runs the version-bump guard
+   again, builds `_site/` and publishes it to GitHub Pages automatically. The
+   guard runs on both paths, so a commit pushed straight to `main` is checked
+   too — it would stop the catalog from being republished rather than shipping a
+   changed skill under its old version.
 6. Consumers run `opencode reload` (or restart OpenCode) to pull the new
    version.
 

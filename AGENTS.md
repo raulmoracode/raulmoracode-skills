@@ -16,8 +16,11 @@ published by zero-dependency Node scripts.
   (`name`, `description`); optional `skills/<name>/references/*.md` files.
 - `scripts/validate.mjs` — validates the whole catalog.
 - `scripts/build-site.mjs` — builds `_site/` exactly as Pages serves it.
-- `scripts/check-version-bump.mjs` — PR guard comparing against `origin/<base>`.
-- `.github/workflows/{deploy,validate}.yml` — Pages deploy and PR checks.
+- `scripts/check-version-bump.mjs` — version-bump guard. Compares against
+  `origin/<base>` for a pull request, or against `BASE_SHA` (a push's
+  `github.event.before`) for a direct push.
+- `.github/workflows/{deploy,validate}.yml` — Pages deploy and PR checks. Both
+  run the version-bump guard.
 
 ## Hard rules
 
@@ -65,10 +68,15 @@ Both must pass. `_site/` is gitignored and never committed.
 - New skills: `feat: add <skill-name> skill` (remember the `index.json` entry).
 - Content updates: bump the version in the same commit as the content change,
   e.g. `feat: update <skill-name> skill to 1.0.1`.
-- Workflow changes: verify the version-bump guard still matches PR behavior.
+- Workflow changes: verify the version-bump guard still works on both paths —
+  the pull-request one (`BASE_REF`) and the push one (`BASE_SHA`).
 
 ## Deploy flow
 
-Push to `main` → `deploy.yml` runs validation, builds `_site/`, deploys to
-GitHub Pages. No manual publishing step; merged is shipped (after Pages
-finishes, users need `opencode reload` to refresh their cache).
+Push to `main` → `deploy.yml` runs validation, the version-bump guard, builds
+`_site/`, deploys to GitHub Pages. No manual publishing step; merged is shipped
+(after Pages finishes, users need `opencode reload` to refresh their cache).
+
+A direct push to `main` is guarded too: the version-bump check runs there as
+well, so a skill change without a bump stops the republish instead of going live
+with every consumer left on the cached copy.

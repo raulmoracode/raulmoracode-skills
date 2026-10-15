@@ -8,10 +8,19 @@
  * OpenCode only re-downloads a skill when its version changes, so forgetting
  * the bump silently ships stale content to every consumer.
  *
- * Environment:
+ * Environment, in priority order:
+ *   BASE_SHA  an explicit commit to compare against. Set from github.event.before
+ *             so the guard also covers a push straight to a protected branch,
+ *             where the pull_request workflow never runs.
  *   BASE_REF  base branch name (default: "main"); compared as origin/<BASE_REF>
  *
- * Zero dependencies. Run with: BASE_REF=main node scripts/check-version-bump.mjs
+ * On a branch's first push BASE_SHA is all zeroes. That means there is nothing to
+ * compare against, so the run is skipped rather than failed.
+ *
+ * Zero dependencies. Run with:
+ *   node scripts/check-version-bump.mjs                    # BASE_REF=main
+ *   BASE_REF=main node scripts/check-version-bump.mjs      # pull request
+ *   BASE_SHA=<sha> node scripts/check-version-bump.mjs     # push
  */
 import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
@@ -20,7 +29,10 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const BASE_REF = process.env.BASE_REF ?? "main";
-const BASE = `origin/${BASE_REF}`;
+const BASE_SHA = process.env.BASE_SHA ?? "";
+const ALL_ZEROES = /^0+$/.test(BASE_SHA);
+const HAS_EXPLICIT_BASE = BASE_SHA.length > 0 && !ALL_ZEROES;
+const BASE = HAS_EXPLICIT_BASE ? BASE_SHA : `origin/${BASE_REF}`;
 
 function git(...args) {
   return execFileSync("git", args, { cwd: ROOT, encoding: "utf8" }).trim();
@@ -32,12 +44,20 @@ function suggestBump(version) {
   return `${version ?? "x.y.z"}-next`;
 }
 
+if (ALL_ZEROES) {
+  console.log(
+    "info  BASE_SHA is all zeroes (first push to this branch); nothing to compare against.",
+  );
+  process.exit(0);
+}
+
 try {
   git("rev-parse", "--verify", "--quiet", `${BASE}^{commit}`);
 } catch {
-  console.error(
-    `FAIL  base ref ${BASE} not found. Fetch it first (e.g. git fetch origin ${BASE_REF}).`,
-  );
+  const hint = HAS_EXPLICIT_BASE
+    ? "It must exist in this checkout; actions/checkout needs fetch-depth: 0."
+    : `Fetch it first (e.g. git fetch origin ${BASE_REF}).`;
+  console.error(`FAIL  base ${BASE} not found. ${hint}`);
   process.exit(1);
 }
 
