@@ -24,7 +24,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `follow-project-conventions` — the tree is the input when the layout has to be
     described rather than changed.
   - `why` — a surprising name in the map is usually the `why` question worth asking.
-  - All six skills bumped to `1.0.1`.
+  - `software-engineer` — its routing table gains an orientation row pointing at
+    `understand-before-acting` and `project-structure`.
+- Fixed a cohesion gap found while integrating: `software-engineer` was the one skill no
+  other entry pointed at. `raulmoracode-mode` now names it alongside `software-architect`.
+  Every skill in the catalog is now referenced by at least one sibling.
+- Versions: the six skills above are bumped to `1.0.1`; `software-engineer` to `1.0.2`.
+- Note on reciprocity: 53% of the catalog's cross-references are one-way, which is the
+  established convention — a skill points at the owner of a concern without requiring the
+  owner to point back. Reciprocity was added for `project-structure` because those pairs
+  are the genuinely confusable ones, not to symmetrize the graph.
 
 ### Fixed
 

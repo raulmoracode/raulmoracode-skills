@@ -49,7 +49,7 @@ rest own one responsibility each.
 | `how` | 1.0.1 | Understanding and planning | Explains how a system, component or process works |
 | `why` | 1.0.1 | Understanding and planning | Investigates why a decision, implementation or behavior exists |
 | `software-architect` | 1.0.1 | Personas +1 ref | Evaluates system design and architectural decisions before they are built |
-| `software-engineer` | 1.0.1 | Personas | Practical working posture for day-to-day engineering |
+| `software-engineer` | 1.0.2 | Personas | Practical working posture for day-to-day engineering |
 | `dont-dance-for-me` | 1.0.1 | Behavior and efficiency | Agrees with nobody by default |
 | `dont-f-my-tokens` | 1.0.1 | Behavior and efficiency | Spends tokens, time and tool calls deliberately while working |
 | `subagent-task-as-crazy` | 1.0.1 | Behavior and efficiency | Runs independent parts of a task in parallel with subagents instead of one at a time |

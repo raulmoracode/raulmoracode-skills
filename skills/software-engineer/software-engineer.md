@@ -61,6 +61,7 @@ Load the owner of the concern rather than improvising the process here.
 
 | The work is | Load |
 | --- | --- |
+| Orienting in an unfamiliar repository, or needing the layout described | `understand-before-acting`, `project-structure` |
 | Writing or changing code | `code`, `follow-project-conventions` |
 | Something is broken and the cause is unknown | `debug-properly` |
 | Designing a boundary, pattern or structure | `software-architect` |
