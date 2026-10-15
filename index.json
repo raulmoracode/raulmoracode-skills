@@ -1,0 +1,28 @@
+{
+  "skills": [
+    {
+      "name": "frontend-design",
+      "version": "1.0.0",
+      "files": [
+        "frontend-design.md",
+        "references/review-checklist.md"
+      ]
+    },
+    {
+      "name": "code-review",
+      "version": "1.0.0",
+      "files": [
+        "code-review.md",
+        "references/severity-guide.md"
+      ]
+    },
+    {
+      "name": "create-component",
+      "version": "1.0.0",
+      "files": [
+        "create-component.md",
+        "references/discovery-questions.md"
+      ]
+    }
+  ]
+}
