@@ -44,6 +44,11 @@
       "files": ["blast-radius.md", "references/impact-surfaces.md"]
     },
     {
+      "name": "contract-and-migration",
+      "version": "1.0.0",
+      "files": ["contract-and-migration.md"]
+    },
+    {
       "name": "project-structure",
       "version": "1.0.1",
       "files": [
