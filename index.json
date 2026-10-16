@@ -11,6 +11,11 @@
       "files": ["understand-before-acting.md"]
     },
     {
+      "name": "define-the-outcome",
+      "version": "1.0.0",
+      "files": ["define-the-outcome.md"]
+    },
+    {
       "name": "plan-before-coding",
       "version": "1.0.1",
       "files": ["plan-before-coding.md"]
