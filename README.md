@@ -78,6 +78,15 @@ rest own one responsibility each.
 The "What it does" column is abbreviated; the full `description` in each skill's
 frontmatter is the authoritative text and the activation surface.
 
+## Composition model
+
+`raulmoracode-mode` chooses one primary specialist for a request and may add zero to two
+justified support skills. Composition is operationally shallow: support skills do not load
+other support skills, the maximum composition depth is one, and related skills are not
+loaded merely because they are conceptually adjacent. The compact `## Composition`
+metadata in each skill entry is the machine-checked contract; the
+`## Interaction with other skills` section remains explanatory only.
+
 ## Repository structure
 
 ```
@@ -123,7 +132,9 @@ skill is a deliberate outcome, not an unfinished one.
 
 ## Catalog format
 
-`index.json` is the whole contract:
+`index.json` remains the whole external OpenCode contract. Composition metadata lives in
+the skill markdowns and is validation infrastructure for the catalog; it does not add
+keys to `index.json`:
 
 ```json
 {
@@ -152,6 +163,11 @@ Rules (enforced by `scripts/validate.mjs`):
 - Every listed support file is named by its relative path somewhere in the skill
   body. OpenCode does not auto-load support files, so an unreferenced one is dead
   weight the agent will never read.
+- A skill with a `## Composition` section has parseable role, invocation, budget, depth
+  and operational-reference metadata. During the layer-2 migration, run
+  `node scripts/validate.mjs --strict-composition` to require that section on every
+  catalog skill; the default check keeps layer 1 and layer 2 branches independently
+  verifiable.
 - The entry markdown has an `## Interaction with other skills` section, and the
   sibling names it mentions exist in the catalog. This catches references to
   renamed or retired skills.

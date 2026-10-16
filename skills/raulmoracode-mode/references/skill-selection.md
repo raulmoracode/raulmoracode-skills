@@ -22,6 +22,19 @@ Work from the shape of the request, not from a skill you already had in mind:
   opinion is the failure this catalog is most prone to.
 - **None of it fits.** Say so and do the task. A wrong skill is worse than no skill.
 
+## Conceptual interaction versus operational composition
+
+The `## Interaction with other skills` section is conceptual: it names neighboring
+responsibilities and ownership boundaries for readers. Those names do not cause a skill
+to load and are not operational dependencies.
+
+The `## Composition` section is operational: its compact metadata declares the skill's
+role, whether it may be invoked directly, its support budget and depth, and the skills it
+may compose. Only those declarations affect composition validation. A primary specialist
+may load zero to two justified support skills; support skills must not compose further
+support skills, and composition depth is at most one. Do not load a related skill merely
+because it is relevant, and do not reload a skill already active.
+
 ## Risk tiers
 
 Risk sets the floor of process. It never sets the ceiling.
