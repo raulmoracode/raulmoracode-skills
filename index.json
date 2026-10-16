@@ -201,6 +201,11 @@
       "name": "git-issues",
       "version": "1.0.2",
       "files": ["git-issues.md", "references/issue-templates.md"]
+    },
+    {
+      "name": "skill-evaluation",
+      "version": "1.0.0",
+      "files": ["skill-evaluation.md"]
     }
   ]
 }
