@@ -2,6 +2,17 @@
 name: how-was-last-night
 description: "Reconstructs context from previous work by reading version-control and repository artifacts. Use when resuming after a break, when a session starts with no context, or when the user asks what was done, where things stand, what happened last time or to continue where we left off. Recovers decisions and their evidence, the last verified state, unfinished work, blockers and open questions from history, reflog, stash, branches, plan files, recent tests and changelogs. Cannot detect a session reset automatically; recovery is always explicit."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # How was last night
 

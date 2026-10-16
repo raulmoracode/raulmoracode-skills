@@ -7,27 +7,27 @@
     },
     {
       "name": "understand-before-acting",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["understand-before-acting.md"]
     },
     {
       "name": "plan-before-coding",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["plan-before-coding.md"]
     },
     {
       "name": "research-first",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["research-first.md"]
     },
     {
       "name": "read-the-f-docs",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["read-the-f-docs.md"]
     },
     {
       "name": "follow-project-conventions",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": [
         "follow-project-conventions.md",
         "references/discovery-questions.md"
@@ -35,17 +35,17 @@
     },
     {
       "name": "how-was-last-night",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["how-was-last-night.md", "references/recovery-commands.md"]
     },
     {
       "name": "blast-radius",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["blast-radius.md", "references/impact-surfaces.md"]
     },
     {
       "name": "project-structure",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "project-structure.md",
         "references/tree-format.md",
@@ -54,87 +54,87 @@
     },
     {
       "name": "how",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["how.md"]
     },
     {
       "name": "why",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["why.md"]
     },
     {
       "name": "software-architect",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["software-architect.md", "references/decision-criteria.md"]
     },
     {
       "name": "software-engineer",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": ["software-engineer.md"]
     },
     {
       "name": "dont-dance-for-me",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["dont-dance-for-me.md"]
     },
     {
       "name": "dont-f-my-tokens",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["dont-f-my-tokens.md"]
     },
     {
       "name": "subagent-task-as-crazy",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["subagent-task-as-crazy.md"]
     },
     {
       "name": "dont-ask-shit",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["dont-ask-shit.md"]
     },
     {
       "name": "show-your-work",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["show-your-work.md"]
     },
     {
       "name": "simplify",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["simplify.md"]
     },
     {
       "name": "code",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["code.md"]
     },
     {
       "name": "minimal-changes",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["minimal-changes.md"]
     },
     {
       "name": "debug-properly",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["debug-properly.md"]
     },
     {
       "name": "security-first",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["security-first.md", "references/threat-checklist.md"]
     },
     {
       "name": "mom-always-say-the-same",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["mom-always-say-the-same.md"]
     },
     {
       "name": "unslop",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["unslop.md", "references/slop-catalog.md"]
     },
     {
       "name": "dad-always-say-the-same",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "dad-always-say-the-same.md",
         "references/test-quality.md"
@@ -142,17 +142,17 @@
     },
     {
       "name": "test-before-finishing",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["test-before-finishing.md"]
     },
     {
       "name": "break-the-edge",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["break-the-edge.md", "references/edge-catalog.md"]
     },
     {
       "name": "review-your-work",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": [
         "review-your-work.md",
         "references/review-passes.md",
@@ -161,12 +161,12 @@
     },
     {
       "name": "no-made-up-results",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["no-made-up-results.md"]
     },
     {
       "name": "verify-before-claiming",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": [
         "verify-before-claiming.md",
         "references/evidence-standards.md"
@@ -174,27 +174,27 @@
     },
     {
       "name": "clear-final-report",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["clear-final-report.md", "references/report-templates.md"]
     },
     {
       "name": "safe-git",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["safe-git.md"]
     },
     {
       "name": "git-branch",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["git-branch.md"]
     },
     {
       "name": "git-pr",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["git-pr.md", "references/pr-template.md"]
     },
     {
       "name": "git-issues",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["git-issues.md", "references/issue-templates.md"]
     }
   ]

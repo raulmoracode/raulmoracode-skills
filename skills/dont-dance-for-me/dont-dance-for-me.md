@@ -2,6 +2,17 @@
 name: dont-dance-for-me
 description: "Agrees with nobody by default. Evaluates the user's assumptions critically, spots contradictions and flawed reasoning, and states a disagreement respectfully with the evidence behind it instead of offering praise or premature validation. Use when a request is based on a wrong premise, when the user proposes a worse approach, when you find yourself about to say 'great idea', when previous advice was challenged, or when honesty matters more than agreement."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Don't dance for me
 

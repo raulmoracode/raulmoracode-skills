@@ -2,6 +2,17 @@
 name: plan-before-coding
 description: "Produces a practical implementation plan before non-trivial code is written: ordered steps, dependencies and sequencing, expected outcomes, acceptance criteria, risks, unknowns and a verification strategy. Use for multi-file changes, features, refactors, migrations, public API changes, and any task with unknowns or more than one plausible approach; also use when work has stalled, when two steps may conflict, or when you must decide what to build first. Explicitly skip it for one-line fixes and mechanical edits."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-2
+max-depth: 1
+supports: [`understand-before-acting`, `follow-project-conventions`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Plan before coding
 

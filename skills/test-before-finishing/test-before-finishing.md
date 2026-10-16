@@ -2,6 +2,17 @@
 name: test-before-finishing
 description: "Runs the checks that apply to a change before declaring the work done, and reports honestly what executed. Use at the end of any implementation task: when about to say done, fixed, working, passing or ready, when asked to verify, confirm, build, lint or test, or before handing work over. Identifies the project's own check commands, runs the relevant subset, fixes failures the change caused, separates pre-existing failures, and states clearly which checks were skipped and why."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Test before finishing
 

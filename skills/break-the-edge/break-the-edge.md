@@ -2,6 +2,17 @@
 name: break-the-edge
 description: "Hunts the edge cases, unusual inputs and failure conditions that could break a change, and turns each plausible one into a targeted test or mitigation. Use when implementing or reviewing anything with boundary conditions, parsing, user input, retries, caching, concurrency, limits, time, money, permissions or external dependencies: enumerates assumptions, scans boundary, emptiness, scale, state, time, concurrency, failure, integration and abuse cases, ranks them by likelihood and impact, and reports only findings tied to a realistic trigger."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Break the edge
 

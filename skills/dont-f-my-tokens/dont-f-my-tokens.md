@@ -2,6 +2,17 @@
 name: dont-f-my-tokens
 description: "Spends tokens, time and tool calls deliberately while working. Use on any long-running task, when context is filling, when a search has already failed once, when output is growing faster than the user needs it, or when asked to be faster, cheaper or more efficient. Finds the file once and reads it whole, batches independent calls, stops exploring as soon as you can act, and never buys speed by skipping verification."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Don't f my tokens
 

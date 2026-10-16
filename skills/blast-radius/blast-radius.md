@@ -2,6 +2,17 @@
 name: blast-radius
 description: "Evaluates the forward-looking impact of a proposed change before and during it. Use when asking what would break, who uses this, is this safe to change, will this need a migration, is this still backward compatible, or before altering a public API, schema, config key, dependency, integration or hot path. Traces consumers, interfaces, data and configuration, compatibility, security and operational implications, then recommends safeguards, rollout order and rollback proportionate to the risk."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`understand-before-acting`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Blast radius
 

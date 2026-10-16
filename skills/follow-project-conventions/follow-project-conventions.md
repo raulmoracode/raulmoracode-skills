@@ -2,6 +2,17 @@
 name: follow-project-conventions
 description: "Matches the way an existing project already does things: architecture, file layout, naming and casing, module and export style, data flow, error handling, dependency policy, test placement and documentation. Use before writing or modifying code in an unfamiliar codebase, when the closest existing analog has not been identified, or when a change might be consistent in isolation but alien to the repository. Includes the rule for deviating deliberately when a convention is unsafe."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Follow project conventions
 

@@ -2,6 +2,17 @@
 name: dad-always-say-the-same
 description: "Designs tests that are useful, deterministic and maintainable. Use when writing, fixing or improving tests: choosing what to cover, asserting behavior instead of internals, deciding between unit, integration and end-to-end tests, adding a regression test for a fixed bug, or repairing a flaky, slow or noisy suite. Keeps tests deterministic, free of wall-clock, randomness, network and ordering dependence, and focused on observable contracts rather than coverage numbers."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Dad always says the same
 

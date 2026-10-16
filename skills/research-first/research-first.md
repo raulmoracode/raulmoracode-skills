@@ -2,6 +2,17 @@
 name: research-first
 description: "Answers open questions with evidence before a decision is made. Use when a choice depends on facts you do not have: which library, tool or approach to use, whether something is supported, fast enough or still maintained, how prior art solved the same problem, or before asserting something you have not verified. Names the questions, ranks sources by authority, compares alternatives, separates fact from assumption, stops when the evidence is sufficient, and reports what the findings change."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`understand-before-acting`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Research first
 

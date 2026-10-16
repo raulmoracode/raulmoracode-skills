@@ -2,6 +2,17 @@
 name: clear-final-report
 description: "Produces the final report the user reads: the result, the important changes, the significant decisions, the checks that actually ran with their real outcomes, the limitations and the outstanding work. Scales to the task instead of padding a two-line fix into a multi-section document, and contains only what happened. Use when work is finished and needs handing over, when reporting back after a long task, after an investigation or diagnosis, or when a partial result has to be reported honestly."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Clear final report
 

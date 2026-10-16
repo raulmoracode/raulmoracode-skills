@@ -2,6 +2,17 @@
 name: mom-always-say-the-same
 description: "Keeps code, comments, documentation, examples and configuration telling the same story. Use when a change alters a signature, default, CLI flag, config key, environment variable, schema, error message or public behavior, or when a README, docstring, example, comment or .env file may now be wrong: sweeps every affected artifact, gives each important fact one authoritative home, and treats outdated documentation as a defect rather than cosmetics."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Mom always says the same
 

@@ -2,6 +2,17 @@
 name: code
 description: "Writes implementations that are correct, readable, maintainable and secure. Use when creating or modifying application code in any language: new features, bug fixes, functions, modules, API endpoints, components or scripts. Discovers the project's existing conventions and closest analog before writing, mirrors their structure, handles errors and edge states explicitly, and keeps the implementation proportional to the requirement instead of building speculative abstractions."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-2
+max-depth: 1
+supports: [`understand-before-acting`, `follow-project-conventions`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Code
 

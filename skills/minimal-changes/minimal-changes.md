@@ -2,6 +2,17 @@
 name: minimal-changes
 description: "Keeps a change limited to what the request actually requires. Use when editing existing code, fixing a bug, or adding a feature: avoids unrelated refactoring, reformatting, file moves and opportunistic dependency upgrades, preserves uncommitted user work and existing behavior, separates necessary changes from optional ones, notes improvements instead of bundling them, and widens the diff only when correctness or a security fix demands it."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Minimal changes
 

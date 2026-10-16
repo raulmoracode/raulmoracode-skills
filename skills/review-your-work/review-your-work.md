@@ -2,6 +2,17 @@
 name: review-your-work
 description: "Reviews the changes you just made before treating the task as finished. Reads the actual diff instead of your memory of it, and looks for defects, regressions, security problems, accidental modifications, unnecessary scope and missing tests or documentation. Use when you are about to report a change as done, when a diff is larger or stranger than you expected, after fixing a bug, or when you want a second adversarial pass over your own work. Produces findings ranked by severity, each with impact and a concrete fix."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Review your work
 

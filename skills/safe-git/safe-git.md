@@ -2,6 +2,17 @@
 name: safe-git
 description: "Protects repository state and uncommitted work during any Git operation. Use before or after a reset, rebase, checkout, restore, clean, stash, branch deletion, history rewrite or force push, and whenever the working tree is dirty or you are unsure what a command will destroy. Inspects status first, makes work safe before acting, triages destructive commands, verifies the result of each operation, and recovers losses through the reflog, stash and ORIG_HEAD."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Safe git
 

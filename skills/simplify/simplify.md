@@ -2,6 +2,17 @@
 name: simplify
 description: "Removes unnecessary complexity from the solution and from the way the solution is reached: fewer task subdivisions, fewer plan steps, fewer skills and tools, the straightforward implementation instead of a clever one, no duplicated instructions or repeated work, shorter docs and reports, no speculative structure. Minimize unnecessary complexity without reducing necessary rigor. Use when a task feels over-planned, when an abstraction has one caller, when the same work is done twice, or when reviewing your own output for cruft."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Simplify
 

@@ -2,6 +2,17 @@
 name: git-pr
 description: "Prepares, opens and manages pull requests. Use when asked to create, open, update, describe or check a PR, to push a branch for review, or to interpret CI and review status on one. Inspects the branch and its real diff against the correct base, follows the repository's PR template, writes a title and body covering motivation, implementation, testing and risk, verifies the actual result of the create command, and never merges without explicit authorization."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`clear-final-report`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Git pull request
 

@@ -2,6 +2,17 @@
 name: understand-before-acting
 description: "Investigates the environment before any change is made: reads the files, project instructions, architecture and conventions the task touches, and checks the repository's current state including uncommitted work. Use when opening an unfamiliar repository or module, before editing, refactoring or running commands that mutate state; when the request names something by role rather than location ('the exporter', 'the auth flow', 'the config loader') and you must locate it; and whenever you are about to assume structure, entry points, build tooling or data flow that a read would settle."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Understand before acting
 

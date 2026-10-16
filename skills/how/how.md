@@ -2,6 +2,17 @@
 name: how
 description: "Explains how a system, component or process works: its architecture, the responsibilities of each part, the data and control flows, and the execution path of a request, job or event. Use for questions like 'how does this work', 'walk me through this', 'what calls this', 'where does the data go', 'trace this request', or when onboarding to an unfamiliar subsystem. Traces from code and configuration, and labels what is observed versus inferred."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`understand-before-acting`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # How
 
