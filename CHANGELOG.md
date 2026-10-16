@@ -78,6 +78,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `catalog-version.json` (`1.0.1`) — a separately served semver identifier for the
+  published catalog, preserving the strict OpenCode-compatible `index.json`
+  shape while allowing consumers to record the catalog version they resolved.
 - `project-structure` skill (`1.0.0`) — reads the project it is in and produces an
   annotated directory tree, with an inline `#` comment on every listed folder and file,
   drawn from evidence rather than from names. Read-only, excludes generated and vendored

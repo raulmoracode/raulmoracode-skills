@@ -35,6 +35,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const INDEX_FILE = join(ROOT, "index.json");
+const CATALOG_VERSION_FILE = join(ROOT, "catalog-version.json");
 const SKILL_NAME_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const ALLOWED_KEYS = ["name", "version", "files"];
 const MAX_DESCRIPTION_LENGTH = 1024;
@@ -65,6 +66,10 @@ function section(title) {
 
 function isPlainObject(value) {
   return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function isSemver(value) {
+  return /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/.test(value);
 }
 
 function isSafeRelativePath(value) {
@@ -282,6 +287,30 @@ if (existsSync(INDEX_FILE)) {
     raw = readFileSync(INDEX_FILE, "utf8");
   } catch (error) {
     fail("index.json is readable", error.message);
+  }
+
+  section("catalog-version.json");
+  let catalogVersion = null;
+  try {
+    catalogVersion = JSON.parse(readFileSync(CATALOG_VERSION_FILE, "utf8"));
+  } catch (error) {
+    fail("catalog-version.json is readable and valid JSON", error.message);
+  }
+
+  if (catalogVersion !== null) {
+    if (
+      !isPlainObject(catalogVersion) ||
+      Object.keys(catalogVersion).length !== 1 ||
+      typeof catalogVersion.version !== "string" ||
+      !isSemver(catalogVersion.version)
+    ) {
+      fail(
+        'catalog-version.json has the exact { "version": "semver" } shape',
+        'expected a single semver "version" string',
+      );
+    } else {
+      ok(`catalog version is ${catalogVersion.version}`);
+    }
   }
   if (raw !== null) {
     try {

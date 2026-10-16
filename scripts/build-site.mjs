@@ -20,6 +20,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = join(ROOT, "_site");
 const INDEX_FILE = join(ROOT, "index.json");
+const CATALOG_VERSION_FILE = join(ROOT, "catalog-version.json");
 
 function fail(message) {
   console.error(`FAIL  ${message}`);
@@ -53,6 +54,16 @@ mkdirSync(SITE, { recursive: true });
 
 writeFileSync(join(SITE, "index.json"), raw);
 console.log("copied index.json -> _site/index.json");
+
+let catalogVersion;
+try {
+  catalogVersion = readFileSync(CATALOG_VERSION_FILE, "utf8");
+  JSON.parse(catalogVersion);
+} catch (error) {
+  fail(`cannot read a valid catalog-version.json: ${error.message}`);
+}
+writeFileSync(join(SITE, "catalog-version.json"), catalogVersion);
+console.log("copied catalog-version.json -> _site/catalog-version.json");
 
 const missing = [];
 for (const skill of catalog.skills) {

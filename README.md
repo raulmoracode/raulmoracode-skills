@@ -10,6 +10,23 @@ package, no install step, no build tooling for consumers.
 https://raulmoracode.github.io/raulmoracode-skills/
 ```
 
+The default URL always serves the latest catalog. The same site also exposes
+`catalog-version.json`, whose exact shape is:
+
+```json
+{
+  "version": "1.0.1"
+}
+```
+
+The catalog version is a semver identifier for the published catalog as a
+whole. Bump it when the catalog contract, skill inventory, or published layout
+changes. A skill-only content change keeps the catalog version stable and
+bumps that skill's `version` in `index.json` instead. Consumers can record the
+catalog version alongside their generated configuration to identify the exact
+catalog they resolved from the default URL; release tags use the same
+`v<catalog-version>` identifier for repository-level pinning.
+
 ## How OpenCode consumes it
 
 Add the base URL to the `skills` array in your OpenCode configuration
@@ -32,7 +49,7 @@ OpenCode then:
 
 ## Skills
 
-36 skills, organized in seven categories. `raulmoracode-mode` is the entry point; the
+40 skills, organized in seven categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
