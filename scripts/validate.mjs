@@ -21,6 +21,9 @@
  *   - the entry markdown has an "## Interaction with other skills" section
  *   - the sibling names that section mentions are real skills in the catalog,
  *     which catches references to renamed or retired skills
+ *   - the entry markdown has a compact, parseable "## Composition" contract
+ *   - composition roles, invocation values, support budgets, depths and operational
+ *     references are valid; support chains and cycles are rejected
  *   - no long prose block is duplicated across skills, which catches the
  *     copy-paste drift that shared guidance is prone to
  *
@@ -35,6 +38,11 @@ const INDEX_FILE = join(ROOT, "index.json");
 const SKILL_NAME_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const ALLOWED_KEYS = ["name", "version", "files"];
 const MAX_DESCRIPTION_LENGTH = 1024;
+const COMPOSITION_ROLES = new Set(["orchestrator", "specialist", "support", "policy"]);
+const COMPOSITION_INVOCATION_VALUES = new Set(["yes", "no"]);
+const COMPOSITION_BLOCK_RE =
+  /```yaml\r?\n([\s\S]*?)\r?\n```/;
+const STRICT_COMPOSITION = process.argv.includes("--strict-composition");
 
 let checks = 0;
 let failures = 0;
@@ -99,6 +107,56 @@ function readSection(body, heading) {
     collected.push(lines[i]);
   }
   return collected.join("\n");
+}
+
+function parseComposition(body) {
+  const section = readSection(body, "Composition");
+  if (section === null) return { section: null, metadata: null, errors: [] };
+  const match = section.match(COMPOSITION_BLOCK_RE);
+  if (!match) {
+    return {
+      section,
+      metadata: null,
+      errors: ['section must contain one fenced ```yaml metadata block'],
+    };
+  }
+  const metadata = {};
+  const errors = [];
+  for (const line of match[1].split(/\r?\n/)) {
+    if (line.trim() === "") continue;
+    const field = line.match(/^([a-z-]+):\s*(.+)$/);
+    if (!field) {
+      errors.push(`invalid metadata line: ${line}`);
+      continue;
+    }
+    const [, key, rawValue] = field;
+    if (Object.hasOwn(metadata, key)) {
+      errors.push(`duplicate metadata field: ${key}`);
+      continue;
+    }
+    metadata[key] = rawValue.trim();
+  }
+  return { section, metadata, errors };
+}
+
+function parseSupportList(value) {
+  if (value === "[]") return [];
+  if (!value || !value.startsWith("[") || !value.endsWith("]")) return null;
+  const contents = value.slice(1, -1).trim();
+  if (contents === "") return [];
+  const names = contents.split(",").map((item) => item.trim());
+  return names.every((name) => /^`?[a-z0-9]+(?:-[a-z0-9]+)*`?$/.test(name))
+    ? names.map((name) => name.replaceAll("`", ""))
+    : null;
+}
+
+function parseSupportLimit(value) {
+  if (/^\d+$/.test(value)) return { min: Number(value), max: Number(value) };
+  const match = value?.match(/^(\d+)-(\d+)$/);
+  if (!match) return null;
+  const min = Number(match[1]);
+  const max = Number(match[2]);
+  return min <= max ? { min, max } : null;
 }
 
 function proseLines(body) {
@@ -326,6 +384,7 @@ if (skills !== null) {
       .map((entry) => entry.name),
   );
   const bodies = new Map();
+  const compositions = new Map();
 
   for (const entry of skills) {
     if (!isPlainObject(entry) || typeof entry.name !== "string") continue;
@@ -339,6 +398,88 @@ if (skills !== null) {
 
     const body = readFileSync(absolute, "utf8");
     bodies.set(name, body);
+
+    const composition = parseComposition(body);
+    if (composition.section === null) {
+      if (STRICT_COMPOSITION) {
+        fail(`${name}: entry markdown has a "## Composition" section`);
+      } else {
+        console.log(`  info  ${name}: Composition section pending catalog migration`);
+      }
+    } else if (composition.metadata === null) {
+      fail(`${name}: Composition section is parseable`, composition.errors.join("; "));
+    } else {
+      const required = [
+        "role",
+        "direct-invocation",
+        "support-limit",
+        "max-depth",
+        "supports",
+      ];
+      const missing = required.filter((field) => !Object.hasOwn(composition.metadata, field));
+      const unexpected = Object.keys(composition.metadata).filter(
+        (field) => !required.includes(field),
+      );
+      if (missing.length > 0 || unexpected.length > 0 || composition.errors.length > 0) {
+        const details = [
+          missing.length > 0 ? `missing: ${missing.join(", ")}` : null,
+          unexpected.length > 0 ? `unexpected: ${unexpected.join(", ")}` : null,
+          ...composition.errors,
+        ]
+          .filter(Boolean)
+          .join("; ");
+        fail(`${name}: Composition metadata has the required fields`, details);
+      } else {
+        const metadata = composition.metadata;
+        const supportLimit = parseSupportLimit(metadata["support-limit"]);
+        const maxDepth = Number(metadata["max-depth"]);
+        const supports = parseSupportList(metadata.supports);
+        const localErrors = [];
+        if (!COMPOSITION_ROLES.has(metadata.role)) {
+          localErrors.push(`invalid role ${JSON.stringify(metadata.role)}`);
+        }
+        if (!COMPOSITION_INVOCATION_VALUES.has(metadata["direct-invocation"])) {
+          localErrors.push(
+            `invalid direct-invocation ${JSON.stringify(metadata["direct-invocation"])}`,
+          );
+        }
+        if (
+          supportLimit === null ||
+          supportLimit.min < 0 ||
+          supportLimit.max > 2
+        ) {
+          localErrors.push("support-limit must be a range within 0-2");
+        }
+        if (!Number.isInteger(maxDepth) || maxDepth < 0 || maxDepth > 1) {
+          localErrors.push("max-depth must be 0 or 1");
+        }
+        if (supports === null) {
+          localErrors.push("supports must be a bracketed list of skill names");
+        } else if (supportLimit !== null && supports.length > supportLimit.max) {
+          localErrors.push(
+            `supports lists ${supports.length} skills but support-limit allows ${supportLimit.max}`,
+          );
+        } else if (supports.length > 0 && maxDepth === 0) {
+          localErrors.push("max-depth must be 1 when supports are declared");
+        }
+        if (metadata.role === "support" && supports?.length > 0) {
+          localErrors.push("support skills cannot compose other skills");
+        }
+        if (metadata.role !== "orchestrator" && maxDepth > 1) {
+          localErrors.push("non-orchestrators cannot declare composition depth above 1");
+        }
+        if (localErrors.length > 0) {
+          fail(`${name}: Composition metadata is valid`, localErrors.join("; "));
+        } else {
+          compositions.set(name, {
+            role: metadata.role,
+            supports,
+            maxDepth,
+          });
+          ok(`${name}: Composition metadata is valid`);
+        }
+      }
+    }
 
     const unreferenced = files.filter(
       (file) => file !== entryFile && !body.includes(file),
@@ -372,6 +513,48 @@ if (skills !== null) {
       ok(`${name}: interaction section names real sibling skills`);
     }
   }
+
+  for (const [name, composition] of compositions) {
+    const unknown = composition.supports.filter((support) => !skillNames.has(support));
+    if (unknown.length > 0) {
+      fail(
+        `${name}: Composition references real catalog skills`,
+        `not in the catalog: ${unknown.map((item) => `"${item}"`).join(", ")}`,
+      );
+      continue;
+    }
+
+    const invalidTargets = composition.supports.filter((support) => {
+      const target = compositions.get(support);
+      return target !== undefined && target.role === "orchestrator";
+    });
+    if (invalidTargets.length > 0) {
+      fail(
+        `${name}: Composition does not load orchestrators as support`,
+        invalidTargets.map((item) => `"${item}"`).join(", "),
+      );
+    } else {
+      ok(`${name}: Composition references valid operational targets`);
+    }
+  }
+
+  const visiting = new Set();
+  const visited = new Set();
+  function visit(name, path = []) {
+    if (visiting.has(name)) {
+      const cycle = [...path.slice(path.indexOf(name)), name].join(" -> ");
+      fail("Composition graph has no operational cycles", cycle);
+      return;
+    }
+    if (visited.has(name)) return;
+    const composition = compositions.get(name);
+    if (composition === undefined) return;
+    visiting.add(name);
+    for (const support of composition.supports) visit(support, [...path, name]);
+    visiting.delete(name);
+    visited.add(name);
+  }
+  for (const name of compositions.keys()) visit(name);
 
   const skillsDir = join(ROOT, "skills");
   const onDisk = existsSync(skillsDir)

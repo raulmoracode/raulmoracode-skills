@@ -5,6 +5,22 @@ description: "Entry point and orchestrator for non-trivial work. Use at the star
 
 # raulmoracode-mode
 
+## Composition
+
+```yaml
+role: orchestrator
+direct-invocation: yes
+support-limit: 0-2
+max-depth: 1
+supports: []
+```
+
+Composition is deliberate and shallow. Select one primary specialist first, then load zero
+to two support skills only when a stated risk, uncertainty or verification need justifies
+them. Support skills do not select or load other skills, and no skill is loaded merely
+because it is related. Do not reload a skill already in context. Keep the active set
+small enough that the task's useful work, not orchestration, gets the token budget.
+
 The entry point for non-trivial work. It cuts the task down to what it actually needs,
 hands it to the one skill that owns it, and gets out of the way.
 
