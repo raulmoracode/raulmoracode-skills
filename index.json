@@ -211,6 +211,11 @@
       "name": "skill-evaluation",
       "version": "1.0.0",
       "files": ["skill-evaluation.md"]
+    },
+    {
+      "name": "ci-cd",
+      "version": "1.0.0",
+      "files": ["ci-cd.md"]
     }
   ]
 }
