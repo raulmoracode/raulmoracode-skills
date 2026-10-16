@@ -2,6 +2,17 @@
 name: no-made-up-results
 description: "Forbids fabricating evidence. Command output, test results, log excerpts, file contents, research findings, documentation quotes, URLs and tool results must never be invented, paraphrased from memory, or completed by guesswork, and a task that failed is never reported as succeeded. Use whenever you are about to describe what happened: reporting a command, a test run, a fix, a file change, a citation or a completion. Every such claim must come from something you actually observed, and anything unavailable is reported as unavailable."
 ---
+## Composition
+
+```yaml
+role: policy
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # No made-up results
 

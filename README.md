@@ -37,7 +37,7 @@ rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.2 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.3 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.1 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.0 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.0 | Understanding and planning | Answers open questions with evidence before a decision is made |
@@ -83,9 +83,10 @@ frontmatter is the authoritative text and the activation surface.
 `raulmoracode-mode` chooses one primary specialist for a request and may add zero to two
 justified support skills. Composition is operationally shallow: support skills do not load
 other support skills, the maximum composition depth is one, and related skills are not
-loaded merely because they are conceptually adjacent. The compact `## Composition`
-metadata in each skill entry is the machine-checked contract; the
-`## Interaction with other skills` section remains explanatory only.
+loaded merely because they are conceptually adjacent. Each entry declares one layer-1
+role — `orchestrator`, `specialist`, `support`, or `policy` — plus direct invocation,
+support budget, depth, and explicit operational targets in its compact `## Composition`
+metadata. The `## Interaction with other skills` section remains explanatory only.
 
 ## Repository structure
 
@@ -163,11 +164,10 @@ Rules (enforced by `scripts/validate.mjs`):
 - Every listed support file is named by its relative path somewhere in the skill
   body. OpenCode does not auto-load support files, so an unreferenced one is dead
   weight the agent will never read.
-- A skill with a `## Composition` section has parseable role, invocation, budget, depth
-  and operational-reference metadata. During the layer-2 migration, run
-  `node scripts/validate.mjs --strict-composition` to require that section on every
-  catalog skill; the default check keeps layer 1 and layer 2 branches independently
-  verifiable.
+- Every skill has a `## Composition` section with parseable role, invocation, budget,
+  depth and operational-reference metadata. The normal check is strict; the explicit
+  `node scripts/validate.mjs --strict-composition` form is retained as a clear CI and
+  local-validation command.
 - The entry markdown has an `## Interaction with other skills` section, and the
   sibling names it mentions exist in the catalog. This catches references to
   renamed or retired skills.
@@ -176,7 +176,8 @@ Rules (enforced by `scripts/validate.mjs`):
 
 ## Adding or updating a skill
 
-1. Create or edit `skills/<name>/<name>.md` (plus optional reference files).
+1. Create or edit `skills/<name>/<name>.md` (plus optional reference files), including
+   its compact `## Composition` contract.
 2. Update `index.json`: add or edit the entry and **bump its `version`**.
 3. Run `node scripts/validate.mjs` locally and fix anything it reports.
 4. Open a pull request. CI runs the same validation plus a version-bump guard
@@ -193,6 +194,7 @@ Rules (enforced by `scripts/validate.mjs`):
 
 ```sh
 node scripts/validate.mjs                    # validate the catalog
+node scripts/validate.mjs --strict-composition # explicit strict composition validation
 node scripts/build-site.mjs                  # build _site/ exactly as deployed
 python3 -m http.server 8000 --directory _site  # preview the deployed site
 ```

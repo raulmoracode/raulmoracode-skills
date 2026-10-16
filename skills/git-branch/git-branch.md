@@ -2,6 +2,17 @@
 name: git-branch
 description: "Manages Git branches according to the repository's own workflow. Use when creating, switching, renaming, rebasing or deleting a branch, when asked to move work onto a branch, to isolate a change, or to start from an up-to-date base. Discovers the naming convention and base branch from CONTRIBUTING, AGENTS.md and existing branch names, keeps one logical change per branch, checks status before switching, and avoids creating branches the task or repository does not require."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`safe-git`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Git branch
 

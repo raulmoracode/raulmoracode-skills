@@ -2,6 +2,17 @@
 name: project-structure
 description: "Reads the project it is in and produces an annotated directory tree: every listed folder and file gets an inline `#` comment describing its actual responsibility, established from evidence in the code, imports, manifests and config rather than guessed from names. Use when asked to show the project structure, generate or explain a directory tree, explain what each folder or file is for, produce an onboarding map of a repository, document the layout, or save the tree to a file. Excludes generated, vendored and cached directories by default, controls depth on large repositories, never prints secret values, and is read-only unless explicitly asked to save."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`understand-before-acting`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Project structure
 

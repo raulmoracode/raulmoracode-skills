@@ -2,6 +2,17 @@
 name: subagent-task-as-crazy
 description: "Runs independent parts of a task in parallel with subagents instead of one at a time. Use when a request has two or more parts that do not depend on each other, when the same investigation must be repeated across modules, when several files or areas need the same treatment, or when wall-clock time is the thing being optimized. Partitions work into disjoint scopes with one writer per file, writes delegation prompts that produce a usable deliverable, then reviews and integrates every result before reporting."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`dont-f-my-tokens`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Subagent task as crazy
 

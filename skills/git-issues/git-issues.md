@@ -2,6 +2,17 @@
 name: git-issues
 description: "Creates, triages and updates repository issues when explicitly requested. Use when asked to file or draft a bug report, open a feature request, report a documentation error, raise technical debt, search for duplicates, or check on an existing issue. Identifies the issue type, checks for duplicates, follows repository issue templates and forms, supplies reproduction steps and acceptance criteria, respects private security disclosure, and verifies that an issue was really created or updated."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`clear-final-report`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Git issues
 

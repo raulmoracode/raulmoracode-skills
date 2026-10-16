@@ -2,6 +2,17 @@
 name: why
 description: "Investigates why a decision, implementation or behavior exists: reads the code and its comments, the documentation and decision records, and the Git history, then separates documented rationale from inference and presents competing explanations when the evidence is inconclusive. Use for questions like 'why is it done this way', 'why this library', 'why does it retry three times', 'what was the intent here', or before changing something whose purpose you do not yet know."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`how-was-last-night`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Why
 

@@ -2,6 +2,17 @@
 name: show-your-work
 description: "Makes important decisions, assumptions, findings and verification results visible while the work happens, so the user can catch a wrong direction before it costs them. Use when a decision changes the shape of the work, when you deviate from what was asked, when a check fails or cannot run, when you rely on a load-bearing assumption, or when you change direction mid-task. Surfaces decisions and evidence, not a narration of internal reasoning."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Show your work
 

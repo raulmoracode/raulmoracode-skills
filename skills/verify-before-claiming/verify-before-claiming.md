@@ -2,6 +2,17 @@
 name: verify-before-claiming
 description: "Sets the evidence standard a claim must clear before it is stated. Every claim about completed work or observed behavior is placed on the evidence ladder — observed and checked, observed, inferred, assumed, unknown — and its language is raised or lowered to match: what the build command actually exited, what the test run actually printed, what was read versus deduced. Use before asserting that something works, is fixed, passes, is the convention, is safe, or is done, and when deciding whether one more check is worth running."
 ---
+## Composition
+
+```yaml
+role: policy
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Verify before claiming
 

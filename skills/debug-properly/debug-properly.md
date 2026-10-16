@@ -2,6 +2,17 @@
 name: debug-properly
 description: "Diagnoses and fixes the root cause of a defect instead of its symptom. Use when something is broken, failing, flaky, crashing, slow or behaving unexpectedly: reproduces the failure when possible, gathers evidence, tests one hypothesis at a time, implements a targeted fix, proves it by re-running the original reproduction, adds regression coverage, and states plainly when the cause could not be established."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-2
+max-depth: 1
+supports: [`understand-before-acting`, `test-before-finishing`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Debug properly
 

@@ -2,6 +2,17 @@
 name: software-architect
 description: "Evaluates system design and architectural decisions before they are built: component boundaries, dependency direction, interfaces, coupling, sync versus async, shared versus duplicated logic, schema ownership, caching and migration strategy. Use when choosing between designs, when a module or service boundary is in question, when a design has grown tangled, or when asked whether to split a monolith, add an abstraction or a layer of indirection, or make a build-time versus runtime choice. Recommends the simplest architecture that adequately satisfies the requirements and names the trade-off behind every recommendation."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`understand-before-acting`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Software architect
 

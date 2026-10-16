@@ -2,6 +2,17 @@
 name: security-first
 description: "Folds security into the decisions a change makes, at a scale that matches the risk. Use when work touches untrusted input, authentication, authorization, sessions, payments, personal or regulated data, secrets, file uploads, outbound requests, dependencies, or public configuration: ranks the exposure, validates at the boundary, defaults to deny, protects credentials, and surfaces findings it cannot fix in scope. Runs a full threat model on an auth path and none at all on a stylesheet tweak."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-2
+max-depth: 1
+supports: [`understand-before-acting`, `break-the-edge`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Security first
 

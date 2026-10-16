@@ -2,6 +2,17 @@
 name: software-engineer
 description: "Practical working posture for day-to-day engineering: understand the requirement, implement it, debug defects, maintain what is there, follow the project's conventions, handle errors and failure deliberately, and validate behavior before claiming it works. Use when you are implementing a change, fixing a bug, extending an existing system, or doing any routine engineering work in a repository, to pick the right specialized skill for the concern at hand instead of improvising process."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-2
+max-depth: 1
+supports: [`understand-before-acting`, `follow-project-conventions`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Software engineer
 

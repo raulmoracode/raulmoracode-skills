@@ -2,6 +2,17 @@
 name: unslop
 description: "Detects and removes low-quality AI-generated code and prose: pass-through wrappers, abstractions with one caller, helpers nobody parameterized, comments that restate the code, swallowed exceptions, defensive checks of internal invariants, magic numbers, dead code, placeholder text, filler markup and padded sentences. Use when reviewing or cleaning generated output, when a diff or file looks finished but thin, or when asked to tighten, clean up, de-slop or de-bloat code, comments, docs or UI copy. Removes volume that carries no information while preserving behavior, error handling, validation and tests."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`understand-before-acting`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Unslop
 

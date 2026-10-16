@@ -42,7 +42,7 @@ const COMPOSITION_ROLES = new Set(["orchestrator", "specialist", "support", "pol
 const COMPOSITION_INVOCATION_VALUES = new Set(["yes", "no"]);
 const COMPOSITION_BLOCK_RE =
   /```yaml\r?\n([\s\S]*?)\r?\n```/;
-const STRICT_COMPOSITION = process.argv.includes("--strict-composition");
+const STRICT_COMPOSITION = true;
 
 let checks = 0;
 let failures = 0;
@@ -403,8 +403,6 @@ if (skills !== null) {
     if (composition.section === null) {
       if (STRICT_COMPOSITION) {
         fail(`${name}: entry markdown has a "## Composition" section`);
-      } else {
-        console.log(`  info  ${name}: Composition section pending catalog migration`);
       }
     } else if (composition.metadata === null) {
       fail(`${name}: Composition section is parseable`, composition.errors.join("; "));

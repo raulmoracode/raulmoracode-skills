@@ -2,6 +2,17 @@
 name: read-the-f-docs
 description: "Consults authoritative documentation for a specific technology at a specific version. Use when you need an exact API signature, default value, flag name, config key, error behavior, deprecation, migration path, rate limit or platform requirement, and guessing would produce code that does not run: version skew, a snippet copied from the wrong release, or a question about what a tool or API actually does. Pins the version in use, finds the official reference, checks migration and deprecation notes, and separates documented behavior from interpretation."
 ---
+## Composition
+
+```yaml
+role: specialist
+direct-invocation: yes
+support-limit: 0-1
+max-depth: 1
+supports: [`understand-before-acting`]
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Read the f-docs
 

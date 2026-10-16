@@ -2,6 +2,17 @@
 name: dont-ask-shit
 description: "Investigates and infers before asking, and asks only when a wrong guess would be expensive. Use when you hit an ambiguity, are tempted to ask a question you could answer by reading the repo, inferring from a convention or checking a default, and must decide whether to proceed or interrupt the user with a blocking question."
 ---
+## Composition
+
+```yaml
+role: support
+direct-invocation: yes
+support-limit: 0
+max-depth: 0
+supports: []
+```
+
+Operational metadata only; related skills are conceptual unless listed here.
 
 # Don't ask shit
 
