@@ -101,6 +101,8 @@ metadata. The `## Interaction with other skills` section remains explanatory onl
 │   ├── validate.mjs            # Catalog validation (zero dependencies)
 │   ├── build-site.mjs          # Builds _site/ for GitHub Pages
 │   └── check-version-bump.mjs  # Guard: a changed skill must bump its version
+├── Dockerfile                  # Builds and serves the catalog image
+└── docker-compose.yml          # Runs a redundant local catalog service
 └── .github/workflows/
     ├── deploy.yml              # Validate + version guard + build + deploy on push
     └── validate.yml            # PR validation + version-bump guard
@@ -197,7 +199,13 @@ node scripts/validate.mjs                    # validate the catalog
 node scripts/validate.mjs --strict-composition # explicit strict composition validation
 node scripts/build-site.mjs                  # build _site/ exactly as deployed
 python3 -m http.server 8000 --directory _site  # preview the deployed site
+docker compose up --build -d                  # run the catalog locally on port 8080
 ```
+
+The local Docker service serves the same `_site/` output deployed to GitHub Pages.
+It validates the catalog and builds the site inside the image, then serves the
+static files with Nginx. Set `SKILLS_SITE_PORT` to use another host port, for
+example `SKILLS_SITE_PORT=8081 docker compose up --build -d`.
 
 The scripts are plain Node 24 ESM with zero dependencies.
 
