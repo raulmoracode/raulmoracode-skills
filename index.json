@@ -214,8 +214,8 @@
     },
     {
       "name": "skill-evaluation",
-      "version": "1.0.1",
-      "files": ["skill-evaluation.md"]
+      "version": "1.0.2",
+      "files": ["skill-evaluation.md", "references/task-script.md"]
     },
     {
       "name": "ci-cd",

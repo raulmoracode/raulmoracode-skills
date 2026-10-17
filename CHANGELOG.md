@@ -112,6 +112,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `skill-evaluation` (`1.0.2`) ships `references/task-script.md`, a starter script of ten
+  tasks — canonical, boundary, negative, risk and regression — for running the evaluation
+  flow against the catalog.
 - `catalog-version.json` (`1.0.1`) — a separately served semver identifier for the
   published catalog, preserving the strict OpenCode-compatible `index.json`
   shape while allowing consumers to record the catalog version they resolved.
