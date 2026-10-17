@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -194,7 +194,7 @@
     },
     {
       "name": "git-branch",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["git-branch.md"]
     },
     {
@@ -216,6 +216,11 @@
       "name": "ci-cd",
       "version": "1.0.0",
       "files": ["ci-cd.md"]
+    },
+    {
+      "name": "git-tree",
+      "version": "1.0.0",
+      "files": ["git-tree.md"]
     }
   ]
 }

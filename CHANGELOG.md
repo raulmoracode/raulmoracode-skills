@@ -111,6 +111,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   passes, severity guide, evidence standards, report templates, PR template, issue
   templates).
 
+- `git-tree` skill (`1.0.0`) — renders local and remote branches as a tree grouped by
+  naming prefixes, distinct from commit ancestry.
+- Wiring: `git-branch` (`1.0.2`) now names `git-tree` for the branch landscape, and
+  `raulmoracode-mode` gains its routing row.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
