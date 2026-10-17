@@ -129,6 +129,8 @@ missing tests is real work: estimate it or do it, but never imply it was covered
   progress.
 - `minimal-changes` — a failing check is a reason to read the diff, not to widen it.
 - `clear-final-report` — turns your results into the final message.
+- `accessibility-engineering` — supplies the automated accessibility checks worth
+  running before a UI change is called done.
 
 ## Anti-patterns
 

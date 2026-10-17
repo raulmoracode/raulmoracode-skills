@@ -179,6 +179,9 @@ These get confused most often. When two apply, load both — they do different w
 - **web-performance** — Core Web Vitals, bundle size, loading order, caching, code
   splitting and network waterfalls.
 
+- **accessibility-engineering** — semantic HTML, keyboard, focus management, ARIA and
+  automated accessibility checks.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,

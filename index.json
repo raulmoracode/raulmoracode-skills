@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.16",
+      "version": "1.0.17",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -144,7 +144,7 @@
     },
     {
       "name": "dad-always-say-the-same",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": [
         "dad-always-say-the-same.md",
         "references/test-quality.md"
@@ -152,7 +152,7 @@
     },
     {
       "name": "test-before-finishing",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["test-before-finishing.md"]
     },
     {
@@ -269,7 +269,7 @@
     },
     {
       "name": "frontend-engineering",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": ["frontend-engineering.md"]
     },
     {
@@ -281,6 +281,11 @@
       "name": "web-performance",
       "version": "1.0.0",
       "files": ["web-performance.md"]
+    },
+    {
+      "name": "accessibility-engineering",
+      "version": "1.0.0",
+      "files": ["accessibility-engineering.md"]
     }
   ]
 }

@@ -171,6 +171,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `performance-engineering` (`1.0.1`), `frontend-engineering` (`1.0.2`) and
   `browser-engineering` (`1.0.1`) name it for web-specific measurement.
 
+- `accessibility-engineering` skill (`1.0.0`) — accessibility-tree-first implementation
+  with automation as a floor, not a verdict.
+- Wiring: `frontend-engineering` (`1.0.3`), `dad-always-say-the-same` (`1.0.2`) and
+  `test-before-finishing` (`1.0.2`) name it for accessible behavior.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
