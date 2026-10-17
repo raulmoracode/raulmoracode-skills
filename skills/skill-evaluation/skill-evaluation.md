@@ -69,6 +69,9 @@ Include enough variation to expose neighboring boundaries:
 5. **Regression tasks** — previously representative requests whose route must remain
    stable unless the change intentionally moves it.
 
+A starter script of ten tasks — canonical, boundary, negative, risk and regression — is
+in `references/task-script.md`, meant to be adapted to the repository under evaluation.
+
 For every task, record the expected primary skill, expected support skills and forbidden
 skills before observing the route. Expectations are hypotheses, not labels to edit after
 the fact.
