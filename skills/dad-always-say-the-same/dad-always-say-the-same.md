@@ -150,6 +150,8 @@ For every bug fixed in this session:
 - `unslop` — removes bloat and meaningless assertions from test files.
 - `security-first` — owns sensitive fixtures: no real credentials or personal data.
 - `minimal-changes` — owns whether a test file may be reorganized while adding a test.
+- `accessibility-engineering` — defines the accessible behaviors worth a test and how
+  they are verified, including automated checks.
 
 ## Anti-patterns
 

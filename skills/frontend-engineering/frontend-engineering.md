@@ -108,6 +108,8 @@ that ignores those patterns is not an improvement to the product.
   pipeline, event loop, workers, storage, permissions and sandboxing.
 - `web-performance` — measures and improves the loading and responsiveness of the UI
   this skill builds.
+- `accessibility-engineering` — semantic markup, keyboard navigation, focus management,
+  ARIA and screen-reader behavior: the accessible layer of this work.
 
 ## Anti-patterns
 
