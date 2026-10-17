@@ -218,6 +218,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `release-engineering` (`1.0.2`) and `ci-cd` (`1.0.4`) name it for artifact
   inspection.
 
+- `compare-environments` skill (`1.0.0`) — builds a dimension-by-dimension environment
+  diff and reduces it until one variable explains the symptom.
+- Wiring: `configuration-management` (`1.0.2`) and `platform-engineer` (`1.0.1`) name it
+  for environment comparison.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

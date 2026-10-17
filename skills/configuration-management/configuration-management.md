@@ -119,6 +119,8 @@ the symptom this skill exists to eliminate.
   exposing secret values.
 - `platform-engineer` — the working posture that applies this skill across environments,
   tooling and developer infrastructure.
+- `compare-environments` — diffs local, CI, staging and production versions,
+  configuration and permissions to locate drift.
 
 ## Anti-patterns
 

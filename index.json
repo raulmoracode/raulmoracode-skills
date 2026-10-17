@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.26",
+      "version": "1.0.27",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -254,7 +254,7 @@
     },
     {
       "name": "configuration-management",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["configuration-management.md"]
     },
     {
@@ -309,7 +309,7 @@
     },
     {
       "name": "platform-engineer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["platform-engineer.md"]
     },
     {
@@ -331,6 +331,11 @@
       "name": "inspect-the-artifact",
       "version": "1.0.0",
       "files": ["inspect-the-artifact.md"]
+    },
+    {
+      "name": "compare-environments",
+      "version": "1.0.0",
+      "files": ["compare-environments.md"]
     }
   ]
 }
