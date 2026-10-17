@@ -24,7 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     the previous entry-plus-reference path and ~5,570 for loading `simplify`
     unconditionally. `raulmoracode-mode` bumped to `1.0.2`.
 - Integrated `project-structure` into the skill graph so it is not an orphan. Every link
-  is reciprocal: the entry already named six siblings, and each now names it back.
+  in that integration is reciprocal: the entry already named six siblings, and each now
+  names it back.
   - `raulmoracode-mode` — added to the interaction list, plus a routing row ("show me
     the project structure" / "what does each folder do"), two entries in the overlap
     table (`project-structure` vs `how`, and vs `understand-before-acting`), and an
@@ -44,9 +45,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   other entry pointed at. `raulmoracode-mode` now names it alongside `software-architect`.
   Every skill in the catalog is now referenced by at least one sibling.
 - Versions: the six skills above are bumped to `1.0.1`; `software-engineer` to `1.0.2`.
-- Note on reciprocity: 53% of the catalog's cross-references are one-way, which is the
-  established convention — a skill points at the owner of a concern without requiring the
-  owner to point back. Reciprocity was added for `project-structure` because those pairs
+- Note on reciprocity: 53% of the catalog's cross-references were one-way when that
+  integration landed, which is the established convention — a skill points at the owner
+  of a concern without requiring the owner to point back. Reciprocity was added for
+  `project-structure` because those pairs
   are the genuinely confusable ones, not to symmetrize the graph.
 - Introduced the composition contract: every skill entry declares one layer-1 role,
   direct invocation, support budget, depth and explicit operational targets in a
@@ -133,7 +135,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   exclusion policy, rendering and truncation) and `references/description-guidelines.md`
   (evidence sources per kind of element, phrasing calibration, and how to state an
   unknown purpose honestly).
-- 36 agent-behavior skills, organized in seven categories:
+- Imported 36 agent-behavior skills, organized in seven categories:
   - **Orchestration** — `raulmoracode-mode` (entry point, task classification, skill
     selection), with a `references/skill-selection.md` routing table.
   - **Understanding and planning** — `understand-before-acting`,
@@ -149,11 +151,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     `test-before-finishing`, `break-the-edge`, `review-your-work`,
     `no-made-up-results`, `verify-before-claiming`, `clear-final-report`.
   - **Git and repository** — `safe-git`, `git-branch`, `git-pr`, `git-issues`.
-- 17 `references/` files for lookup material (skill-selection, discovery questions,
-  recovery commands, impact surfaces, tree format, description guidelines, architecture
-  decision criteria, threat checklist, slop catalog, test quality, edge catalog, review
-  passes, severity guide, evidence standards, report templates, PR template, issue
-  templates).
+- The import shipped 17 `references/` files for lookup material
+  (skill-selection, discovery questions, recovery commands, impact surfaces, tree
+  format, description guidelines, architecture decision criteria, threat checklist,
+  slop catalog, test quality, edge catalog, review passes, severity guide, evidence
+  standards, report templates, PR template, issue templates).
 
 - A local skills site service: `Dockerfile` validates and builds the catalog inside
   the image and serves `_site/` with Nginx on port 8080; `docker-compose.yml` runs the
@@ -289,7 +291,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- `frontend-design`, `code-review` and `create-component`. The catalog is now a
+- `frontend-design`, `code-review` and `create-component`. The catalog became a
   single, coherent system of 35 agent-behavior skills instead of a mix of domain
   tutorials and behavioral skills.
   - The `code-review` review passes and severity guide were absorbed into
