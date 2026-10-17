@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.28",
+      "version": "1.0.29",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "name": "follow-project-conventions",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": [
         "follow-project-conventions.md",
         "references/discovery-questions.md"
@@ -204,7 +204,7 @@
     },
     {
       "name": "git-pr",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["git-pr.md", "references/pr-template.md"]
     },
     {

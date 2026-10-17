@@ -60,6 +60,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `git-branch` also pins the name format: a regex-checkable shape, lowercase letters,
   digits and hyphens only, a 50-character target, banned empty words, a free-name check
   before creating, and the same format for stacked branches.
+- Cohesion pass for the `git-branch` rebuild: `git-pr` (`1.0.2`) now bases a stacked
+  branch's pull request on its sibling and retargets it after that merges;
+  `follow-project-conventions` (`1.0.3`) no longer counts branches among the naming
+  conventions it matches; and `raulmoracode-mode` (`1.0.29`) updates its `git-branch`
+  inventory entry to the new rules.
 
 ### Fixed
 
