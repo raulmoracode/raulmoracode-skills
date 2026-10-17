@@ -161,6 +161,9 @@ These get confused most often. When two apply, load both — they do different w
 - **observability** — design and use logs, metrics, traces, correlation identifiers and
   alerts so production behavior is diagnosable.
 
+- **configuration-management** — sources, defaults, precedence, validation and secret
+  references; make any effective value explainable.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,

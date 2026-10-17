@@ -162,6 +162,8 @@ Escalate rather than rationalize. "I am not sure this is safe" is a valid result
 - `clear-final-report` — carries residual risk and out-of-scope findings to the user.
 - `dependency-audit` — reviews direct and transitive dependencies for vulnerabilities,
   provenance and supply-chain risk before they reach production.
+- `configuration-management` — owns sources, defaults, precedence, validation and secret
+  references; use it to keep configuration from leaking or drifting.
 
 ## Anti-patterns
 
