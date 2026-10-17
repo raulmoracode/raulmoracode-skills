@@ -208,6 +208,8 @@ job is not evidence that a later deployment or post-deploy check succeeded.
   a deliberate release path.
 - `platform-engineer` — the working posture for the delivery platform this skill builds
   on: environments, tooling, configuration and developer workflow.
+- `inspect-the-artifact` — inspects what a pipeline actually produced rather than
+  trusting a green job.
 
 ## Anti-patterns
 

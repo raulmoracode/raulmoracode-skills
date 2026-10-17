@@ -227,3 +227,5 @@ These get confused most often. When two apply, load both — they do different w
   links versus inferred ones.
 - **check-the-boundary** — audit a seam’s contract, encoding and failure behavior from both
   sides.
+- **inspect-the-artifact** — open the shipped bytes: contents, metadata and reproducibility
+  of builds, packages and images.

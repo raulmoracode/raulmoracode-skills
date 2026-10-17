@@ -125,6 +125,8 @@ record is what someone reconstructs the release from once memory has moved on.
   annotate a release.
 - `release-engineer` — the working posture that applies this skill: versions,
   changelogs, artifacts, tags, publishing and rollback.
+- `inspect-the-artifact` — opens the built artifact itself: contents, metadata and
+  reproducibility, so a release ships what the source promised.
 
 ## Anti-patterns
 

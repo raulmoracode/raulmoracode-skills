@@ -213,6 +213,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `api-contracts` (`1.0.2`), `security-first` (`1.0.4`) and
   `contract-and-migration` (`1.0.4`) name it for boundary failures.
 
+- `inspect-the-artifact` skill (`1.0.0`) — opens the shipped artifact instead of
+  trusting the build: digest, contents, metadata, reproducibility.
+- Wiring: `release-engineering` (`1.0.2`) and `ci-cd` (`1.0.4`) name it for artifact
+  inspection.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
