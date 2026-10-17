@@ -153,6 +153,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   publication and reconstructable release records.
 - Wiring: `ci-cd` (`1.0.2`) names it for the release path.
 
+- `performance-engineering` skill (`1.0.0`) — turns complaints into quantities and
+  locates the dominant cost with falsifiable measurements.
+- Wiring: `observability` (`1.0.1`) names it for measured bottlenecks.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
