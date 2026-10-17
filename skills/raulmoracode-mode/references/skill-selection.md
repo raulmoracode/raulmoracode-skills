@@ -164,6 +164,9 @@ These get confused most often. When two apply, load both — they do different w
 - **configuration-management** — sources, defaults, precedence, validation and secret
   references; make any effective value explainable.
 
+- **release-engineering** — versioned releases: identity, changelog, tags, artifacts,
+  publication, rollout and rollback.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,
