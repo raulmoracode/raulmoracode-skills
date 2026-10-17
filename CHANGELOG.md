@@ -208,6 +208,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `debug-properly` (`1.0.5`) and `how` (`1.0.3`) name it for concrete call
   paths.
 
+- `check-the-boundary` skill (`1.0.0`) — audits a seam by writing the contract from each
+  side and checking failure behavior through the real transport.
+- Wiring: `api-contracts` (`1.0.2`), `security-first` (`1.0.4`) and
+  `contract-and-migration` (`1.0.4`) name it for boundary failures.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

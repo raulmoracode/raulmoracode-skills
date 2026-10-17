@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.24",
+      "version": "1.0.25",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -50,7 +50,7 @@
     },
     {
       "name": "contract-and-migration",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "files": ["contract-and-migration.md"]
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "name": "security-first",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "files": ["security-first.md", "references/threat-checklist.md"]
     },
     {
@@ -234,7 +234,7 @@
     },
     {
       "name": "api-contracts",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["api-contracts.md"]
     },
     {
@@ -321,6 +321,11 @@
       "name": "trace-the-call",
       "version": "1.0.0",
       "files": ["trace-the-call.md"]
+    },
+    {
+      "name": "check-the-boundary",
+      "version": "1.0.0",
+      "files": ["check-the-boundary.md"]
     }
   ]
 }

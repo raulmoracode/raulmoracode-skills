@@ -153,6 +153,8 @@ evidence that the old path is gone.
   compatibility rules, before this skill evolves it.
 - `backward-compatibility` — compares released and proposed behavior to detect the
   breaking changes this skill's transition plan must absorb.
+- `check-the-boundary` — verifies the failure behavior at each end of a contract
+  transition.
 
 ## Anti-patterns
 
