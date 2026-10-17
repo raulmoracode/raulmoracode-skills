@@ -158,6 +158,9 @@ These get confused most often. When two apply, load both — they do different w
 - **dependency-audit** — review direct and transitive dependencies: versions, licenses,
   vulnerabilities, provenance and supply-chain risk.
 
+- **observability** — design and use logs, metrics, traces, correlation identifiers and
+  alerts so production behavior is diagnosable.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,

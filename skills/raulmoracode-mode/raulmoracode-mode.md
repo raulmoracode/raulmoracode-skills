@@ -94,6 +94,7 @@ not cost an extra read.
 | "Design or verify this API" / HTTP, event, schema or CLI contracts | `api-contracts` |
 | "Will this break existing users?" / compare old and new behavior | `backward-compatibility` |
 | "Is this dependency safe?" / versions, licenses, vulnerabilities, provenance | `dependency-audit` |
+| "We cannot see why this fails in production" / logs, metrics, traces, alerts | `observability` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds

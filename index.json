@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.9",
+      "version": "1.0.10",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -124,7 +124,7 @@
     },
     {
       "name": "debug-properly",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": ["debug-properly.md"]
     },
     {
@@ -246,6 +246,11 @@
       "name": "dependency-audit",
       "version": "1.0.0",
       "files": ["dependency-audit.md"]
+    },
+    {
+      "name": "observability",
+      "version": "1.0.0",
+      "files": ["observability.md"]
     }
   ]
 }

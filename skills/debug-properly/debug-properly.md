@@ -156,6 +156,8 @@ These produce changes without understanding:
 - `low-level-engineering` — takes over when the cause sits below application code:
   memory, CPU, ABI, compiler, loader or runtime behavior that source inspection cannot
   explain.
+- `observability` — designs the logs, metrics and traces that make production behavior
+  diagnosable; consult it when the defect only reproduces there.
 
 ## Anti-patterns
 
