@@ -125,6 +125,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `contract-and-migration` (`1.0.1`) and `blast-radius` (`1.0.2`) name it for
   the data-side surface.
 
+- `api-contracts` skill (`1.0.0`) — designs and verifies HTTP, event, schema, CLI and
+  service contracts with explicit validation rules.
+- Wiring: `contract-and-migration` (`1.0.2`) names it for contract design before
+  evolution.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

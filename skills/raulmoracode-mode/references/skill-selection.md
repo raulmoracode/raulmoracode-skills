@@ -149,6 +149,9 @@ These get confused most often. When two apply, load both — they do different w
 - **database-engineering** — schema, query, transaction, lock, migration and integrity
   analysis with evidence from real plans.
 
+- **api-contracts** — design and verify HTTP, event, schema, CLI and service contracts,
+  including validation and compatibility rules.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,
