@@ -109,6 +109,7 @@ not cost an extra read.
 | Platform posture: CI/CD, environments, tooling, developer infrastructure | `platform-engineer` |
 | "Organize this work" / objectives, scope, priorities, dependencies, blockers | `project-manager` |
 | "Follow this call" / trace an execution path end to end | `trace-the-call` |
+| "Where does this break between services?" / boundary assumptions and failures | `check-the-boundary` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds

@@ -126,6 +126,8 @@ both.
   contract assumes.
 - `backward-compatibility` — compares old and new behavior across every surface the
   contract promises; use it before this design is declared stable.
+- `check-the-boundary` — reviews the failure behavior at module, process, service and
+  database boundaries this contract spans.
 
 ## Anti-patterns
 

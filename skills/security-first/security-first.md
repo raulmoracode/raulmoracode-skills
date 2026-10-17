@@ -164,6 +164,8 @@ Escalate rather than rationalize. "I am not sure this is safe" is a valid result
   provenance and supply-chain risk before they reach production.
 - `configuration-management` — owns sources, defaults, precedence, validation and secret
   references; use it to keep configuration from leaking or drifting.
+- `check-the-boundary` — inspects boundary assumptions: serialization, validation and
+  ownership between components.
 
 ## Anti-patterns
 

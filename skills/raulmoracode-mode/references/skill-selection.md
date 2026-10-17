@@ -225,3 +225,5 @@ These get confused most often. When two apply, load both — they do different w
 
 - **trace-the-call** — follow one execution path end to end, tagging runtime-confirmed
   links versus inferred ones.
+- **check-the-boundary** — audit a seam’s contract, encoding and failure behavior from both
+  sides.
