@@ -134,6 +134,8 @@ they know.
 - `review-your-work` — reviews a change; `how` explains the system it lands in.
 - `show-your-work` — surfaces the evidence trail while you gather it.
 - `clear-final-report` — for delivering a change, not an explanation.
+- `trace-the-call` — produces the concrete execution path when an explanation needs the
+  actual call chain rather than the intended flow.
 
 ## Anti-patterns
 

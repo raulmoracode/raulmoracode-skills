@@ -203,6 +203,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   project-level structure; `software-engineer` (`1.0.4`) routes domain concerns to it
   and the domain personas.
 
+- `trace-the-call` skill (`1.0.0`) — follows one execution path from an entry point,
+  tagging confirmed links versus inferred ones.
+- Wiring: `debug-properly` (`1.0.5`) and `how` (`1.0.3`) name it for concrete call
+  paths.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

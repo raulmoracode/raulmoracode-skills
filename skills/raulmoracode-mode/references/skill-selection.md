@@ -220,3 +220,8 @@ These get confused most often. When two apply, load both — they do different w
 - **git-issues** — create, triage and update issues on explicit request.
 - **git-tree** — render local and remote branches as a tree grouped by naming prefixes;
   grouping is organizational, never commit ancestry.
+
+### Utilities
+
+- **trace-the-call** — follow one execution path end to end, tagging runtime-confirmed
+  links versus inferred ones.

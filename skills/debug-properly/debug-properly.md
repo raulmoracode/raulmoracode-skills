@@ -161,6 +161,8 @@ These produce changes without understanding:
 - `browser-engineering` — explains browser-specific behavior: DOM, event loop,
   rendering, workers, storage and sandboxing, so a platform quirk is not treated as a
   generic application bug.
+- `trace-the-call` — follows execution from an entry point through every call, event and
+  side effect; use it when the defect needs a full path, not a suspect function.
 
 ## Anti-patterns
 
