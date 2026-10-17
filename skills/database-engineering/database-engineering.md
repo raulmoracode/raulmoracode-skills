@@ -119,6 +119,8 @@ Record what ran, on what data, and what remains unchecked.
   about the data.
 - `low-level-engineering` — explains buffer management, write-ahead logging and page
   behavior when a plan or a timing cannot be explained from SQL.
+- `database-engineer` — the working posture that applies this skill: data modeling, SQL,
+  transactions, indexes, locks and query performance.
 
 ## Anti-patterns
 
