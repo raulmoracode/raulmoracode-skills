@@ -141,6 +141,11 @@ These get confused most often. When two apply, load both — they do different w
   with one authoritative source.
 - **unslop** — detect and remove low-quality generated code and prose.
 
+### Engineering domains
+
+- **low-level-engineering** — investigate execution below the application: memory, CPU,
+  ABI, compilers, loaders, runtimes and operating systems.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,

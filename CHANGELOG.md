@@ -116,6 +116,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `git-branch` (`1.0.2`) now names `git-tree` for the branch landscape, and
   `raulmoracode-mode` gains its routing row.
 
+- `low-level-engineering` skill (`1.0.0`) — investigates execution below application
+  code: memory, CPU, GPU, ABI, compilers, loaders and runtimes.
+- Wiring: `debug-properly` (`1.0.2`) names it for causes below application code.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

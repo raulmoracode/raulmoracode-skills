@@ -49,12 +49,12 @@ OpenCode then:
 
 ## Skills
 
-41 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
+42 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.4 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.5 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.1 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.1 | Understanding and planning | Answers open questions with evidence before a decision is made |
@@ -75,7 +75,7 @@ rest own one responsibility each.
 | `simplify` | 1.0.1 | Behavior and efficiency | Removes unnecessary complexity from the solution and from the way the solution is reached |
 | `code` | 1.0.1 | Development and code quality | Writes implementations that are correct, readable, maintainable and secure |
 | `minimal-changes` | 1.0.1 | Development and code quality | Keeps a change limited to what the request actually requires |
-| `debug-properly` | 1.0.1 | Development and code quality | Diagnoses and fixes the root cause of a defect instead of its symptom |
+| `debug-properly` | 1.0.2 | Development and code quality | Diagnoses and fixes the root cause of a defect instead of its symptom |
 | `security-first` | 1.0.1 | Development and code quality +1 ref | Folds security into the decisions a change makes, at a scale that matches the risk |
 | `mom-always-say-the-same` | 1.0.1 | Development and code quality | Keeps code, comments, documentation, examples and configuration telling the same story |
 | `unslop` | 1.0.1 | Development and code quality +1 ref | Detects and removes low-quality AI-generated code and prose |
@@ -95,6 +95,7 @@ rest own one responsibility each.
 | `skill-evaluation` | 1.0.0 | Orchestration | Evaluates catalog routing and composition with representative tasks and evidence |
 | `ci-cd` | 1.0.0 | Engineering domains | Designs, reviews and troubleshoots provider-agnostic CI/CD workflows |
 | `git-tree` | 1.0.0 | Git and repository | Inspects all local and remote branches and groups them into a tree by naming prefixes |
+| `low-level-engineering` | 1.0.0 | Engineering domains | Investigates how software executes through memory, CPU, ABI, compilers and runtimes |
 
 `+N ref` marks a skill that ships `references/` lookup files next to its entry markdown.
 The "What it does" column is abbreviated; the full `description` in each skill's

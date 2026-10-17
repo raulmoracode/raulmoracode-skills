@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -124,7 +124,7 @@
     },
     {
       "name": "debug-properly",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["debug-properly.md"]
     },
     {
@@ -221,6 +221,11 @@
       "name": "git-tree",
       "version": "1.0.0",
       "files": ["git-tree.md"]
+    },
+    {
+      "name": "low-level-engineering",
+      "version": "1.0.0",
+      "files": ["low-level-engineering.md"]
     }
   ]
 }

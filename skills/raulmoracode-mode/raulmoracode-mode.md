@@ -89,6 +89,7 @@ not cost an extra read.
 | "What did we do last time?" / resuming after a break | `how-was-last-night` |
 | "The docs are wrong" / "update the README" | `mom-always-say-the-same` |
 | "Show me the branch landscape" / what branches exist | `git-tree` |
+| "This only breaks in production" / behavior below application code | `low-level-engineering` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds

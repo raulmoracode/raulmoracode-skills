@@ -153,6 +153,9 @@ These produce changes without understanding:
 - `verify-before-claiming` — sets the evidence bar for the statement "it is fixed".
 - `show-your-work` — carries the hypothesis log while you work, so a long diagnosis is
   followable.
+- `low-level-engineering` — takes over when the cause sits below application code:
+  memory, CPU, ABI, compiler, loader or runtime behavior that source inspection cannot
+  explain.
 
 ## Anti-patterns
 
