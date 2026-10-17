@@ -129,6 +129,8 @@ revised is a stale document. When you depart from it, say so — `show-your-work
 - `research-first` — resolves the unknowns this plan exposes.
 - `minimal-changes` — trims the plan back to the scope that was actually requested.
 - `simplify` — strips ceremony out of both the plan and the work.
+- `project-manager` — owns objectives, scope, priorities and blockers; this skill
+  sequences the work once those are settled.
 
 ## Anti-patterns
 

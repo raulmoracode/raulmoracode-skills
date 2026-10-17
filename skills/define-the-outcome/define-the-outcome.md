@@ -130,6 +130,8 @@ easy to find.
   that must be proved.
 - `test-before-finishing` — runs the selected checks before the result is claimed.
 - `minimal-changes` — keeps the implementation proportional to the defined outcome.
+- `project-manager` — organizes objectives, priorities, dependencies and blockers around
+  the outcome this skill defines.
 
 ## Anti-patterns
 

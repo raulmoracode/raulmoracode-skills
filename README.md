@@ -49,14 +49,14 @@ OpenCode then:
 
 ## Skills
 
-59 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
+60 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.22 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.23 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
-| `plan-before-coding` | 1.0.1 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
+| `plan-before-coding` | 1.0.2 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.2 | Understanding and planning | Answers open questions with evidence before a decision is made |
 | `read-the-f-docs` | 1.0.1 | Understanding and planning | Consults authoritative documentation for a specific technology at a specific version |
 | `follow-project-conventions` | 1.0.2 | Understanding and planning +1 ref | Matches the way an existing project already does things |
@@ -66,7 +66,7 @@ rest own one responsibility each.
 | `how` | 1.0.2 | Understanding and planning | Explains how a system, component or process works |
 | `why` | 1.0.2 | Understanding and planning | Investigates why a decision, implementation or behavior exists |
 | `software-architect` | 1.0.2 | Personas +1 ref | Evaluates system design and architectural decisions before they are built |
-| `software-engineer` | 1.0.3 | Personas | Practical working posture for day-to-day engineering |
+| `software-engineer` | 1.0.4 | Personas | Practical working posture for day-to-day engineering |
 | `dont-dance-for-me` | 1.0.2 | Behavior and efficiency | Agrees with nobody by default |
 | `dont-f-my-tokens` | 1.0.2 | Behavior and efficiency | Spends tokens, time and tool calls deliberately while working |
 | `subagent-task-as-crazy` | 1.0.2 | Behavior and efficiency | Runs independent parts of a task in parallel with subagents instead of one at a time |
@@ -90,7 +90,7 @@ rest own one responsibility each.
 | `git-branch` | 1.0.2 | Git and repository | Manages Git branches according to the repository's own workflow |
 | `git-pr` | 1.0.1 | Git and repository +1 ref | Prepares, opens and manages pull requests |
 | `git-issues` | 1.0.2 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested |
-| `define-the-outcome` | 1.0.0 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
+| `define-the-outcome` | 1.0.1 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
 | `contract-and-migration` | 1.0.3 | Understanding and planning | Guides safe evolution of API, CLI, configuration, schema and persisted contracts |
 | `skill-evaluation` | 1.0.0 | Orchestration | Evaluates catalog routing and composition with representative tasks and evidence |
 | `ci-cd` | 1.0.3 | Engineering domains | Designs, reviews and troubleshoots provider-agnostic CI/CD workflows |
@@ -113,6 +113,7 @@ rest own one responsibility each.
 | `performance-engineer` | 1.0.0 | Personas | Focuses on measurement, profiling, benchmarks, latency, throughput and regressions |
 | `release-engineer` | 1.0.0 | Personas | Focuses on versions, changelogs, artifacts, tags, publishing and reproducibility |
 | `platform-engineer` | 1.0.0 | Personas | Focuses on CI/CD, environments, developer tooling and development infrastructure |
+| `project-manager` | 1.0.0 | Personas | Organizes objectives, scope, priorities, dependencies, risks and blockers |
 
 `+N ref` marks a skill that ships `references/` lookup files next to its entry markdown.
 The "What it does" column is abbreviated; the full `description` in each skill's

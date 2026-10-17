@@ -197,6 +197,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `ci-cd` (`1.0.3`) and `configuration-management` (`1.0.1`) name it for
   platform work.
 
+- `project-manager` skill (`1.0.0`) — keeps a workstream legible with a scope ledger,
+  dependency register and honest status.
+- Wiring: `define-the-outcome` (`1.0.1`) and `plan-before-coding` (`1.0.2`) name it for
+  project-level structure; `software-engineer` (`1.0.4`) routes domain concerns to it
+  and the domain personas.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
