@@ -157,6 +157,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   locates the dominant cost with falsifiable measurements.
 - Wiring: `observability` (`1.0.1`) names it for measured bottlenecks.
 
+- `frontend-engineering` skill (`1.0.0`) — application-side UI correctness without
+  visual or aesthetic decisions.
+- Wiring: `code` (`1.0.2`) names it for the frontend surface.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

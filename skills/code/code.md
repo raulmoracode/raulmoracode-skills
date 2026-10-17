@@ -109,6 +109,8 @@ If the change touches anything a person sees or operates:
 - **Conventions are `follow-project-conventions`.** When a project convention is
   demonstrably unsafe or incompatible with the requirement, say so explicitly and deviate
   deliberately rather than silently.
+- **The frontend surface is `frontend-engineering`:** state, rendering, event handling,
+  forms, validation, loading and error states, and the technical tests around them.
 
 ## Anti-patterns
 

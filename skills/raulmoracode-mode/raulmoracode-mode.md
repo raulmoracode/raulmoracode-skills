@@ -98,6 +98,7 @@ not cost an extra read.
 | "This only works in one environment" / configuration sources, defaults, precedence | `configuration-management` |
 | "Cut a release" / versions, tags, artifacts, changelog, rollback | `release-engineering` |
 | "Make it faster" / profiling, benchmarks, regressions | `performance-engineering` |
+| "Fix the frontend" / state, rendering, forms, loading and error states | `frontend-engineering` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds
