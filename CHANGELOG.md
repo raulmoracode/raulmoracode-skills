@@ -120,6 +120,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   code: memory, CPU, GPU, ABI, compilers, loaders and runtimes.
 - Wiring: `debug-properly` (`1.0.2`) names it for causes below application code.
 
+- `database-engineering` skill (`1.0.0`) — schema, query, transaction, lock and
+  migration analysis against representative data.
+- Wiring: `contract-and-migration` (`1.0.1`) and `blast-radius` (`1.0.2`) name it for
+  the data-side surface.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
