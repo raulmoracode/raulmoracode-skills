@@ -206,6 +206,8 @@ job is not evidence that a later deployment or post-deploy check succeeded.
   precedence used across pipeline environments.
 - `release-engineering` — plans versioning, artifacts, tags, publication and rollback as
   a deliberate release path.
+- `platform-engineer` — the working posture for the delivery platform this skill builds
+  on: environments, tooling, configuration and developer workflow.
 
 ## Anti-patterns
 

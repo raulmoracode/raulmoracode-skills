@@ -117,6 +117,8 @@ the symptom this skill exists to eliminate.
   true when a key changes.
 - `observability` — turns configuration state and failures into signals without
   exposing secret values.
+- `platform-engineer` — the working posture that applies this skill across environments,
+  tooling and developer infrastructure.
 
 ## Anti-patterns
 
