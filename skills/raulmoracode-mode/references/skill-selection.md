@@ -125,6 +125,9 @@ These get confused most often. When two apply, load both — they do different w
 - **database-engineer** — the database posture: modeling, SQL, transactions, indexes, locks
   and query performance.
 
+- **performance-engineer** — the measurement posture: profiling, benchmarks, latency,
+  throughput and regressions.
+
 ### Behavior, autonomy, efficiency
 
 - **dont-dance-for-me** — independent judgment; disagree with evidence instead of

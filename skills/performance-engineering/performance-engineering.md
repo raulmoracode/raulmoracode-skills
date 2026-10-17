@@ -126,6 +126,8 @@ next investigation starts from evidence rather than rebuilding the setup.
   makes a benchmark valid.
 - `web-performance` — the web-specific measurement surface: Core Web Vitals, bundle
   size, loading order, caching and network waterfalls.
+- `performance-engineer` — the working posture that applies this skill: measurement,
+  profiling, benchmarks and regression discipline.
 
 ## Anti-patterns
 
