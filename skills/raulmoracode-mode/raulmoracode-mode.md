@@ -73,6 +73,7 @@ not cost an extra read.
 | "Fix this bug" / "it is broken" / "it crashes" | `debug-properly` |
 | "Add X" / "implement X" / "change this behavior" | `code` |
 | "Refactor" / "clean this up" / "this file is bloated" | `unslop` |
+| An ask that names an activity, not a result / scope is drifting | `define-the-outcome` |
 | "Should we use A or B?" / a design decision | `software-architect` |
 | "What breaks if I change this?" | `blast-radius` |
 | "Review my changes" / "is this diff good?" | `review-your-work` |
@@ -92,6 +93,7 @@ not cost an extra read.
 | "This only breaks in production" / behavior below application code | `low-level-engineering` |
 | "The query is slow" / schema, index, transaction or migration work | `database-engineering` |
 | "Design or verify this API" / HTTP, event, schema or CLI contracts | `api-contracts` |
+| "Rename this field" / "deprecate this flag" / evolving a shipped contract | `contract-and-migration` |
 | "Will this break existing users?" / compare old and new behavior | `backward-compatibility` |
 | "Is this dependency safe?" / versions, licenses, vulnerabilities, provenance | `dependency-audit` |
 | "We cannot see why this fails in production" / logs, metrics, traces, alerts | `observability` |
@@ -107,12 +109,14 @@ not cost an extra read.
 | Performance posture: measurement, profiling, benchmarks, regressions | `performance-engineer` |
 | Release posture: versions, artifacts, tags, publishing, rollback | `release-engineer` |
 | Platform posture: CI/CD, environments, tooling, developer infrastructure | `platform-engineer` |
+| "Set up or fix the pipeline" / CI jobs, runners, gates, promotion, rollback | `ci-cd` |
 | "Organize this work" / objectives, scope, priorities, dependencies, blockers | `project-manager` |
 | "Follow this call" / trace an execution path end to end | `trace-the-call` |
 | "Where does this break between services?" / boundary assumptions and failures | `check-the-boundary` |
 | "What is actually inside this package?" / artifact contents and metadata | `inspect-the-artifact` |
 | "It works locally but not in CI" / compare environments | `compare-environments` |
 | "Show me the catalogue" / "what skills are there?" | `raulmoracode-catalogue` |
+| "Does this route work?" / evaluating a skill, its boundaries or its cost | `skill-evaluation` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds

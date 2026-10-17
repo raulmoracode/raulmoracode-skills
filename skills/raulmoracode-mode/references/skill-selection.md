@@ -70,6 +70,10 @@ These get confused most often. When two apply, load both — they do different w
 | Confused pair | Split |
 | --- | --- |
 | `plan-before-coding` / `software-architect` | Plan sequences this task. Architecture evaluates the design. |
+| `define-the-outcome` / `plan-before-coding` | Outcome states what success is. Plan orders the steps that reach it. |
+| `api-contracts` / `contract-and-migration` | Design and verify the contract. Sequence its safe evolution across versions. |
+| `platform-engineer` / `ci-cd` | Platform posture over time. The delivery path being changed right now. |
+| `raulmoracode-mode` / `skill-evaluation` | Route the current task. Evaluate whether past routes worked, from observed runs. |
 | `research-first` / `read-the-f-docs` | Research compares and concludes. Docs lookup returns an authoritative fact for a version. |
 | `blast-radius` / `review-your-work` | Impact looks forward before and during. Review looks back at the finished diff. |
 | `review-your-work` / `break-the-edge` | Review finds defects in the change. Edge hunting attacks the change's assumptions. |
@@ -91,11 +95,15 @@ These get confused most often. When two apply, load both — they do different w
 - **raulmoracode-mode** — entry point: classify, select, sequence, report.
 - **raulmoracode-catalogue** — open the published catalogue page: every skill with its
   name, version and description, plus install and reload instructions.
+- **skill-evaluation** — evaluate whether routing sends work to the right skills, from
+  representative tasks, observed routes, measured cost and bounded refinements.
 
 ### Understanding and planning
 
 - **understand-before-acting** — inspect the environment and current state before changing
   anything; never assume what a read would tell you.
+- **define-the-outcome** — turn an ambiguous request into a precise, observable outcome:
+  success, failure, constraints and the evidence that proves it.
 - **plan-before-coding** — steps, dependencies, acceptance criteria for work that needs
   more than a few edits.
 - **research-first** — answer open questions with evidence, compare alternatives, stop when
@@ -172,6 +180,9 @@ These get confused most often. When two apply, load both — they do different w
 - **api-contracts** — design and verify HTTP, event, schema, CLI and service contracts,
   including validation and compatibility rules.
 
+- **contract-and-migration** — evolve a shipped API, CLI, config, schema, event or
+  persisted contract: compatibility, deprecation, staged migration and rollback.
+
 - **backward-compatibility** — compare released and candidate behavior to detect breaking
   changes before consumers hit them.
 
@@ -183,6 +194,9 @@ These get confused most often. When two apply, load both — they do different w
 
 - **configuration-management** — sources, defaults, precedence, validation and secret
   references; make any effective value explainable.
+
+- **ci-cd** — design, review and troubleshoot delivery workflows: what is built, gated,
+  promoted, deployed and verified, and how failure is recovered.
 
 - **release-engineering** — versioned releases: identity, changelog, tags, artifacts,
   publication, rollout and rollback.
