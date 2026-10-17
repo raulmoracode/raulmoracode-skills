@@ -49,12 +49,12 @@ OpenCode then:
 
 ## Skills
 
-63 skills, organized in nine categories. `raulmoracode-mode` is the entry point; the
+64 skills, organized in nine categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.26 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.27 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.2 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.2 | Understanding and planning | Answers open questions with evidence before a decision is made |
@@ -101,7 +101,7 @@ rest own one responsibility each.
 | `backward-compatibility` | 1.0.0 | Engineering domains | Compares current and proposed behavior across APIs, configuration, schemas and data formats |
 | `dependency-audit` | 1.0.0 | Engineering domains | Reviews direct and transitive dependencies: versions, licenses, vulnerabilities, provenance |
 | `observability` | 1.0.1 | Engineering domains | Designs and uses structured logs, metrics, traces, correlation identifiers and alerts |
-| `configuration-management` | 1.0.1 | Engineering domains | Manages configuration sources, defaults, validation, precedence and secret references |
+| `configuration-management` | 1.0.2 | Engineering domains | Manages configuration sources, defaults, validation, precedence and secret references |
 | `release-engineering` | 1.0.2 | Engineering domains | Plans and executes versioned releases, artifacts, tags, publication and rollback |
 | `performance-engineering` | 1.0.2 | Engineering domains | Measures and improves performance with profiling, benchmarks and regression checks |
 | `frontend-engineering` | 1.0.3 | Engineering domains | Handles frontend state, rendering, events, forms, loading and error states and API integration |
@@ -112,11 +112,12 @@ rest own one responsibility each.
 | `database-engineer` | 1.0.0 | Personas | Applies database expertise to modeling, SQL, transactions, indexes, locks and migrations |
 | `performance-engineer` | 1.0.0 | Personas | Focuses on measurement, profiling, benchmarks, latency, throughput and regressions |
 | `release-engineer` | 1.0.0 | Personas | Focuses on versions, changelogs, artifacts, tags, publishing and reproducibility |
-| `platform-engineer` | 1.0.0 | Personas | Focuses on CI/CD, environments, developer tooling and development infrastructure |
+| `platform-engineer` | 1.0.1 | Personas | Focuses on CI/CD, environments, developer tooling and development infrastructure |
 | `project-manager` | 1.0.0 | Personas | Organizes objectives, scope, priorities, dependencies, risks and blockers |
 | `trace-the-call` | 1.0.0 | Utilities | Follows execution from an entry point through calls, events, transformations and side effects |
 | `check-the-boundary` | 1.0.0 | Utilities | Reviews contracts and failure behavior at module, process, service and database boundaries |
 | `inspect-the-artifact` | 1.0.0 | Utilities | Inspects the contents, metadata and reproducibility of builds, packages, images and bundles |
+| `compare-environments` | 1.0.0 | Utilities | Compares local, CI, staging and production versions, configuration and permissions |
 
 `+N ref` marks a skill that ships `references/` lookup files next to its entry markdown.
 The "What it does" column is abbreviated; the full `description` in each skill's

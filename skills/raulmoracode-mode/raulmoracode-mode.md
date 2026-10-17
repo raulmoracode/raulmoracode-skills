@@ -111,6 +111,7 @@ not cost an extra read.
 | "Follow this call" / trace an execution path end to end | `trace-the-call` |
 | "Where does this break between services?" / boundary assumptions and failures | `check-the-boundary` |
 | "What is actually inside this package?" / artifact contents and metadata | `inspect-the-artifact` |
+| "It works locally but not in CI" / compare environments | `compare-environments` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds

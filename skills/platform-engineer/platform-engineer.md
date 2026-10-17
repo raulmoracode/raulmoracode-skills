@@ -111,6 +111,8 @@ first rather than the one complained about most recently.
   deprecation of what the platform produces.
 - `security-first` — owns threat modeling for runners, credentials and anything the
   platform installs or executes.
+- `compare-environments` — compares the environments this posture is responsible for,
+  surfacing drift between them.
 
 ## Anti-patterns
 
