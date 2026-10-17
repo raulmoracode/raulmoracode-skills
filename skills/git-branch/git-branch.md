@@ -115,6 +115,9 @@ The format is fixed and checkable — a name either matches it or is wrong:
 
 The one variation: a release version keeps its dots — `release/1.2.0`.
 
+When the work starts from an issue, keep the issue's prefix and take the description
+from its title, in the format above: `feat: User auth` → `feat/user-auth`.
+
 Rules that never bend:
 
 - Exactly one prefix and one slash: nothing before it, never a second prefix stacked
@@ -174,8 +177,9 @@ touch your working tree, or a repro that needs to stay runnable:
   step here defers to it. This skill owns branch lifecycle; safe-git owns what the
   repository state may be destroyed by.
 - `git-pr` — owns opening and updating the pull request once the branch is ready.
-- `git-issues` — owns the ticket itself; putting an issue number in a branch name is
-  convention, not a reason to create an issue.
+- `git-issues` — owns the ticket itself and the prefix on its title; a branch born from
+  one keeps it. Putting an issue number in a branch name is convention, not a reason to
+  create an issue.
 - `follow-project-conventions` — owns discovering repository conventions at large; here
   it is applied to the base branch and the workflow, not to naming — the prefix table
   fixes that.
@@ -202,9 +206,9 @@ touch your working tree, or a repro that needs to stay runnable:
 
 ## Definition of done
 
-The branch name matches the fixed format — one prefix from the mandatory table, then a
-short, descriptive name — and was verified free before creation; it starts from an
-updated `main` — the repository's verified default branch — or from the sibling branch it
-genuinely depends on, with the dependency stated; there are no unaccounted working-tree
-changes; and `git log <base>..HEAD` contains exactly the commits this change is meant to
-contain.
+The branch name matches the fixed format — one prefix from the mandatory table (kept
+from the issue title when the work starts from one), then a short, descriptive name —
+and was verified free before creation; it starts from an updated `main` — the
+repository's verified default branch — or from the sibling branch it genuinely depends
+on, with the dependency stated; there are no unaccounted working-tree changes; and
+`git log <base>..HEAD` contains exactly the commits this change is meant to contain.
