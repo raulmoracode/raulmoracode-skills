@@ -131,6 +131,9 @@ These get confused most often. When two apply, load both — they do different w
 - **release-engineer** — the release posture: versions, changelogs, artifacts, tags,
   publishing and reproducibility.
 
+- **platform-engineer** — the platform posture: CI/CD, environments, developer tooling and
+  development infrastructure.
+
 ### Behavior, autonomy, efficiency
 
 - **dont-dance-for-me** — independent judgment; disagree with evidence instead of

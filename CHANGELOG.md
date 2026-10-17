@@ -192,6 +192,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   release and an evidence-based approval gate.
 - Wiring: `release-engineering` (`1.0.1`) names it as the posture that applies it.
 
+- `platform-engineer` skill (`1.0.0`) — the platform working posture: the delivery path,
+  environments and tooling treated as a product.
+- Wiring: `ci-cd` (`1.0.3`) and `configuration-management` (`1.0.1`) name it for
+  platform work.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

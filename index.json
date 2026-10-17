@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.21",
+      "version": "1.0.22",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -214,7 +214,7 @@
     },
     {
       "name": "ci-cd",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": ["ci-cd.md"]
     },
     {
@@ -254,7 +254,7 @@
     },
     {
       "name": "configuration-management",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["configuration-management.md"]
     },
     {
@@ -306,6 +306,11 @@
       "name": "release-engineer",
       "version": "1.0.0",
       "files": ["release-engineer.md"]
+    },
+    {
+      "name": "platform-engineer",
+      "version": "1.0.0",
+      "files": ["platform-engineer.md"]
     }
   ]
 }

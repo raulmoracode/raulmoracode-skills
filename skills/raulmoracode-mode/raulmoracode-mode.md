@@ -106,6 +106,7 @@ not cost an extra read.
 | Database posture: modeling, SQL, transactions, indexes, locks | `database-engineer` |
 | Performance posture: measurement, profiling, benchmarks, regressions | `performance-engineer` |
 | Release posture: versions, artifacts, tags, publishing, rollback | `release-engineer` |
+| Platform posture: CI/CD, environments, tooling, developer infrastructure | `platform-engineer` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds
