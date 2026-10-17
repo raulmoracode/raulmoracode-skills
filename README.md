@@ -60,13 +60,13 @@ rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.28 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.29 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `raulmoracode-catalogue` | 1.0.0 | Orchestration | Opens the published catalogue page listing every skill, with install and reload instructions |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.2 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.2 | Understanding and planning | Answers open questions with evidence before a decision is made |
 | `read-the-f-docs` | 1.0.1 | Understanding and planning | Consults authoritative documentation for a specific technology at a specific version |
-| `follow-project-conventions` | 1.0.2 | Understanding and planning +1 ref | Matches the way an existing project already does things |
+| `follow-project-conventions` | 1.0.3 | Understanding and planning +1 ref | Matches the way an existing project already does things |
 | `how-was-last-night` | 1.0.2 | Understanding and planning +1 ref | Reconstructs context from previous work by reading version-control and repository artifacts |
 | `blast-radius` | 1.0.2 | Understanding and planning +1 ref | Evaluates the forward-looking impact of a proposed change before and during it |
 | `project-structure` | 1.0.1 | Understanding and planning +2 ref | Reads the project it is in and produces an annotated directory tree |
@@ -94,8 +94,8 @@ rest own one responsibility each.
 | `verify-before-claiming` | 1.0.2 | Testing and verification +1 ref | Sets the evidence standard a claim must clear before it is stated |
 | `clear-final-report` | 1.0.2 | Testing and verification +1 ref | Produces the final report the user reads |
 | `safe-git` | 1.0.1 | Git and repository | Protects repository state and uncommitted work during any Git operation |
-| `git-branch` | 1.0.2 | Git and repository | Manages Git branches according to the repository's own workflow |
-| `git-pr` | 1.0.1 | Git and repository +1 ref | Prepares, opens and manages pull requests |
+| `git-branch` | 1.0.3 | Git and repository | Manages Git branches; every branch it creates uses a fixed prefix table and name format |
+| `git-pr` | 1.0.2 | Git and repository +1 ref | Prepares, opens and manages pull requests |
 | `git-issues` | 1.0.2 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested |
 | `define-the-outcome` | 1.0.1 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
 | `contract-and-migration` | 1.0.4 | Understanding and planning | Guides safe evolution of API, CLI, configuration, schema and persisted contracts |

@@ -217,7 +217,8 @@ These get confused most often. When two apply, load both — they do different w
 
 - **safe-git** — protect repository state and uncommitted work; destructive operations need
   authorization.
-- **git-branch** — branch lifecycle and isolation, following the repository's workflow.
+- **git-branch** — branch lifecycle and isolation; branches start from updated `main`
+  and follow the mandatory prefix table and fixed name format.
 - **git-pr** — prepare, verify and manage pull requests.
 - **git-issues** — create, triage and update issues on explicit request.
 - **git-tree** — render local and remote branches as a tree grouped by naming prefixes;

@@ -48,6 +48,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   established convention — a skill points at the owner of a concern without requiring the
   owner to point back. Reciprocity was added for `project-structure` because those pairs
   are the genuinely confusable ones, not to symmetrize the graph.
+- `git-branch` (`1.0.3`) now names every branch it creates from a mandatory prefix table
+  (`feat/`, `fix/`, `hotfix/`, `bugfix/`, `chore/`, `refactor/`, `docs/`, `test/`,
+  `style/`, `perf/`, `build/`, `ci/`, `revert/`, `release/`, `spike/`, `experiment/`),
+  each with its purpose, followed by a short, descriptive name. Discovery now covers the
+  base branch and the surrounding workflow; branch naming no longer copies whatever
+  existing names happen to suggest.
+- `git-branch` also defaults every branch to an updated `main`; depending on an unmerged
+  sibling is reserved for genuinely dependent work, with the dependency stated and the
+  pull request retargeted to `main` once the sibling merges.
+- `git-branch` also pins the name format: a regex-checkable shape, lowercase letters,
+  digits and hyphens only, a 50-character target, banned empty words, a free-name check
+  before creating, and the same format for stacked branches.
+- Cohesion pass for the `git-branch` rebuild: `git-pr` (`1.0.2`) now bases a stacked
+  branch's pull request on its sibling and retargets it after that merges;
+  `follow-project-conventions` (`1.0.3`) no longer counts branches among the naming
+  conventions it matches; and `raulmoracode-mode` (`1.0.29`) updates its `git-branch`
+  inventory entry to the new rules.
 
 ### Fixed
 

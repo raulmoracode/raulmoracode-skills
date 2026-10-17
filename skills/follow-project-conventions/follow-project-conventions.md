@@ -46,8 +46,8 @@ existing analog for the change, or when you are unsure where a new file belongs.
 - **Layout.** Folder structure, colocation of tests and styles, barrel or index files,
   generated code markers, the file set a feature is expected to produce.
 - **Naming and casing.** Files, directories, types, functions, constants, booleans,
-  events, environment variables, branches, and the suffixes in use (`*.test.*`,
-  `*.types.*`, `-service.ts`).
+  events, environment variables, and the suffixes in use (`*.test.*`, `*.types.*`,
+  `-service.ts`).
 - **Modules and exports.** Default versus named, one export per file or many, public
   entry points, index/manifest files that must be updated.
 - **Style.** Formatter and linter configuration, line width, quote style, import order,
@@ -112,6 +112,8 @@ insecure, do not reproduce it. Say so and call `security-first`.
 - `project-structure` — exposes the folder organization this skill turns into rules:
   where a new file belongs, which directory owns what. Use its tree as the input when
   the layout has to be described rather than changed.
+- `git-branch` — owns branch naming and lifecycle; branch names are not one of the
+  conventions this skill matches.
 
 ## Anti-patterns
 

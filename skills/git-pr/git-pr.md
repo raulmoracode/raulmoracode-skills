@@ -56,6 +56,9 @@ reviewing the diff for defects → `review-your-work`; filing a bug or feature r
   does not do.
 - Establish `<base>` from `gh repo view --json defaultBranchRef` or the repository's
   documented default. Guessing it produces a 3,000-line PR full of reverts.
+- The one exception: a branch stacked on an unmerged sibling targets that sibling as its
+  PR base, not the default branch. Once the sibling merges, retarget the PR —
+  `gh pr edit <pr> --base <default>` — so the comparison stays meaningful.
 - If the base has moved or the branch is behind, say so and propose the update rather
   than rebasing silently.
 
@@ -127,6 +130,8 @@ reconstructing a PR for someone who was not in this session.
 - Building the body by concatenating commit messages.
 - A 3,000-line diff described as a small refactor.
 - Opening a duplicate PR without checking for an existing one.
+- A stacked PR pointed at the default branch while its sibling is unmerged, or still
+  pointed at the sibling after it merges.
 - Leaving tokens, internal hostnames or customer data in the body.
 - Expanding the diff to make the PR look tidier.
 
