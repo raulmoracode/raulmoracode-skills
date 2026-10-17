@@ -202,6 +202,8 @@ job is not evidence that a later deployment or post-deploy check succeeded.
   deployment and verification.
 - `clear-final-report` — reports what ran, what shipped, residual risk and recovery
   limitations.
+- `configuration-management` — validates environment-specific values, defaults and
+  precedence used across pipeline environments.
 
 ## Anti-patterns
 

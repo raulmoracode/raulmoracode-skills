@@ -144,6 +144,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   events, correlation, alerts and verification.
 - Wiring: `debug-properly` (`1.0.3`) names it for production diagnosis.
 
+- `configuration-management` skill (`1.0.0`) — makes sources, key types, precedence,
+  defaults and secret references explicit.
+- Wiring: `security-first` (`1.0.3`) and `ci-cd` (`1.0.1`) name it for configuration
+  handling.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
