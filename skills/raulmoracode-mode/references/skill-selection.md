@@ -128,6 +128,9 @@ These get confused most often. When two apply, load both — they do different w
 - **performance-engineer** — the measurement posture: profiling, benchmarks, latency,
   throughput and regressions.
 
+- **release-engineer** — the release posture: versions, changelogs, artifacts, tags,
+  publishing and reproducibility.
+
 ### Behavior, autonomy, efficiency
 
 - **dont-dance-for-me** — independent judgment; disagree with evidence instead of

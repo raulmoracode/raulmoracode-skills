@@ -123,6 +123,8 @@ record is what someone reconstructs the release from once memory has moved on.
   release reads; nothing environment-specific is baked into the artifact.
 - `dependency-audit` — supplies license and vulnerability findings that may block or
   annotate a release.
+- `release-engineer` — the working posture that applies this skill: versions,
+  changelogs, artifacts, tags, publishing and rollback.
 
 ## Anti-patterns
 

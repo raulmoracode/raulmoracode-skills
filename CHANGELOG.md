@@ -188,6 +188,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   over adjectives, baselines before opinions.
 - Wiring: `performance-engineering` (`1.0.2`) names it as the posture that applies it.
 
+- `release-engineer` skill (`1.0.0`) — the release working posture: one owner per
+  release and an evidence-based approval gate.
+- Wiring: `release-engineering` (`1.0.1`) names it as the posture that applies it.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
