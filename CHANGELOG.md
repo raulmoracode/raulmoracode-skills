@@ -149,6 +149,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `security-first` (`1.0.3`) and `ci-cd` (`1.0.1`) name it for configuration
   handling.
 
+- `release-engineering` skill (`1.0.0`) — release identity, reproducibility, staged
+  publication and reconstructable release records.
+- Wiring: `ci-cd` (`1.0.2`) names it for the release path.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
