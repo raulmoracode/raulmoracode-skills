@@ -104,6 +104,8 @@ that ignores those patterns is not an improvement to the product.
 - `follow-project-conventions` — supplies the repository's component, state-management, fetching and test idioms that the change must mirror.
 - `dad-always-say-the-same` — owns test design and determinism; this skill names the interface behaviors those tests must pin.
 - `unslop` — removes generated filler from components and copy without altering the behavioral contract established here.
+- `browser-engineering` — explains the runtime this skill builds against: rendering
+  pipeline, event loop, workers, storage, permissions and sandboxing.
 
 ## Anti-patterns
 

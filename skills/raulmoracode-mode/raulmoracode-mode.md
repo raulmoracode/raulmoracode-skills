@@ -99,6 +99,7 @@ not cost an extra read.
 | "Cut a release" / versions, tags, artifacts, changelog, rollback | `release-engineering` |
 | "Make it faster" / profiling, benchmarks, regressions | `performance-engineering` |
 | "Fix the frontend" / state, rendering, forms, loading and error states | `frontend-engineering` |
+| "Only happens in the browser" / DOM, event loop, rendering, storage, workers | `browser-engineering` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds
