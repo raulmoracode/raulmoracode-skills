@@ -118,6 +118,9 @@ touch your working tree, or a repro that needs to stay runnable:
 - `follow-project-conventions` — owns discovering repository conventions at large; here
   it is applied to branch naming and the base.
 - `minimal-changes` — owns diff scope; this skill owns the isolation boundary.
+- `git-tree` — renders the branch landscape this skill navigates: prefix grouping is
+  organizational, never commit ancestry; use it to see the whole picture before choosing
+  a base or cleaning up.
 
 ## Anti-patterns
 

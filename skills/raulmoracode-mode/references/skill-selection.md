@@ -159,3 +159,5 @@ These get confused most often. When two apply, load both — they do different w
 - **git-branch** — branch lifecycle and isolation, following the repository's workflow.
 - **git-pr** — prepare, verify and manage pull requests.
 - **git-issues** — create, triage and update issues on explicit request.
+- **git-tree** — render local and remote branches as a tree grouped by naming prefixes;
+  grouping is organizational, never commit ancestry.

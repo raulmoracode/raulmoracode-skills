@@ -49,12 +49,12 @@ OpenCode then:
 
 ## Skills
 
-40 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
+41 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.3 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.4 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.1 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.1 | Understanding and planning | Answers open questions with evidence before a decision is made |
@@ -87,13 +87,14 @@ rest own one responsibility each.
 | `verify-before-claiming` | 1.0.2 | Testing and verification +1 ref | Sets the evidence standard a claim must clear before it is stated |
 | `clear-final-report` | 1.0.2 | Testing and verification +1 ref | Produces the final report the user reads |
 | `safe-git` | 1.0.1 | Git and repository | Protects repository state and uncommitted work during any Git operation |
-| `git-branch` | 1.0.1 | Git and repository | Manages Git branches according to the repository's own workflow |
+| `git-branch` | 1.0.2 | Git and repository | Manages Git branches according to the repository's own workflow |
 | `git-pr` | 1.0.1 | Git and repository +1 ref | Prepares, opens and manages pull requests |
 | `git-issues` | 1.0.2 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested |
 | `define-the-outcome` | 1.0.0 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
 | `contract-and-migration` | 1.0.0 | Understanding and planning | Guides safe evolution of API, CLI, configuration, schema and persisted contracts |
 | `skill-evaluation` | 1.0.0 | Orchestration | Evaluates catalog routing and composition with representative tasks and evidence |
 | `ci-cd` | 1.0.0 | Engineering domains | Designs, reviews and troubleshoots provider-agnostic CI/CD workflows |
+| `git-tree` | 1.0.0 | Git and repository | Inspects all local and remote branches and groups them into a tree by naming prefixes |
 
 `+N ref` marks a skill that ships `references/` lookup files next to its entry markdown.
 The "What it does" column is abbreviated; the full `description` in each skill's
