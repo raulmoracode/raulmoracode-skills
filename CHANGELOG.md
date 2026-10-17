@@ -48,6 +48,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   established convention — a skill points at the owner of a concern without requiring the
   owner to point back. Reciprocity was added for `project-structure` because those pairs
   are the genuinely confusable ones, not to symmetrize the graph.
+- Introduced the composition contract: every skill entry declares one layer-1 role,
+  direct invocation, support budget, depth and explicit operational targets in a
+  compact `## Composition` block, and `scripts/validate.mjs` now validates it
+  strictly; the rollout updated and bumped the whole inventory.
+- The version-bump guard now also runs on pushes to `main`, comparing against the
+  pushed range's base, so a direct push that changes a skill without a version bump
+  stops the republish instead of shipping silently.
 - `git-branch` (`1.0.3`) now names every branch it creates from a mandatory prefix table
   (`feat/`, `fix/`, `hotfix/`, `bugfix/`, `chore/`, `refactor/`, `docs/`, `test/`,
   `style/`, `perf/`, `build/`, `ci/`, `revert/`, `release/`, `spike/`, `experiment/`),
@@ -147,6 +154,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   decision criteria, threat checklist, slop catalog, test quality, edge catalog, review
   passes, severity guide, evidence standards, report templates, PR template, issue
   templates).
+
+- A local skills site service: `Dockerfile` validates and builds the catalog inside
+  the image and serves `_site/` with Nginx on port 8080; `docker-compose.yml` runs the
+  service locally, with the host port overridable via `SKILLS_SITE_PORT`.
+
+- Four skills joined the catalog: `define-the-outcome` turns an ambiguous request
+  into a precise, testable outcome before implementation; `contract-and-migration`
+  guides safe evolution of API, CLI, configuration, schema and persisted contracts;
+  `ci-cd` designs, reviews and troubleshoots provider-agnostic CI/CD workflows; and
+  `skill-evaluation` evaluates catalog routing and composition with representative
+  tasks and evidence.
 
 - `git-tree` skill (`1.0.0`) — renders local and remote branches as a tree grouped by
   naming prefixes, distinct from commit ancestry.
