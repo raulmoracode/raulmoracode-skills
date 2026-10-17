@@ -6,16 +6,18 @@ Guidance for AI agents working in this repository.
 
 The central skills catalog consumed natively by OpenCode v2 over HTTP from
 GitHub Pages (<https://raulmoracode.github.io/raulmoracode-skills/>). It is a
-static-files repository: Markdown skills plus `index.json`, validated and
-published by zero-dependency Node scripts.
+static-files repository: Markdown skills plus `index.json` and the served
+`catalog-version.json`, validated and published by zero-dependency Node scripts.
 
 ## Repository structure
 
 - `index.json` — the catalog manifest; the only contract OpenCode reads.
+- `catalog-version.json` — the published catalog version, served next to `index.json`.
 - `skills/<name>/<name>.md` — skill entry markdown with YAML frontmatter
   (`name`, `description`); optional `skills/<name>/references/*.md` files.
 - `scripts/validate.mjs` — validates the whole catalog.
 - `scripts/build-site.mjs` — builds `_site/` exactly as Pages serves it.
+- `scripts/build-catalogue.mjs` — generates `catalogue.html` during the site build.
 - `scripts/check-version-bump.mjs` — version-bump guard. Compares against
   `origin/<base>` for a pull request, or against `BASE_SHA` (a push's
   `github.event.before`) for a direct push.
