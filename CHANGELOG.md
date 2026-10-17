@@ -65,6 +65,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `follow-project-conventions` (`1.0.3`) no longer counts branches among the naming
   conventions it matches; and `raulmoracode-mode` (`1.0.29`) updates its `git-branch`
   inventory entry to the new rules.
+- `git-pr` (`1.0.3`) now repeats the branch's prefix in the pull request title —
+  `feat/...` gets `feat: ...` — with the full table of prefixes and example titles in
+  `references/pr-template.md`.
+- `git-pr` also mandates English titles and bodies, and the body may reference other
+  pull requests by number, from the Related work section.
 
 ### Fixed
 

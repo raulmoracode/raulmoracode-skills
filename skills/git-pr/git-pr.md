@@ -1,6 +1,6 @@
 ---
 name: git-pr
-description: "Prepares, opens and manages pull requests. Use when asked to create, open, update, describe or check a PR, to push a branch for review, or to interpret CI and review status on one. Inspects the branch and its real diff against the correct base, follows the repository's PR template, writes a title and body covering motivation, implementation, testing and risk, verifies the actual result of the create command, and never merges without explicit authorization."
+description: "Prepares, opens and manages pull requests. Use when asked to create, open, update, describe or check a PR, to push a branch for review, or to interpret CI and review status on one. Inspects the branch and its real diff against the correct base, follows the repository's PR template, writes a title repeating the branch's prefix and a body covering motivation, implementation, testing and risk, both in English, verifies the actual result of the create command, and never merges without explicit authorization."
 ---
 ## Composition
 
@@ -79,9 +79,10 @@ reconstructing a PR for someone who was not in this session.
 
 ### 4. Write the title and body
 
-- The title states the outcome, in the repository's imperative or conventional-commit
-  style, around 70 characters or fewer. `fix: treat empty env vars as unset in config
-  loader`, not `Update config stuff`.
+- The title repeats the branch's prefix — `feat/...` gets `feat: ...` — and states the
+  outcome, around 70 characters or fewer. The table of prefixes is in
+  `references/pr-template.md`.
+- The title and the body are written in English — always.
 - The body is not a commit-message generator. It answers why this change exists, what it
   does, what was actually verified, and what a reviewer should be careful about.
 - Name the checks you really ran, as commands, with their real results.
@@ -128,6 +129,7 @@ reconstructing a PR for someone who was not in this session.
 - Pushing to a branch someone else owns, or force-pushing a PR branch (`safe-git`).
 - Merging because checks passed.
 - Building the body by concatenating commit messages.
+- A title whose prefix does not match the branch, or a title or body not in English.
 - A 3,000-line diff described as a small refactor.
 - Opening a duplicate PR without checking for an existing one.
 - A stacked PR pointed at the default branch while its sibling is unmerged, or still
@@ -138,5 +140,6 @@ reconstructing a PR for someone who was not in this session.
 ## Definition of done
 
 The base, the commit list and the diff were read, and the PR carries only this task's
-scope; the title and body follow the repository template and name the checks actually
-run; and the PR number, URL and CI status in the report all come from real command output.
+scope; the title repeats the branch's prefix, the title and body are in English and
+follow the repository template, naming the checks actually run; and the PR number, URL
+and CI status in the report all come from real command output.

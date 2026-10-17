@@ -95,7 +95,7 @@ rest own one responsibility each.
 | `clear-final-report` | 1.0.2 | Testing and verification +1 ref | Produces the final report the user reads |
 | `safe-git` | 1.0.1 | Git and repository | Protects repository state and uncommitted work during any Git operation |
 | `git-branch` | 1.0.3 | Git and repository | Manages Git branches; every branch it creates uses a fixed prefix table and name format |
-| `git-pr` | 1.0.2 | Git and repository +1 ref | Prepares, opens and manages pull requests |
+| `git-pr` | 1.0.3 | Git and repository +1 ref | Prepares, opens and manages pull requests; titles repeat the branch's prefix and everything is written in English |
 | `git-issues` | 1.0.2 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested |
 | `define-the-outcome` | 1.0.1 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
 | `contract-and-migration` | 1.0.4 | Understanding and planning | Guides safe evolution of API, CLI, configuration, schema and persisted contracts |
