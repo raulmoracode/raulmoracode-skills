@@ -60,7 +60,7 @@ rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.29 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.30 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `raulmoracode-catalogue` | 1.0.0 | Orchestration | Opens the published catalogue page listing every skill, with install and reload instructions |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.2 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
@@ -99,7 +99,7 @@ rest own one responsibility each.
 | `git-issues` | 1.0.3 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested; titles carry the workflow prefix |
 | `define-the-outcome` | 1.0.1 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
 | `contract-and-migration` | 1.0.4 | Understanding and planning | Guides safe evolution of API, CLI, configuration, schema and persisted contracts |
-| `skill-evaluation` | 1.0.1 | Orchestration +1 ref | Evaluates catalog routing and composition with representative tasks and evidence |
+| `skill-evaluation` | 1.0.2 | Orchestration +1 ref | Evaluates catalog routing and composition with representative tasks and evidence |
 | `ci-cd` | 1.0.4 | Engineering domains | Designs, reviews and troubleshoots provider-agnostic CI/CD workflows |
 | `git-tree` | 1.0.0 | Git and repository | Inspects all local and remote branches and groups them into a tree by naming prefixes |
 | `low-level-engineering` | 1.0.1 | Engineering domains | Investigates how software executes through memory, CPU, ABI, compilers and runtimes |

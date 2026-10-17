@@ -76,6 +76,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   pull request.
 - `git-branch` (`1.0.4`) keeps the issue's prefix and derives the branch description
   from the issue title when the work starts from an issue.
+- `raulmoracode-mode` (`1.0.30`) now routes the four skills that were absent from its
+  table and inventory — `define-the-outcome`, `contract-and-migration`, `ci-cd` and
+  `skill-evaluation` — with their confusing-neighbor splits added to
+  `references/skill-selection.md`.
+- `skill-evaluation` (`1.0.1`) gains the `## Anti-patterns` section the rest of the
+  catalog already had.
 
 ### Fixed
 
@@ -106,7 +112,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `skill-evaluation` (`1.0.1`) ships `references/task-script.md`, a starter script of ten
+- `skill-evaluation` (`1.0.2`) ships `references/task-script.md`, a starter script of ten
   tasks — canonical, boundary, negative, risk and regression — for running the evaluation
   flow against the catalog.
 - `catalog-version.json` (`1.0.1`) — a separately served semver identifier for the

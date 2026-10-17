@@ -139,6 +139,18 @@ encoding a speculative rule.
 - `no-made-up-results` forbids invented observations, costs and outcomes.
 - `blast-radius` helps identify catalog surfaces that a route change may affect.
 
+## Anti-patterns
+
+- Writing the task set around the candidate skill's best examples and calling it
+  representative.
+- Setting expectations after observing the route, so every run counts as a match.
+- Estimating token or tool cost from file length instead of the runtime's accounting.
+- Treating a plausible route as a good outcome, or a good outcome as an efficient route.
+- Loading extra skills to exercise composition and counting the ceremony as a finding.
+- Turning one bad run into a catalog rule; refinements need a repeated, evidenced problem.
+- Writing a rule that only pretends to constrain which skills a runtime loads.
+- Keeping a costlier change that showed no measurable quality gain.
+
 ## Definition of done
 
 The evaluation question is explicit; representative canonical, boundary, negative and
