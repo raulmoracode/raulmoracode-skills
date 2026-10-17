@@ -59,20 +59,42 @@ Empty only when the change genuinely carries none.
 
 ## Related work
 
-Linked issues, the PR that supersedes this, the follow-up issue filed for the part
-that did not fit here.
+Linked issues and the follow-up issue filed for the part that did not fit here. Other
+pull requests this builds on or supersedes may be referenced by number (`See #480`).
 ```
 
 ## Title
 
-- State the outcome in the repository's established style: conventional commits
-  (`fix: ...`, `feat: ...`) if the history uses them, imperative otherwise.
+The title repeats the branch's prefix: `feat/...` gets `feat: ...`, `fix/...` gets
+`fix: ...`. The prefix is mandatory and never chosen freely — it comes from the branch.
+
+| Prefix | Purpose | Example PR title |
+| --- | --- | --- |
+| `feat:` | Add a new feature | `feat: add user profile page` |
+| `fix:` | Fix a bug | `fix: prevent login with expired tokens` |
+| `hotfix:` | Fix a critical production issue | `hotfix: fix payment processing failure` |
+| `bugfix:` | Fix a bug in an unreleased change | `bugfix: correct avatar upload validation` |
+| `refactor:` | Improve code structure without changing behavior | `refactor: simplify authentication service` |
+| `chore:` | Perform maintenance tasks | `chore: update project dependencies` |
+| `docs:` | Update documentation | `docs: document REST API endpoints` |
+| `test:` | Add or update tests | `test: add authentication integration tests` |
+| `style:` | Make formatting or stylistic changes | `style: apply consistent code formatting` |
+| `perf:` | Improve performance | `perf: optimize user database queries` |
+| `build:` | Modify build configuration or dependencies | `build: upgrade Vite to latest version` |
+| `ci:` | Modify CI/CD pipelines | `ci: add automated test workflow` |
+| `revert:` | Revert a previous change | `revert: remove user authentication changes` |
+| `release:` | Prepare or publish a new release | `release: prepare version 1.2.0` |
+| `spike:` | Investigate a technical approach or assess feasibility | `spike: evaluate Redis for session storage` |
+| `experiment:` | Experiment with a new approach or implementation | `experiment: test a new caching strategy` |
+
+- Everything is written in English — the title and the body, always.
 - Around 70 characters. Reviewers read a list of titles, not full sentences.
-- Scope it when the repo scopes things: `fix(config): ...` narrows it usefully.
 - Name the symptom, not the implementation: `fix: treat empty env vars as unset in
   config loader`, not `refactor: rewrite read_env`.
 
 ## Worked example
+
+**Branch:** `fix/empty-env-vars`
 
 **Title:** `fix: treat empty env vars as unset in config loader`
 
@@ -134,11 +156,13 @@ explicit rather than applied by reflection. Full integration suite not run local
 
 ## Related work
 
-Fixes #482. Follow-up for the coercion behavior: #485.
+Fixes #482. Supersedes the first attempt, #479. Follow-up for the coercion behavior:
+#485.
 ```
 
 ## Before you submit
 
+- Title carries the branch's prefix; the title and the body are in English.
 - Summary says what a reviewer will see, not what you intend to do.
 - Body claims match the diff and the command output you actually have.
 - Every checklist item is either checked or the reason it is not.
