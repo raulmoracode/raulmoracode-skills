@@ -49,12 +49,12 @@ OpenCode then:
 
 ## Skills
 
-46 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
+47 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.9 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.10 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.1 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.2 | Understanding and planning | Answers open questions with evidence before a decision is made |
@@ -75,7 +75,7 @@ rest own one responsibility each.
 | `simplify` | 1.0.1 | Behavior and efficiency | Removes unnecessary complexity from the solution and from the way the solution is reached |
 | `code` | 1.0.1 | Development and code quality | Writes implementations that are correct, readable, maintainable and secure |
 | `minimal-changes` | 1.0.1 | Development and code quality | Keeps a change limited to what the request actually requires |
-| `debug-properly` | 1.0.2 | Development and code quality | Diagnoses and fixes the root cause of a defect instead of its symptom |
+| `debug-properly` | 1.0.3 | Development and code quality | Diagnoses and fixes the root cause of a defect instead of its symptom |
 | `security-first` | 1.0.2 | Development and code quality +1 ref | Folds security into the decisions a change makes, at a scale that matches the risk |
 | `mom-always-say-the-same` | 1.0.1 | Development and code quality | Keeps code, comments, documentation, examples and configuration telling the same story |
 | `unslop` | 1.0.1 | Development and code quality +1 ref | Detects and removes low-quality AI-generated code and prose |
@@ -100,6 +100,7 @@ rest own one responsibility each.
 | `api-contracts` | 1.0.1 | Engineering domains | Designs and verifies HTTP, event, schema, CLI and service contracts |
 | `backward-compatibility` | 1.0.0 | Engineering domains | Compares current and proposed behavior across APIs, configuration, schemas and data formats |
 | `dependency-audit` | 1.0.0 | Engineering domains | Reviews direct and transitive dependencies: versions, licenses, vulnerabilities, provenance |
+| `observability` | 1.0.0 | Engineering domains | Designs and uses structured logs, metrics, traces, correlation identifiers and alerts |
 
 `+N ref` marks a skill that ships `references/` lookup files next to its entry markdown.
 The "What it does" column is abbreviated; the full `description` in each skill's

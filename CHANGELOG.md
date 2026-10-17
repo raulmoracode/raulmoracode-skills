@@ -140,6 +140,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `security-first` (`1.0.2`) and `research-first` (`1.0.2`) name it for
   dependency risk.
 
+- `observability` skill (`1.0.0`) — question-first diagnostic signals: structured
+  events, correlation, alerts and verification.
+- Wiring: `debug-properly` (`1.0.3`) names it for production diagnosis.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
