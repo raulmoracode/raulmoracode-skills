@@ -152,6 +152,9 @@ These get confused most often. When two apply, load both — they do different w
 - **api-contracts** — design and verify HTTP, event, schema, CLI and service contracts,
   including validation and compatibility rules.
 
+- **backward-compatibility** — compare released and candidate behavior to detect breaking
+  changes before consumers hit them.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,

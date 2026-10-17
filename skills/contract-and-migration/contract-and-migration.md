@@ -151,6 +151,8 @@ evidence that the old path is gone.
   a contract change touches stored data.
 - `api-contracts` — designs and verifies the contract itself, including validation and
   compatibility rules, before this skill evolves it.
+- `backward-compatibility` — compares released and proposed behavior to detect the
+  breaking changes this skill's transition plan must absorb.
 
 ## Anti-patterns
 

@@ -130,6 +130,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `contract-and-migration` (`1.0.2`) names it for contract design before
   evolution.
 
+- `backward-compatibility` skill (`1.0.0`) — pins a released baseline and classifies
+  every observed behavioral difference.
+- Wiring: `contract-and-migration` (`1.0.3`) and `api-contracts` (`1.0.1`) name it
+  before evolution and before declaring a design stable.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
