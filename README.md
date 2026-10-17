@@ -98,7 +98,7 @@ rest own one responsibility each.
 | `git-pr` | 1.0.3 | Git and repository +1 ref | Prepares, opens and manages pull requests; titles repeat the branch's prefix and everything is written in English |
 | `git-issues` | 1.0.3 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested; titles carry the workflow prefix |
 | `define-the-outcome` | 1.0.1 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
-| `contract-and-migration` | 1.0.4 | Understanding and planning | Guides safe evolution of API, CLI, configuration, schema and persisted contracts |
+| `contract-and-migration` | 1.0.4 | Engineering domains | Guides safe evolution of API, CLI, configuration, schema and persisted contracts |
 | `skill-evaluation` | 1.0.2 | Orchestration +1 ref | Evaluates catalog routing and composition with representative tasks and evidence |
 | `ci-cd` | 1.0.4 | Engineering domains | Designs, reviews and troubleshoots provider-agnostic CI/CD workflows |
 | `git-tree` | 1.0.0 | Git and repository | Inspects all local and remote branches and groups them into a tree by naming prefixes |
@@ -145,6 +145,7 @@ metadata. The `## Interaction with other skills` section remains explanatory onl
 ```
 .
 ├── index.json                  # Catalog manifest consumed by OpenCode
+├── catalog-version.json        # Published catalog version, served with the site
 ├── skills/
 │   └── <skill-name>/
 │       ├── <skill-name>.md     # Entry markdown (frontmatter + content)
@@ -155,7 +156,7 @@ metadata. The `## Interaction with other skills` section remains explanatory onl
 │   ├── build-catalogue.mjs     # Generates _site/catalogue.html from the catalog
 │   └── check-version-bump.mjs  # Guard: a changed skill must bump its version
 ├── Dockerfile                  # Builds and serves the catalog image
-└── docker-compose.yml          # Runs a redundant local catalog service
+├── docker-compose.yml          # Runs a redundant local catalog service
 └── .github/workflows/
     ├── deploy.yml              # Validate + version guard + build + deploy on push
     └── validate.yml            # PR validation + version-bump guard
@@ -220,9 +221,9 @@ Rules (enforced by `scripts/validate.mjs`):
   body. OpenCode does not auto-load support files, so an unreferenced one is dead
   weight the agent will never read.
 - Every skill has a `## Composition` section with parseable role, invocation, budget,
-  depth and operational-reference metadata. The normal check is strict; the explicit
-  `node scripts/validate.mjs --strict-composition` form is retained as a clear CI and
-  local-validation command.
+  depth and operational-reference metadata. Composition is always validated strictly;
+  `node scripts/validate.mjs --strict-composition` is accepted as an explicit alias
+  for the same check.
 - The entry markdown has an `## Interaction with other skills` section, and the
   sibling names it mentions exist in the catalog. This catches references to
   renamed or retired skills.
@@ -249,7 +250,7 @@ Rules (enforced by `scripts/validate.mjs`):
 
 ```sh
 node scripts/validate.mjs                    # validate the catalog
-node scripts/validate.mjs --strict-composition # explicit strict composition validation
+node scripts/validate.mjs --strict-composition # explicit alias of the strict check
 node scripts/build-site.mjs                  # build _site/ exactly as deployed
 node scripts/build-catalogue.mjs             # regenerate only _site/catalogue.html
 python3 -m http.server 8000 --directory _site  # preview the deployed site
