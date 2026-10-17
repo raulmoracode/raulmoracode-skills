@@ -184,6 +184,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   speed, locks and transaction lifetimes first.
 - Wiring: `database-engineering` (`1.0.1`) names it as the posture that applies it.
 
+- `performance-engineer` skill (`1.0.0`) — the performance working posture: quantities
+  over adjectives, baselines before opinions.
+- Wiring: `performance-engineering` (`1.0.2`) names it as the posture that applies it.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

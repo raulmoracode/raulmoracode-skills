@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.19",
+      "version": "1.0.20",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -264,7 +264,7 @@
     },
     {
       "name": "performance-engineering",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["performance-engineering.md"]
     },
     {
@@ -296,6 +296,11 @@
       "name": "database-engineer",
       "version": "1.0.0",
       "files": ["database-engineer.md"]
+    },
+    {
+      "name": "performance-engineer",
+      "version": "1.0.0",
+      "files": ["performance-engineer.md"]
     }
   ]
 }
