@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.29",
+      "version": "1.0.30",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -214,7 +214,7 @@
     },
     {
       "name": "skill-evaluation",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["skill-evaluation.md"]
     },
     {
