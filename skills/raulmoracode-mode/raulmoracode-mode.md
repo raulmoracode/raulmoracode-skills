@@ -105,6 +105,7 @@ not cost an extra read.
 | Systems-level posture: memory, CPU, ABI, compilers, runtimes | `low-level-engineer` |
 | Database posture: modeling, SQL, transactions, indexes, locks | `database-engineer` |
 | Performance posture: measurement, profiling, benchmarks, regressions | `performance-engineer` |
+| Release posture: versions, artifacts, tags, publishing, rollback | `release-engineer` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds
