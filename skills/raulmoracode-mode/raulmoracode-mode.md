@@ -102,6 +102,7 @@ not cost an extra read.
 | "Only happens in the browser" / DOM, event loop, rendering, storage, workers | `browser-engineering` |
 | "The page is slow" / Core Web Vitals, bundles, caching, waterfalls | `web-performance` |
 | "Is this accessible?" / keyboard, focus, ARIA, screen readers | `accessibility-engineering` |
+| Systems-level posture: memory, CPU, ABI, compilers, runtimes | `low-level-engineer` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds

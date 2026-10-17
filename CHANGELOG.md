@@ -176,6 +176,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `frontend-engineering` (`1.0.3`), `dad-always-say-the-same` (`1.0.2`) and
   `test-before-finishing` (`1.0.2`) name it for accessible behavior.
 
+- `low-level-engineer` skill (`1.0.0`) — the systems-level working posture;
+  machine-level claims stay provisional until versions and measurements support them.
+- Wiring: `low-level-engineering` (`1.0.1`) names it as the posture that applies it.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
