@@ -49,12 +49,12 @@ OpenCode then:
 
 ## Skills
 
-52 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
+53 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.15 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.16 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.1 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.2 | Understanding and planning | Answers open questions with evidence before a decision is made |
@@ -103,9 +103,10 @@ rest own one responsibility each.
 | `observability` | 1.0.1 | Engineering domains | Designs and uses structured logs, metrics, traces, correlation identifiers and alerts |
 | `configuration-management` | 1.0.0 | Engineering domains | Manages configuration sources, defaults, validation, precedence and secret references |
 | `release-engineering` | 1.0.0 | Engineering domains | Plans and executes versioned releases, artifacts, tags, publication and rollback |
-| `performance-engineering` | 1.0.0 | Engineering domains | Measures and improves performance with profiling, benchmarks and regression checks |
-| `frontend-engineering` | 1.0.1 | Engineering domains | Handles frontend state, rendering, events, forms, loading and error states and API integration |
-| `browser-engineering` | 1.0.0 | Engineering domains | Analyzes the DOM, event loop, rendering pipeline, workers, storage and permissions |
+| `performance-engineering` | 1.0.1 | Engineering domains | Measures and improves performance with profiling, benchmarks and regression checks |
+| `frontend-engineering` | 1.0.2 | Engineering domains | Handles frontend state, rendering, events, forms, loading and error states and API integration |
+| `browser-engineering` | 1.0.1 | Engineering domains | Analyzes the DOM, event loop, rendering pipeline, workers, storage and permissions |
+| `web-performance` | 1.0.0 | Engineering domains | Measures and improves Core Web Vitals, bundles, caching and network waterfalls |
 
 `+N ref` marks a skill that ships `references/` lookup files next to its entry markdown.
 The "What it does" column is abbreviated; the full `description` in each skill's

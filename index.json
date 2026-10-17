@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.15",
+      "version": "1.0.16",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -264,18 +264,23 @@
     },
     {
       "name": "performance-engineering",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["performance-engineering.md"]
     },
     {
       "name": "frontend-engineering",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["frontend-engineering.md"]
     },
     {
       "name": "browser-engineering",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["browser-engineering.md"]
+    },
+    {
+      "name": "web-performance",
+      "version": "1.0.0",
+      "files": ["web-performance.md"]
     }
   ]
 }

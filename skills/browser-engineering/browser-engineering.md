@@ -109,6 +109,8 @@ as unverified any explanation that never reproduced.
 - `debug-properly` — owns the root-cause loop; this skill contributes the platform model and the experiment that separates competing causes.
 - `frontend-engineering` — owns application state, events and forms; this skill owns what the engine does with them once they reach the platform.
 - `read-the-f-docs` — resolves documented behavior, defaults and compatibility when the question is about a specification rather than an observation.
+- `web-performance` — uses the loading and rendering behavior this skill explains to
+  reduce page weight and delay.
 
 ## Anti-patterns
 

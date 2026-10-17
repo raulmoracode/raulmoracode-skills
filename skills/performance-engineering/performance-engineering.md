@@ -124,6 +124,8 @@ next investigation starts from evidence rather than rebuilding the setup.
   which the profile may flag as the dominant cost.
 - `understand-before-acting` — gathers the build, run and convention context that
   makes a benchmark valid.
+- `web-performance` — the web-specific measurement surface: Core Web Vitals, bundle
+  size, loading order, caching and network waterfalls.
 
 ## Anti-patterns
 

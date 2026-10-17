@@ -106,6 +106,8 @@ that ignores those patterns is not an improvement to the product.
 - `unslop` — removes generated filler from components and copy without altering the behavioral contract established here.
 - `browser-engineering` — explains the runtime this skill builds against: rendering
   pipeline, event loop, workers, storage, permissions and sandboxing.
+- `web-performance` — measures and improves the loading and responsiveness of the UI
+  this skill builds.
 
 ## Anti-patterns
 

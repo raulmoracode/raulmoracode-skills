@@ -176,6 +176,9 @@ These get confused most often. When two apply, load both — they do different w
 - **browser-engineering** — DOM, event loop, rendering pipeline, workers, storage,
   permissions and sandboxing behavior.
 
+- **web-performance** — Core Web Vitals, bundle size, loading order, caching, code
+  splitting and network waterfalls.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,
