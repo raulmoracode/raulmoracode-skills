@@ -82,6 +82,8 @@ Load the owner of the concern rather than improvising the process here.
 | Reviewing the finished diff | `review-your-work` |
 | Keeping code, docs and comments consistent | `mom-always-say-the-same` |
 | A hard decision you are unsure about | `dont-dance-for-me` |
+| Hardware, runtime, database, performance, release or platform specifics | the matching domain persona: `low-level-engineer`, `database-engineer`, `performance-engineer`, `release-engineer`, `platform-engineer` |
+| Objectives, scope, priorities, dependencies, risks or blockers | `project-manager` |
 | A detail you cannot determine yourself | `dont-ask-shit` |
 
 ## Anti-patterns

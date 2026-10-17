@@ -134,6 +134,9 @@ These get confused most often. When two apply, load both — they do different w
 - **platform-engineer** — the platform posture: CI/CD, environments, developer tooling and
   development infrastructure.
 
+- **project-manager** — objectives, scope, priorities, dependencies, risks, deliverables
+  and blockers in one structured view.
+
 ### Behavior, autonomy, efficiency
 
 - **dont-dance-for-me** — independent judgment; disagree with evidence instead of

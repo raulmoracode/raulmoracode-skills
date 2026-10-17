@@ -107,6 +107,7 @@ not cost an extra read.
 | Performance posture: measurement, profiling, benchmarks, regressions | `performance-engineer` |
 | Release posture: versions, artifacts, tags, publishing, rollback | `release-engineer` |
 | Platform posture: CI/CD, environments, tooling, developer infrastructure | `platform-engineer` |
+| "Organize this work" / objectives, scope, priorities, dependencies, blockers | `project-manager` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds
