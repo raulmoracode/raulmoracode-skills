@@ -89,6 +89,8 @@ These get confused most often. When two apply, load both — they do different w
 ### Orchestration
 
 - **raulmoracode-mode** — entry point: classify, select, sequence, report.
+- **raulmoracode-catalogue** — open the published catalogue page: every skill with its
+  name, version and description, plus install and reload instructions.
 
 ### Understanding and planning
 

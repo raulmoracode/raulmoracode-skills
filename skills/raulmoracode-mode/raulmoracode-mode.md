@@ -112,6 +112,7 @@ not cost an extra read.
 | "Where does this break between services?" / boundary assumptions and failures | `check-the-boundary` |
 | "What is actually inside this package?" / artifact contents and metadata | `inspect-the-artifact` |
 | "It works locally but not in CI" / compare environments | `compare-environments` |
+| "Show me the catalogue" / "what skills are there?" | `raulmoracode-catalogue` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds
