@@ -49,12 +49,12 @@ OpenCode then:
 
 ## Skills
 
-51 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
+52 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.14 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.15 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.1 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.2 | Understanding and planning | Answers open questions with evidence before a decision is made |
@@ -75,7 +75,7 @@ rest own one responsibility each.
 | `simplify` | 1.0.1 | Behavior and efficiency | Removes unnecessary complexity from the solution and from the way the solution is reached |
 | `code` | 1.0.2 | Development and code quality | Writes implementations that are correct, readable, maintainable and secure |
 | `minimal-changes` | 1.0.1 | Development and code quality | Keeps a change limited to what the request actually requires |
-| `debug-properly` | 1.0.3 | Development and code quality | Diagnoses and fixes the root cause of a defect instead of its symptom |
+| `debug-properly` | 1.0.4 | Development and code quality | Diagnoses and fixes the root cause of a defect instead of its symptom |
 | `security-first` | 1.0.3 | Development and code quality +1 ref | Folds security into the decisions a change makes, at a scale that matches the risk |
 | `mom-always-say-the-same` | 1.0.1 | Development and code quality | Keeps code, comments, documentation, examples and configuration telling the same story |
 | `unslop` | 1.0.1 | Development and code quality +1 ref | Detects and removes low-quality AI-generated code and prose |
@@ -104,7 +104,8 @@ rest own one responsibility each.
 | `configuration-management` | 1.0.0 | Engineering domains | Manages configuration sources, defaults, validation, precedence and secret references |
 | `release-engineering` | 1.0.0 | Engineering domains | Plans and executes versioned releases, artifacts, tags, publication and rollback |
 | `performance-engineering` | 1.0.0 | Engineering domains | Measures and improves performance with profiling, benchmarks and regression checks |
-| `frontend-engineering` | 1.0.0 | Engineering domains | Handles frontend state, rendering, events, forms, loading and error states and API integration |
+| `frontend-engineering` | 1.0.1 | Engineering domains | Handles frontend state, rendering, events, forms, loading and error states and API integration |
+| `browser-engineering` | 1.0.0 | Engineering domains | Analyzes the DOM, event loop, rendering pipeline, workers, storage and permissions |
 
 `+N ref` marks a skill that ships `references/` lookup files next to its entry markdown.
 The "What it does" column is abbreviated; the full `description` in each skill's

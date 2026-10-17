@@ -173,6 +173,9 @@ These get confused most often. When two apply, load both — they do different w
 - **frontend-engineering** — UI state, rendering, events, forms, loading and error states,
   API integration and technical tests.
 
+- **browser-engineering** — DOM, event loop, rendering pipeline, workers, storage,
+  permissions and sandboxing behavior.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,

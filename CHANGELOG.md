@@ -161,6 +161,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   visual or aesthetic decisions.
 - Wiring: `code` (`1.0.2`) names it for the frontend surface.
 
+- `browser-engineering` skill (`1.0.0`) — browser runtime behavior confirmed with
+  minimal experiments instead of folklore.
+- Wiring: `debug-properly` (`1.0.4`) and `frontend-engineering` (`1.0.1`) name it for
+  browser-specific behavior.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

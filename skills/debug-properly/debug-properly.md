@@ -158,6 +158,9 @@ These produce changes without understanding:
   explain.
 - `observability` — designs the logs, metrics and traces that make production behavior
   diagnosable; consult it when the defect only reproduces there.
+- `browser-engineering` — explains browser-specific behavior: DOM, event loop,
+  rendering, workers, storage and sandboxing, so a platform quirk is not treated as a
+  generic application bug.
 
 ## Anti-patterns
 
