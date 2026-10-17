@@ -124,6 +124,8 @@ both.
   this skill owns the representation crossing it.
 - `read-the-f-docs` — confirms the protocol, framework and transport guarantees the
   contract assumes.
+- `backward-compatibility` — compares old and new behavior across every surface the
+  contract promises; use it before this design is declared stable.
 
 ## Anti-patterns
 
