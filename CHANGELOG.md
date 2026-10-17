@@ -166,6 +166,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `debug-properly` (`1.0.4`) and `frontend-engineering` (`1.0.1`) name it for
   browser-specific behavior.
 
+- `web-performance` skill (`1.0.0`) — field-data-first vitals work, waterfall reading
+  and performance budgets.
+- Wiring: `performance-engineering` (`1.0.1`), `frontend-engineering` (`1.0.2`) and
+  `browser-engineering` (`1.0.1`) name it for web-specific measurement.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a
