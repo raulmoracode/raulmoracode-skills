@@ -57,6 +57,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `git-branch` also defaults every branch to an updated `main`; depending on an unmerged
   sibling is reserved for genuinely dependent work, with the dependency stated and the
   pull request retargeted to `main` once the sibling merges.
+- `git-branch` also pins the name format: a regex-checkable shape, lowercase letters,
+  digits and hyphens only, a 50-character target, banned empty words, a free-name check
+  before creating, and the same format for stacked branches.
 
 ### Fixed
 

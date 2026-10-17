@@ -1,6 +1,6 @@
 ---
 name: git-branch
-description: "Manages Git branches: creates, switches, renames, rebases and deletes them, following the repository's workflow for the base branch. Every branch it creates is named from a mandatory prefix table — feat/, fix/, hotfix/, bugfix/, chore/, refactor/, docs/, test/, style/, perf/, build/, ci/, revert/, release/, spike/, experiment/ — followed by a short, descriptive name. Use when asked to create or move work onto a branch, to isolate a change, to start from an up-to-date base, or to clean branches up. Keeps one logical change per branch and avoids creating branches the task or repository does not require."
+description: "Manages Git branches: creates, switches, renames, rebases and deletes them, following the repository's workflow for the base branch. Every branch it creates is named from a mandatory prefix table — feat/, fix/, hotfix/, bugfix/, chore/, refactor/, docs/, test/, style/, perf/, build/, ci/, revert/, release/, spike/, experiment/ — followed by a short, descriptive name in a fixed, checkable format. Use when asked to create or move work onto a branch, to isolate a change, to start from an up-to-date base, or to clean branches up. Keeps one logical change per branch and avoids creating branches the task or repository does not require."
 ---
 ## Composition
 
@@ -107,16 +107,39 @@ chosen by what the branch contains, followed by a short, descriptive name:
 | `spike/` | Research or feasibility investigation | `spike/new-search-engine` |
 | `experiment/` | Experimenting with a new approach | `experiment/new-cache-strategy` |
 
-Rules that keep the names usable:
+The format is fixed and checkable — a name either matches it or is wrong:
 
-- Exactly one prefix, never stacked (`feat/fix/...` is not a name).
-- The part after the prefix is short and descriptive: a few words naming the outcome, not
-  the activity — `fix/empty-env-lookup`, not `fix/editing-files`.
-- Lowercase kebab-case, as in the examples. One logical change per branch: if the name
-  needs an "and", it is two branches.
+```text
+^(feat|fix|hotfix|bugfix|chore|refactor|docs|test|style|perf|build|ci|revert|release|spike|experiment)/[a-z0-9]+(-[a-z0-9]+)*$
+```
+
+The one variation: a release version keeps its dots — `release/1.2.0`.
+
+Rules that never bend:
+
+- Exactly one prefix and one slash: nothing before it, never a second prefix stacked
+  (`feat/fix/...` is not a name), and the description is mandatory.
+- Characters: lowercase `a-z`, digits and hyphens only — no uppercase, underscores,
+  spaces, accents or emojis, and no double or edge hyphens (`feat/user--auth` is out).
+- Length: keep the whole name at 50 characters or fewer, with the description in two to
+  four words. A longer name is usually the pull request's job, or two branches wearing
+  one name.
+- Names that mean nothing are banned: `wip`, `misc`, `changes`, `updates`, `fixes`,
+  `stuff`, `tmp`, `final`, `new`, `-v2`-style suffixes, dates, personal names. If the
+  name would fit almost any branch, it is not descriptive.
+- The description names the outcome, not the activity — `fix/empty-env-lookup`, not
+  `fix/editing-files` — and one logical change per branch: if the name needs an "and",
+  it is two branches.
+- Stacked work keeps this same format; the dependency lives in the pull request base,
+  never in the name (no `fix/x-on-top-of-y`).
 - When two prefixes both seem to fit, pick the one that is true: `hotfix/` only for an
   urgent production fix, `spike/` only when the deliverable is the answer rather than the
   change.
+
+Before creating the branch, verify the name: it must be free locally and remotely
+(`git branch --list <name>`, `git ls-remote --heads origin <name>`) and a valid ref
+(`git check-ref-format --branch <name>`). A name a merged branch already used stays
+spent; pick a different meaningful name, never a `-2` suffix.
 
 ### 5. Keep it isolated
 
@@ -166,6 +189,8 @@ touch your working tree, or a repro that needs to stay runnable:
 - Creating a branch because it feels safer, then abandoning it half-finished.
 - Inventing a prefix outside the table, or stacking two, instead of the one that matches
   the change.
+- Settling for `wip`, `misc` or `changes` as the description; a name that fits any branch
+  describes none.
 - Branching off another branch when the work does not depend on it; updated `main` is the
   default base.
 - Branching from a stale base and opening a PR full of noise.
@@ -177,8 +202,9 @@ touch your working tree, or a repro that needs to stay runnable:
 
 ## Definition of done
 
-The branch uses exactly one prefix from the mandatory table plus a short, descriptive
-name; it starts from an updated `main` — the repository's verified default branch — or
-from the sibling branch it genuinely depends on, with the dependency stated; there are no
-unaccounted working-tree changes; and `git log <base>..HEAD` contains exactly the commits
-this change is meant to contain.
+The branch name matches the fixed format — one prefix from the mandatory table, then a
+short, descriptive name — and was verified free before creation; it starts from an
+updated `main` — the repository's verified default branch — or from the sibling branch it
+genuinely depends on, with the dependency stated; there are no unaccounted working-tree
+changes; and `git log <base>..HEAD` contains exactly the commits this change is meant to
+contain.
