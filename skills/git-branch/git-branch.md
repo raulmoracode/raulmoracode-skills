@@ -62,16 +62,26 @@ Stay where you are when: the user asked for a commit here, you are on a branch s
 gave you and the work belongs on it, or a branch for this task already exists. Feeling
 tidier is not a reason.
 
-### 3. Start from a clean, current base
+### 3. Start from an updated `main`
 
-A branch cut from a stale base produces a PR full of unrelated reverts.
+Every branch starts from an updated `main` — the repository's actual default branch,
+verified in step 1 — never from a stale copy: a branch cut from a stale base produces a
+PR full of unrelated reverts.
 
-- `git fetch origin`, then `git switch <base>` and `git pull --ff-only`. `--ff-only`
-  refuses to create a merge commit nobody asked for.
+The one exception is genuinely dependent work: a branch that only makes sense on top of
+another branch that is not in `main` yet — stacked changes, a follow-up. Base it on the
+sibling and say so, and prefer waiting for the dependency to land when the choice is
+close.
+
+- Default: `git fetch origin`, then `git switch <main>` and `git pull --ff-only`.
+  `--ff-only` refuses to create a merge commit nobody asked for. Then create the branch
+  from it: `git switch -c <name> <main>`, or `git switch -c <name>` when you are already
+  on it.
+- Dependent branch: create it from the sibling, `git switch -c <name> <sibling>`. Its
+  pull request targets the sibling until that merges and it is retargeted to `main` —
+  `git-pr` owns that update.
 - If the tree is dirty, settle it with `safe-git` first: commit, stash with a message,
   or stop and report. Do not branch from a tree carrying work you have not accounted for.
-- Create the branch from the updated base: `git switch -c <name> <base>`, or
-  `git switch -c <name>` when you are already on it.
 
 ### 4. Name it from the mandatory prefix table
 
@@ -156,6 +166,8 @@ touch your working tree, or a repro that needs to stay runnable:
 - Creating a branch because it feels safer, then abandoning it half-finished.
 - Inventing a prefix outside the table, or stacking two, instead of the one that matches
   the change.
+- Branching off another branch when the work does not depend on it; updated `main` is the
+  default base.
 - Branching from a stale base and opening a PR full of noise.
 - Folding a drive-by fix into a feature branch.
 - Piling unrelated experiments onto one branch until it has no describable purpose.
@@ -166,6 +178,7 @@ touch your working tree, or a repro that needs to stay runnable:
 ## Definition of done
 
 The branch uses exactly one prefix from the mandatory table plus a short, descriptive
-name; the base branch came from the repository rather than a guess; the branch starts
-from an updated base with no unaccounted working-tree changes; and `git log <base>..HEAD`
-contains exactly the commits this change is meant to contain.
+name; it starts from an updated `main` — the repository's verified default branch — or
+from the sibling branch it genuinely depends on, with the dependency stated; there are no
+unaccounted working-tree changes; and `git log <base>..HEAD` contains exactly the commits
+this change is meant to contain.

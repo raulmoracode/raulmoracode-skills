@@ -54,6 +54,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   each with its purpose, followed by a short, descriptive name. Discovery now covers the
   base branch and the surrounding workflow; branch naming no longer copies whatever
   existing names happen to suggest.
+- `git-branch` also defaults every branch to an updated `main`; depending on an unmerged
+  sibling is reserved for genuinely dependent work, with the dependency stated and the
+  pull request retargeted to `main` once the sibling merges.
 
 ### Fixed
 
