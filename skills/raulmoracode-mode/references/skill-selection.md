@@ -122,6 +122,9 @@ These get confused most often. When two apply, load both — they do different w
 - **low-level-engineer** — the systems-level posture for hardware, runtime and
   architecture-dependent behavior.
 
+- **database-engineer** — the database posture: modeling, SQL, transactions, indexes, locks
+  and query performance.
+
 ### Behavior, autonomy, efficiency
 
 - **dont-dance-for-me** — independent judgment; disagree with evidence instead of
