@@ -15,7 +15,7 @@ The default URL always serves the latest catalog. The same site also exposes
 
 ```json
 {
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
 ```
 
@@ -26,6 +26,12 @@ bumps that skill's `version` in `index.json` instead. Consumers can record the
 catalog version alongside their generated configuration to identify the exact
 catalog they resolved from the default URL; release tags use the same
 `v<catalog-version>` identifier for repository-level pinning.
+
+The same site also serves `catalogue.html`: a browsable page that lists every
+skill with its name, version and description. It is generated during the site
+build from `index.json` and the frontmatter descriptions, so it cannot drift
+from the published catalog. The `raulmoracode-catalogue` skill opens it in the
+browser.
 
 ## How OpenCode consumes it
 
@@ -49,12 +55,13 @@ OpenCode then:
 
 ## Skills
 
-64 skills, organized in nine categories. `raulmoracode-mode` is the entry point; the
+65 skills, organized in nine categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.27 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.28 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-catalogue` | 1.0.0 | Orchestration | Opens the published catalogue page listing every skill, with install and reload instructions |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.2 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.2 | Understanding and planning | Answers open questions with evidence before a decision is made |
@@ -145,6 +152,7 @@ metadata. The `## Interaction with other skills` section remains explanatory onl
 ├── scripts/
 │   ├── validate.mjs            # Catalog validation (zero dependencies)
 │   ├── build-site.mjs          # Builds _site/ for GitHub Pages
+│   ├── build-catalogue.mjs     # Generates _site/catalogue.html from the catalog
 │   └── check-version-bump.mjs  # Guard: a changed skill must bump its version
 ├── Dockerfile                  # Builds and serves the catalog image
 └── docker-compose.yml          # Runs a redundant local catalog service
@@ -243,6 +251,7 @@ Rules (enforced by `scripts/validate.mjs`):
 node scripts/validate.mjs                    # validate the catalog
 node scripts/validate.mjs --strict-composition # explicit strict composition validation
 node scripts/build-site.mjs                  # build _site/ exactly as deployed
+node scripts/build-catalogue.mjs             # regenerate only _site/catalogue.html
 python3 -m http.server 8000 --directory _site  # preview the deployed site
 docker compose up --build -d                  # run the catalog locally on port 8080
 ```

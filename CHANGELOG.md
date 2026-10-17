@@ -223,6 +223,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `configuration-management` (`1.0.2`) and `platform-engineer` (`1.0.1`) name it
   for environment comparison.
 
+- `raulmoracode-catalogue` skill (`1.0.0`) — opens the browsable catalogue page in the
+  user's browser: every skill with its name, version and description, plus install and
+  reload instructions.
+  - `catalogue.html` is generated during the site build by `scripts/build-catalogue.mjs`
+    (run from `build-site.mjs`) from `index.json` and the frontmatter descriptions, so
+    the page cannot drift from the published catalog.
+  - Wiring: `raulmoracode-mode` (`1.0.28`) gains the routing row and the inventory entry;
+    `catalog-version.json` bumps to `1.0.2` for the inventory and published-layout change.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

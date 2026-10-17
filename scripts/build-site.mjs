@@ -7,7 +7,9 @@
  *   GET <base>/<encodeURIComponent(name)>/<file>
  *
  * The build is intentionally dumb: clean _site/, copy index.json, then copy
- * every file listed in the catalog to _site/<name>/<file>. Run
+ * every file listed in the catalog to _site/<name>/<file>. Finally it writes
+ * _site/catalogue.html from index.json and the frontmatter descriptions, so
+ * the browsable page cannot drift from the catalog. Run
  * scripts/validate.mjs first; this script still fails loudly on malformed
  * input or missing files.
  *
@@ -16,6 +18,7 @@
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync, cpSync, rmSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { writeCatalogue } from "./build-catalogue.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = join(ROOT, "_site");
@@ -90,5 +93,10 @@ for (const skill of catalog.skills) {
     console.log(`copied skills/${skill.name}/${file} -> _site/${skillDirName}/${file}`);
   }
 }
+
+const catalogue = writeCatalogue({ root: ROOT, siteDir: SITE });
+console.log(
+  `wrote _site/catalogue.html (${catalogue.count} skills, catalog ${catalogue.catalogVersion})`,
+);
 
 console.log(`\nBuilt _site with index.json and ${copied} skill file${copied === 1 ? "" : "s"}.`);
