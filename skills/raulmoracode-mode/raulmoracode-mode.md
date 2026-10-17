@@ -110,6 +110,7 @@ not cost an extra read.
 | "Organize this work" / objectives, scope, priorities, dependencies, blockers | `project-manager` |
 | "Follow this call" / trace an execution path end to end | `trace-the-call` |
 | "Where does this break between services?" / boundary assumptions and failures | `check-the-boundary` |
+| "What is actually inside this package?" / artifact contents and metadata | `inspect-the-artifact` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds
