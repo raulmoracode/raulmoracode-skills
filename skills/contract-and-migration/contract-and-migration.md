@@ -149,6 +149,8 @@ evidence that the old path is gone.
   sync.
 - `database-engineering` — analyzes the schema, query, transaction and lock surface when
   a contract change touches stored data.
+- `api-contracts` — designs and verifies the contract itself, including validation and
+  compatibility rules, before this skill evolves it.
 
 ## Anti-patterns
 

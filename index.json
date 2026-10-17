@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.6",
+      "version": "1.0.7",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -50,7 +50,7 @@
     },
     {
       "name": "contract-and-migration",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["contract-and-migration.md"]
     },
     {
@@ -231,6 +231,11 @@
       "name": "database-engineering",
       "version": "1.0.0",
       "files": ["database-engineering.md"]
+    },
+    {
+      "name": "api-contracts",
+      "version": "1.0.0",
+      "files": ["api-contracts.md"]
     }
   ]
 }

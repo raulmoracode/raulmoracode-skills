@@ -91,6 +91,7 @@ not cost an extra read.
 | "Show me the branch landscape" / what branches exist | `git-tree` |
 | "This only breaks in production" / behavior below application code | `low-level-engineering` |
 | "The query is slow" / schema, index, transaction or migration work | `database-engineering` |
+| "Design or verify this API" / HTTP, event, schema or CLI contracts | `api-contracts` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds
