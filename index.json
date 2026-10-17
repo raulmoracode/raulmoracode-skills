@@ -199,7 +199,7 @@
     },
     {
       "name": "git-branch",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "files": ["git-branch.md"]
     },
     {
@@ -209,7 +209,7 @@
     },
     {
       "name": "git-issues",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": ["git-issues.md", "references/issue-templates.md"]
     },
     {

@@ -65,6 +65,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `follow-project-conventions` (`1.0.3`) no longer counts branches among the naming
   conventions it matches; and `raulmoracode-mode` (`1.0.29`) updates its `git-branch`
   inventory entry to the new rules.
+- `git-issues` (`1.0.3`) now requires the workflow prefix on every issue title — from
+  the same 16-prefix table branches and pull requests use — and states the chain:
+  `feat: User auth` becomes branch `feat/user-auth`, which keeps the prefix into the
+  pull request.
+- `git-branch` (`1.0.4`) keeps the issue's prefix and derives the branch description
+  from the issue title when the work starts from an issue.
 
 ### Fixed
 

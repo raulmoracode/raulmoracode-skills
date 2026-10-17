@@ -1,6 +1,6 @@
 ---
 name: git-issues
-description: "Creates, triages and updates repository issues when explicitly requested. Use when asked to file or draft a bug report, open a feature request, report a documentation error, raise technical debt, search for duplicates, or check on an existing issue. Identifies the issue type, checks for duplicates, follows repository issue templates and forms, supplies reproduction steps and acceptance criteria, respects private security disclosure, and verifies that an issue was really created or updated."
+description: "Creates, triages and updates repository issues when explicitly requested. Use when asked to file or draft a bug report, open a feature request, report a documentation error, raise technical debt, search for duplicates, or check on an existing issue. Identifies the issue type and prefixes the title with the workflow prefix the branch and the pull request will carry, checks for duplicates, follows repository issue templates and forms, supplies reproduction steps and acceptance criteria, respects private security disclosure, and verifies that an issue was really created or updated."
 ---
 ## Composition
 
@@ -65,6 +65,13 @@ reproduction, a feature request needs a problem statement and use cases, debt ne
 effort and risk estimate. A security report goes to the private path above and never to
 a public issue.
 
+The type also gives the title its mandatory prefix, from the same 16-prefix table
+`git-branch` defines: `feat:`, `fix:`, `hotfix:`, `bugfix:`, `chore:`, `refactor:`,
+`docs:`, `test:`, `style:`, `perf:`, `build:`, `ci:`, `revert:`, `release:`, `spike:`,
+`experiment:`. The title reads `<prefix>: <short summary>`, and the prefix carries
+through the workflow: `feat: User auth` becomes branch `feat/user-auth` and pull
+request `feat: add user authentication`.
+
 ### 2. Check for duplicates before writing
 
 Search both open and closed issues — a closed issue with the same symptom is still a
@@ -99,7 +106,7 @@ or documentation issue, or when searching for duplicates.
 Draft first and let the user read it when the issue is non-trivial, contains a security
 adjacent concern, or names other people. When they say create it:
 
-- `gh issue create --title "<type>: <summary>" --body-file <file> [--label ...]`
+- `gh issue create --title "<prefix>: <summary>" --body-file <file> [--label ...]`
 - Read the output for the issue URL. Do not report a number or link you did not see.
 - Confirm with `gh issue view <number> --json number,url,state,title` if the link
   matters.
@@ -124,6 +131,8 @@ obtain it privately instead of pasting it.
 
 - `git-pr` — owns pull requests; this skill owns issues. Both enforce the same rule: no
   external state change and no status claim without authorization and verification.
+- `git-branch` — owns branch naming; a branch born from an issue keeps the issue's title
+  prefix (`feat: User auth` → `feat/user-auth`).
 - `safe-git` — owns repository state and any destructive operation. Issue work never
   touches branches or history; if it appears to need to, that is a separate task.
 - `debug-properly` — owns reproduction and root cause. A filed bug is the artifact, not
@@ -140,6 +149,8 @@ obtain it privately instead of pasting it.
 - Publishing when the user asked for a draft.
 - Posting vulnerability detail in a public issue.
 - Filing a duplicate without searching closed issues.
+- Filing with a bare title like `User auth` instead of `feat: User auth` — the branch
+  and the pull request have nothing to keep.
 - "Broken" as a description, with no steps, no version and no actual result.
 - Inventing a version number, environment or error message to fill a required field.
 - Assigning people, adding labels or closing issues that nobody authorized.
@@ -148,7 +159,8 @@ obtain it privately instead of pasting it.
 
 ## Definition of done
 
-The issue was asked for, not inferred; its type and template match the repository; the
+The issue was asked for, not inferred; its type and template match the repository and
+its title carries the workflow prefix the branch and the pull request will keep; the
 duplicates search covered open and closed issues; a bug has reproduction steps, expected
 versus actual, and a version; no private or sensitive data is included; and the reported
 number and URL come from real command output — or the failure was reported instead.
