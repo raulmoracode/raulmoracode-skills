@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.17",
+      "version": "1.0.18",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -224,7 +224,7 @@
     },
     {
       "name": "low-level-engineering",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["low-level-engineering.md"]
     },
     {
@@ -286,6 +286,11 @@
       "name": "accessibility-engineering",
       "version": "1.0.0",
       "files": ["accessibility-engineering.md"]
+    },
+    {
+      "name": "low-level-engineer",
+      "version": "1.0.0",
+      "files": ["low-level-engineer.md"]
     }
   ]
 }

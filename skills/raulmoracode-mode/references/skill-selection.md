@@ -119,6 +119,9 @@ These get confused most often. When two apply, load both — they do different w
 - **software-engineer** — the practical working posture across implement, debug, maintain
   and validate; routes to the specific skills.
 
+- **low-level-engineer** — the systems-level posture for hardware, runtime and
+  architecture-dependent behavior.
+
 ### Behavior, autonomy, efficiency
 
 - **dont-dance-for-me** — independent judgment; disagree with evidence instead of

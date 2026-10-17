@@ -126,6 +126,8 @@ with the probe that would confirm it.
   instructions, memory, scheduling and the runtime.
 - `read-the-f-docs` — owns version-specific documentation for compilers, runtimes,
   kernels and drivers; a flag semantic recalled from memory is not evidence.
+- `low-level-engineer` — the working posture that applies this skill: systems-level
+  reasoning about memory, CPU, GPU, ABI, compilers, runtimes and operating systems.
 
 ## Anti-patterns
 
