@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -45,12 +45,12 @@
     },
     {
       "name": "blast-radius",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["blast-radius.md", "references/impact-surfaces.md"]
     },
     {
       "name": "contract-and-migration",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["contract-and-migration.md"]
     },
     {
@@ -226,6 +226,11 @@
       "name": "low-level-engineering",
       "version": "1.0.0",
       "files": ["low-level-engineering.md"]
+    },
+    {
+      "name": "database-engineering",
+      "version": "1.0.0",
+      "files": ["database-engineering.md"]
     }
   ]
 }

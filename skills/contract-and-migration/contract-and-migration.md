@@ -147,6 +147,8 @@ evidence that the old path is gone.
   required before calling the migration safe.
 - `mom-always-say-the-same` keeps schemas, docs, examples and operator messages in
   sync.
+- `database-engineering` — analyzes the schema, query, transaction and lock surface when
+  a contract change touches stored data.
 
 ## Anti-patterns
 

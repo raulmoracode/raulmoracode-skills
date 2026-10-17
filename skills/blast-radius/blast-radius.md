@@ -135,6 +135,8 @@ surfaces that mattered most before you finish.
 - `test-before-finishing` — executes the checks this pass argues are necessary.
 - `mom-always-say-the-same` — keeps docs, comments and examples consistent with the
   interface you are changing.
+- `database-engineering` — quantifies the data-side impact: migration cost, lock
+  duration, query regressions and integrity risk.
 
 ## Anti-patterns
 

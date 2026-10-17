@@ -146,6 +146,9 @@ These get confused most often. When two apply, load both — they do different w
 - **low-level-engineering** — investigate execution below the application: memory, CPU,
   ABI, compilers, loaders, runtimes and operating systems.
 
+- **database-engineering** — schema, query, transaction, lock, migration and integrity
+  analysis with evidence from real plans.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,
