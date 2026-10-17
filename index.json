@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "name": "research-first",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["research-first.md"]
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "name": "security-first",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["security-first.md", "references/threat-checklist.md"]
     },
     {
@@ -241,6 +241,11 @@
       "name": "backward-compatibility",
       "version": "1.0.0",
       "files": ["backward-compatibility.md"]
+    },
+    {
+      "name": "dependency-audit",
+      "version": "1.0.0",
+      "files": ["dependency-audit.md"]
     }
   ]
 }

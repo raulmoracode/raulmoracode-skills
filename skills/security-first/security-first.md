@@ -160,6 +160,8 @@ Escalate rather than rationalize. "I am not sure this is safe" is a valid result
   not reason about their semantics from memory.
 - `dad-always-say-the-same` — designs the tests that prove a control holds.
 - `clear-final-report` — carries residual risk and out-of-scope findings to the user.
+- `dependency-audit` — reviews direct and transitive dependencies for vulnerabilities,
+  provenance and supply-chain risk before they reach production.
 
 ## Anti-patterns
 

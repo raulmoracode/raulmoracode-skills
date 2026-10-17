@@ -93,6 +93,7 @@ not cost an extra read.
 | "The query is slow" / schema, index, transaction or migration work | `database-engineering` |
 | "Design or verify this API" / HTTP, event, schema or CLI contracts | `api-contracts` |
 | "Will this break existing users?" / compare old and new behavior | `backward-compatibility` |
+| "Is this dependency safe?" / versions, licenses, vulnerabilities, provenance | `dependency-audit` |
 | Routine engineering with no single named concern | `software-engineer` |
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds

@@ -151,6 +151,8 @@ is misleading about how settled the conclusion is.
   asking the user.
 - `no-made-up-results` and `verify-before-claiming` — never cite a source you did not
   open, or present an inference as a documented fact.
+- `dependency-audit` — the health, license and vulnerability review of a dependency this
+  skill is considering.
 
 ## Anti-patterns
 

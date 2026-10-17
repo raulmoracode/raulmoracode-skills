@@ -49,15 +49,15 @@ OpenCode then:
 
 ## Skills
 
-45 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
+46 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.8 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.9 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.1 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
-| `research-first` | 1.0.1 | Understanding and planning | Answers open questions with evidence before a decision is made |
+| `research-first` | 1.0.2 | Understanding and planning | Answers open questions with evidence before a decision is made |
 | `read-the-f-docs` | 1.0.1 | Understanding and planning | Consults authoritative documentation for a specific technology at a specific version |
 | `follow-project-conventions` | 1.0.2 | Understanding and planning +1 ref | Matches the way an existing project already does things |
 | `how-was-last-night` | 1.0.2 | Understanding and planning +1 ref | Reconstructs context from previous work by reading version-control and repository artifacts |
@@ -76,7 +76,7 @@ rest own one responsibility each.
 | `code` | 1.0.1 | Development and code quality | Writes implementations that are correct, readable, maintainable and secure |
 | `minimal-changes` | 1.0.1 | Development and code quality | Keeps a change limited to what the request actually requires |
 | `debug-properly` | 1.0.2 | Development and code quality | Diagnoses and fixes the root cause of a defect instead of its symptom |
-| `security-first` | 1.0.1 | Development and code quality +1 ref | Folds security into the decisions a change makes, at a scale that matches the risk |
+| `security-first` | 1.0.2 | Development and code quality +1 ref | Folds security into the decisions a change makes, at a scale that matches the risk |
 | `mom-always-say-the-same` | 1.0.1 | Development and code quality | Keeps code, comments, documentation, examples and configuration telling the same story |
 | `unslop` | 1.0.1 | Development and code quality +1 ref | Detects and removes low-quality AI-generated code and prose |
 | `dad-always-say-the-same` | 1.0.1 | Testing and verification +1 ref | Designs tests that are useful, deterministic and maintainable |
@@ -99,6 +99,7 @@ rest own one responsibility each.
 | `database-engineering` | 1.0.0 | Engineering domains | Analyzes schemas, queries, migrations, indexes, transactions, locks and integrity |
 | `api-contracts` | 1.0.1 | Engineering domains | Designs and verifies HTTP, event, schema, CLI and service contracts |
 | `backward-compatibility` | 1.0.0 | Engineering domains | Compares current and proposed behavior across APIs, configuration, schemas and data formats |
+| `dependency-audit` | 1.0.0 | Engineering domains | Reviews direct and transitive dependencies: versions, licenses, vulnerabilities, provenance |
 
 `+N ref` marks a skill that ships `references/` lookup files next to its entry markdown.
 The "What it does" column is abbreviated; the full `description` in each skill's
