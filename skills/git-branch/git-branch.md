@@ -1,6 +1,6 @@
 ---
 name: git-branch
-description: "Manages Git branches according to the repository's own workflow. Use when creating, switching, renaming, rebasing or deleting a branch, when asked to move work onto a branch, to isolate a change, or to start from an up-to-date base. Discovers the naming convention and base branch from CONTRIBUTING, AGENTS.md and existing branch names, keeps one logical change per branch, checks status before switching, and avoids creating branches the task or repository does not require."
+description: "Manages Git branches: creates, switches, renames, rebases and deletes them, following the repository's workflow for the base branch. Every branch it creates is named from a mandatory prefix table — feat/, fix/, hotfix/, bugfix/, chore/, refactor/, docs/, test/, style/, perf/, build/, ci/, revert/, release/, spike/, experiment/ — followed by a short, descriptive name. Use when asked to create or move work onto a branch, to isolate a change, to start from an up-to-date base, or to clean branches up. Keeps one logical change per branch and avoids creating branches the task or repository does not require."
 ---
 ## Composition
 
@@ -35,21 +35,22 @@ the repository before changing it → `understand-before-acting`.
 
 ## Process
 
-### 1. Discover the convention before naming anything
+### 1. Discover the base and the workflow first
 
-The repository already answers this. Read it instead of guessing:
+The repository answers the parts it owns. Read it instead of guessing:
 
 - `CONTRIBUTING.md`, `AGENTS.md`, `README.md`, `.github/` — a stated branching policy, a
   PR template, or a merge strategy that implies one.
-- `git branch -a` and `git log --oneline --no-merges --all -30` — repeated prefixes are
-  the convention: `feat/`, `fix/`, `chore/`, `docs/`, `release/`, or ticket IDs like
-  `PROJ-123-`.
 - `gh repo view --json defaultBranchRef` — the actual default branch, which is not always
   `main` and not always what the README says.
 - `gh pr list --state all --limit 30` — what kinds of branches actually get merged here.
 
-When the convention is invisible and being wrong is costly, ask. A wrong prefix is a
-rename; a wrong base branch is a rewrite.
+Naming is not discovered: every branch this skill creates takes its prefix from the table
+in step 4. If a repository's written policy explicitly requires a different naming scheme,
+follow that policy and say so; otherwise the table is mandatory.
+
+When the base is invisible and being wrong is costly, ask: a wrong base branch is a
+rewrite.
 
 ### 2. Decide whether a branch is warranted
 
@@ -72,13 +73,40 @@ A branch cut from a stale base produces a PR full of unrelated reverts.
 - Create the branch from the updated base: `git switch -c <name> <base>`, or
   `git switch -c <name>` when you are already on it.
 
-### 4. Name it
+### 4. Name it from the mandatory prefix table
 
-- Prefix by kind when the repository does: `feat/`, `fix/`, `chore/`, `docs/`,
-  `refactor/`.
-- Otherwise use short kebab-case describing the outcome: `fix-empty-env-lookup`.
-- One logical change per branch. If the name needs an "and", it is two branches.
-- Match the existing case and separator style exactly. Consistency beats correctness.
+Every branch this skill creates must start with exactly one prefix from this table,
+chosen by what the branch contains, followed by a short, descriptive name:
+
+| Prefix | Purpose | Example |
+| --- | --- | --- |
+| `feat/` | New feature | `feat/user-authentication` |
+| `fix/` | Bug fix | `fix/login-error` |
+| `hotfix/` | Urgent production fix | `hotfix/payment-crash` |
+| `bugfix/` | Bug correction | `bugfix/invalid-email` |
+| `chore/` | Maintenance tasks | `chore/update-dependencies` |
+| `refactor/` | Code restructuring without changing behavior | `refactor/user-service` |
+| `docs/` | Documentation changes | `docs/update-readme` |
+| `test/` | Adding or modifying tests | `test/user-service` |
+| `style/` | Code formatting and styling changes | `style/format-code` |
+| `perf/` | Performance improvements | `perf/optimize-queries` |
+| `build/` | Build system or dependency changes | `build/upgrade-vite` |
+| `ci/` | CI/CD configuration changes | `ci/update-github-actions` |
+| `revert/` | Reverting previous changes | `revert/add-user-auth` |
+| `release/` | Preparing a new release | `release/1.2.0` |
+| `spike/` | Research or feasibility investigation | `spike/new-search-engine` |
+| `experiment/` | Experimenting with a new approach | `experiment/new-cache-strategy` |
+
+Rules that keep the names usable:
+
+- Exactly one prefix, never stacked (`feat/fix/...` is not a name).
+- The part after the prefix is short and descriptive: a few words naming the outcome, not
+  the activity — `fix/empty-env-lookup`, not `fix/editing-files`.
+- Lowercase kebab-case, as in the examples. One logical change per branch: if the name
+  needs an "and", it is two branches.
+- When two prefixes both seem to fit, pick the one that is true: `hotfix/` only for an
+  urgent production fix, `spike/` only when the deliverable is the answer rather than the
+  change.
 
 ### 5. Keep it isolated
 
@@ -116,7 +144,8 @@ touch your working tree, or a repro that needs to stay runnable:
 - `git-issues` — owns the ticket itself; putting an issue number in a branch name is
   convention, not a reason to create an issue.
 - `follow-project-conventions` — owns discovering repository conventions at large; here
-  it is applied to branch naming and the base.
+  it is applied to the base branch and the workflow, not to naming — the prefix table
+  fixes that.
 - `minimal-changes` — owns diff scope; this skill owns the isolation boundary.
 - `git-tree` — renders the branch landscape this skill navigates: prefix grouping is
   organizational, never commit ancestry; use it to see the whole picture before choosing
@@ -125,7 +154,8 @@ touch your working tree, or a repro that needs to stay runnable:
 ## Anti-patterns
 
 - Creating a branch because it feels safer, then abandoning it half-finished.
-- Guessing a prefix instead of reading five existing branch names.
+- Inventing a prefix outside the table, or stacking two, instead of the one that matches
+  the change.
 - Branching from a stale base and opening a PR full of noise.
 - Folding a drive-by fix into a feature branch.
 - Piling unrelated experiments onto one branch until it has no describable purpose.
@@ -135,6 +165,7 @@ touch your working tree, or a repro that needs to stay runnable:
 
 ## Definition of done
 
-The base branch and naming convention came from the repository rather than a guess; the
-branch starts from an updated base with no unaccounted working-tree changes; and
-`git log <base>..HEAD` contains exactly the commits this change is meant to contain.
+The branch uses exactly one prefix from the mandatory table plus a short, descriptive
+name; the base branch came from the repository rather than a guess; the branch starts
+from an updated base with no unaccounted working-tree changes; and `git log <base>..HEAD`
+contains exactly the commits this change is meant to contain.

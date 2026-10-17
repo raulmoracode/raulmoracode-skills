@@ -48,6 +48,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   established convention — a skill points at the owner of a concern without requiring the
   owner to point back. Reciprocity was added for `project-structure` because those pairs
   are the genuinely confusable ones, not to symmetrize the graph.
+- `git-branch` (`1.0.3`) now names every branch it creates from a mandatory prefix table
+  (`feat/`, `fix/`, `hotfix/`, `bugfix/`, `chore/`, `refactor/`, `docs/`, `test/`,
+  `style/`, `perf/`, `build/`, `ci/`, `revert/`, `release/`, `spike/`, `experiment/`),
+  each with its purpose, followed by a short, descriptive name. Discovery now covers the
+  base branch and the surrounding workflow; branch naming no longer copies whatever
+  existing names happen to suggest.
 
 ### Fixed
 

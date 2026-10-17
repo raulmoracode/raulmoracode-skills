@@ -94,7 +94,7 @@ rest own one responsibility each.
 | `verify-before-claiming` | 1.0.2 | Testing and verification +1 ref | Sets the evidence standard a claim must clear before it is stated |
 | `clear-final-report` | 1.0.2 | Testing and verification +1 ref | Produces the final report the user reads |
 | `safe-git` | 1.0.1 | Git and repository | Protects repository state and uncommitted work during any Git operation |
-| `git-branch` | 1.0.2 | Git and repository | Manages Git branches according to the repository's own workflow |
+| `git-branch` | 1.0.3 | Git and repository | Manages Git branches; every branch it creates uses a fixed prefix table |
 | `git-pr` | 1.0.1 | Git and repository +1 ref | Prepares, opens and manages pull requests |
 | `git-issues` | 1.0.2 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested |
 | `define-the-outcome` | 1.0.1 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
