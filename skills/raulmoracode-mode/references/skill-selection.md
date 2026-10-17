@@ -167,6 +167,9 @@ These get confused most often. When two apply, load both — they do different w
 - **release-engineering** — versioned releases: identity, changelog, tags, artifacts,
   publication, rollout and rollback.
 
+- **performance-engineering** — measurement, profiling, benchmarks, resource analysis and
+  regression checks.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,

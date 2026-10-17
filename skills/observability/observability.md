@@ -127,6 +127,8 @@ without that run is a guess.
   secrets and personal data.
 - `understand-before-acting` — maps call paths, boundaries and existing tooling before
   new instrumentation is placed.
+- `performance-engineering` — turns the signals this skill collects into measured
+  bottlenecks and regression checks.
 
 ## Anti-patterns
 

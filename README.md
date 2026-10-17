@@ -49,12 +49,12 @@ OpenCode then:
 
 ## Skills
 
-49 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
+50 skills, organized in eight categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.12 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.13 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.1 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
 | `research-first` | 1.0.2 | Understanding and planning | Answers open questions with evidence before a decision is made |
@@ -100,9 +100,10 @@ rest own one responsibility each.
 | `api-contracts` | 1.0.1 | Engineering domains | Designs and verifies HTTP, event, schema, CLI and service contracts |
 | `backward-compatibility` | 1.0.0 | Engineering domains | Compares current and proposed behavior across APIs, configuration, schemas and data formats |
 | `dependency-audit` | 1.0.0 | Engineering domains | Reviews direct and transitive dependencies: versions, licenses, vulnerabilities, provenance |
-| `observability` | 1.0.0 | Engineering domains | Designs and uses structured logs, metrics, traces, correlation identifiers and alerts |
+| `observability` | 1.0.1 | Engineering domains | Designs and uses structured logs, metrics, traces, correlation identifiers and alerts |
 | `configuration-management` | 1.0.0 | Engineering domains | Manages configuration sources, defaults, validation, precedence and secret references |
 | `release-engineering` | 1.0.0 | Engineering domains | Plans and executes versioned releases, artifacts, tags, publication and rollback |
+| `performance-engineering` | 1.0.0 | Engineering domains | Measures and improves performance with profiling, benchmarks and regression checks |
 
 `+N ref` marks a skill that ships `references/` lookup files next to its entry markdown.
 The "What it does" column is abbreviated; the full `description` in each skill's
