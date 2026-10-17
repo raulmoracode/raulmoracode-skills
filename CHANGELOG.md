@@ -135,6 +135,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Wiring: `contract-and-migration` (`1.0.3`) and `api-contracts` (`1.0.1`) name it
   before evolution and before declaring a design stable.
 
+- `dependency-audit` skill (`1.0.0`) — audits the resolved dependency tree across
+  versions, licenses, advisories and provenance.
+- Wiring: `security-first` (`1.0.2`) and `research-first` (`1.0.2`) name it for
+  dependency risk.
+
 ### Removed
 
 - `frontend-design`, `code-review` and `create-component`. The catalog is now a

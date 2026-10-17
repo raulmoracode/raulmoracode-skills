@@ -155,6 +155,9 @@ These get confused most often. When two apply, load both — they do different w
 - **backward-compatibility** — compare released and candidate behavior to detect breaking
   changes before consumers hit them.
 
+- **dependency-audit** — review direct and transitive dependencies: versions, licenses,
+  vulnerabilities, provenance and supply-chain risk.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,
