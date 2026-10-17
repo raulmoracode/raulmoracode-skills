@@ -170,6 +170,9 @@ These get confused most often. When two apply, load both — they do different w
 - **performance-engineering** — measurement, profiling, benchmarks, resource analysis and
   regression checks.
 
+- **frontend-engineering** — UI state, rendering, events, forms, loading and error states,
+  API integration and technical tests.
+
 ### Testing, verification, review
 
 - **dad-always-say-the-same** — test design: meaningful behavior, real edge cases,
