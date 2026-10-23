@@ -32,8 +32,9 @@ repository's workflow requires it. Every extra branch is permanent bookkeeping.
   CI runs per PR, CONTRIBUTING says so.
 - Work must be moved, split, or rebased onto a different line of development.
 
-Do not use to: reset, clean or recover → `safe-git`. Open the PR → `git-pr`. Inspect
-the repository before changing it → `understand-before-acting`.
+Do not use to: reset, clean or recover → `safe-git`. Open the PR → `git-pr`. Merge a
+remote PR → `git-merge`. Inspect the repository before changing it →
+`understand-before-acting`.
 
 ## Process
 
@@ -201,6 +202,8 @@ touch your working tree, or a repro that needs to stay runnable:
   step here defers to it. This skill owns branch lifecycle; safe-git owns what the
   repository state may be destroyed by.
 - `git-pr` — owns opening and updating the pull request once the branch is ready.
+- `git-merge` — merges remote PRs but never deletes branches; branch deletion and cleanup
+  remain here, with destructive deletion done through `safe-git`.
 - `git-issues` — owns the ticket itself and the prefix on its title; a branch born from
   one keeps it. In the full flow the number is mandatory and comes from `git-workflow`;
   outside it, putting an issue number in a branch name is convention, not a reason to

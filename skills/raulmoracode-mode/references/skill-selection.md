@@ -32,9 +32,9 @@ The `## Composition` section is operational: its compact metadata declares the s
 role, whether it may be invoked directly, its support budget and depth, and the skills it
 may compose. Only those declarations affect composition validation. A primary specialist
 may load up to its declared support budget, at most three; support skills must not compose
-further support skills, and composition depth is at most one. `git-workflow` declares the
+further support skills, and composition depth is at most one. `git-workflow` composes the
 three Git stage skills as supports; implementation and verification are handoffs, not
-supports.
+supports, and merge is a separate specialist, `git-merge`.
 Do not load a related skill merely because it is relevant, and do not reload a skill
 already active.
 
@@ -75,6 +75,9 @@ These get confused most often. When two apply, load both — they do different w
 | `git-workflow` / `git-issues` | The full committed-change flow. The issue stage alone. |
 | `git-workflow` / `git-branch` | The full flow. Branch lifecycle alone. |
 | `git-workflow` / `git-pr` | The full flow. The pull request stage alone. |
+| `git-workflow` / `git-merge` | The flow ends at the pull request. `git-merge` merges it under the standard. |
+| `git-pr` / `git-merge` | Prepare and verify the pull request. Execute the merge. |
+| `safe-git` / `git-merge` | Local history and recovery. The remote pull request merge. |
 | `git-workflow` / `software-engineer` | The Git/GitHub flow around a committed change. The engineering posture inside it. |
 | `git-workflow` / `code` | The flow and its gates. The implementation craft inside it. |
 | `plan-before-coding` / `software-architect` | Plan sequences this task. Architecture evaluates the design. |
@@ -238,12 +241,15 @@ These get confused most often. When two apply, load both — they do different w
 ### Git and repository
 
 - **git-workflow** — default owner of any committed change: issue → branch, implementation
-  handoff → verification → pull request, with the 29-label policy and no merge.
+  handoff → verification → pull request, with the 29-label policy; the flow ends at the
+  pull request.
 - **safe-git** — protect repository state and uncommitted work; destructive operations need
   authorization.
 - **git-branch** — branch lifecycle and isolation; branches start from updated `main`
   and follow the mandatory prefix table and fixed name format.
 - **git-pr** — prepare, verify and manage pull requests.
+- **git-merge** — remote pull request merges: the merge standard, its hard gates and the
+  explicit authorization they require.
 - **git-issues** — create, triage and update issues on explicit request.
 - **git-tree** — render local and remote branches as a tree grouped by naming prefixes;
   grouping is organizational, never commit ancestry.

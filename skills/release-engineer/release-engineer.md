@@ -41,7 +41,7 @@ Do not use to:
 
 - Execute the release mechanics, versioning rules and checklist → `release-engineering`.
 - Repair the pipeline that fails in the middle of a release → `ci-cd`.
-- Handle review, merge or remote-state decisions for the change → `git-pr`.
+- Review or prepare the change and its pull request → `git-pr`; merge it → `git-merge`.
 - Evaluate the supply chain of what is about to ship → `dependency-audit`.
 - Resolve where per-environment values come from → `configuration-management`.
 
@@ -80,8 +80,9 @@ such intervention into a pipeline or process change before the next version.
 Publishing, moving a tag, deleting a version and rewriting a release branch each
 require explicit authorization and a named recovery path first. This posture contributes
 the pause and the question rather than the policy: who may approve and which repository
-operations are safe is settled by the authorization rules these skills defer to, and
-remote-state decisions belong to `git-pr`.
+operations are safe is settled by the authorization rules these skills defer to, while
+publishing and tag decisions remain with the release posture. Pull request preparation and
+review status belong to `git-pr`; merge execution belongs to `git-merge`.
 
 ### 6. Speak precisely about the state
 
@@ -103,8 +104,8 @@ was a performance, not engineering.
   steps this posture applies.
 - `ci-cd` — owns the automated path and the pipeline evidence; this posture refuses
   shortcuts that bypass it.
-- `git-pr` — owns review, merge and authorization for operations that change remote
-  state.
+- `git-pr` — owns pull request preparation and review status.
+- `git-merge` — owns merge execution and the authorization a merge requires.
 - `dependency-audit` — supplies the supply-chain findings that can stop or annotate a
   version.
 - `configuration-management` — owns where per-environment values and secrets come from.

@@ -85,6 +85,7 @@ not cost an extra read.
 | "Which library should I use?" / maintenance and fit | `research-first` |
 | "What does this API do?" / exact flags, defaults, versions | `read-the-f-docs` |
 | "Open a PR" / "prepare a pull request" | `git-pr` |
+| "Merge a pull request" / "land this reviewed PR" | `git-merge` |
 | "Create an issue" / "file a bug" | `git-issues` |
 | "Start a branch" / "move this work aside" | `git-branch` |
 | "Reset" / "rebase" / "undo" / "my git is a mess" | `safe-git` |
@@ -123,9 +124,10 @@ not cost an extra read.
 The first row takes precedence for any change that will be committed. The rows for `code`,
 `debug-properly`, `unslop` and `software-engineer` are stage owners, not alternate entry
 points for a committed change; `git-workflow` wraps them, and the stage skill does the work
-inside the flow. The `git-issues`, `git-branch` and `git-pr` rows are for explicit
-single-stage asks. Every other row applies only when the user asks for that stage alone or
-the work is read-only.
+inside the flow. The `git-issues`, `git-branch`, `git-pr` and `git-merge` rows are for
+explicit single-stage asks; a merge is not a committed-change request and must not be
+routed to `git-workflow`. Every other row applies only when the user asks for that stage
+alone or the work is read-only.
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds
 the full inventory, the risk tiers, the uncertainty tiers, and the pairs that get
@@ -198,16 +200,19 @@ owners of each concern are:
 - `review-your-work` — inspecting the finished diff. `break-the-edge` — attacking its
   assumptions.
 - `git-workflow` — default owner of any change that will be committed: issue → branch →
-  implementation handoff → verification → pull request, with the 29-label policy and no
-  merge.
+  implementation handoff → verification → pull request, with the 29-label policy. The
+  flow ends at the pull request; merges go to `git-merge`.
 - `git-issues`, `git-branch`, `git-pr` — the stages `git-workflow` composes, each within
   its own scope and authorization rules. `safe-git` — repairing repository state when
   something has gone wrong.
+- `git-merge` — owner of remote pull request merges and the merge standard. A handoff from
+  `git-pr` or `git-workflow` once a pull request is ready, not a support of either.
 
 Standing rules that apply to orchestrated work without loading another skill:
 
 - Preserve the user's uncommitted work. See `safe-git` before anything destructive.
 - Never push, merge, publish, comment or close anything without explicit authorization.
+  Authorization for a merge names the pull request.
 - Report only what was executed. A check that could not run is reported as not run.
 - Prefer the project's existing approach over a better-sounding one from outside it.
 
