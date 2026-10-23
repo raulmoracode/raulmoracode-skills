@@ -218,7 +218,8 @@ One `Closes` line per issue. Use `Refs #N` for an issue that is related but must
 Never use `Fixes`.
 
 GitHub closes the issue when the pull request merges into the default branch. This skill
-never merges, so the issue stays open until a human completes the merge.
+never merges, so the issue stays open until `git-merge` merges the PR with explicit
+authorization.
 
 ## Security
 

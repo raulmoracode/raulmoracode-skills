@@ -15,7 +15,7 @@ The default URL always serves the latest catalog. The same site also exposes
 
 ```json
 {
-  "version": "1.0.3"
+  "version": "1.0.4"
 }
 ```
 
@@ -55,12 +55,12 @@ OpenCode then:
 
 ## Skills
 
-66 skills, organized in nine categories. `raulmoracode-mode` is the entry point; the
+67 skills, organized in nine categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.31 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.32 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `raulmoracode-catalogue` | 1.0.0 | Orchestration | Opens the published catalogue page listing every skill, with install and reload instructions |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.2 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
@@ -93,11 +93,12 @@ rest own one responsibility each.
 | `no-made-up-results` | 1.0.1 | Testing and verification | Forbids fabricating evidence |
 | `verify-before-claiming` | 1.0.2 | Testing and verification +1 ref | Sets the evidence standard a claim must clear before it is stated |
 | `clear-final-report` | 1.0.2 | Testing and verification +1 ref | Produces the final report the user reads |
-| `git-workflow` | 1.0.1 | Git and repository +1 ref | Default owner of every committed change: issue → branch → PR, authorization, labels, never merges |
-| `safe-git` | 1.0.2 | Git and repository | Protects repository state and uncommitted work during any Git operation |
-| `git-branch` | 1.0.5 | Git and repository | Manages Git branches; every branch it creates uses a fixed prefix table and name format, keeping the issue's prefix when the work starts from one |
-| `git-pr` | 1.0.4 | Git and repository +1 ref | Prepares, opens and manages pull requests; titles repeat the branch's prefix and everything is written in English |
-| `git-issues` | 1.0.4 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested; titles carry the workflow prefix |
+| `git-workflow` | 1.0.2 | Git and repository +1 ref | Default owner of every committed change: issue → branch → PR, authorization, labels; the flow ends at the PR |
+| `safe-git` | 1.0.3 | Git and repository | Protects repository state and uncommitted work during any Git operation |
+| `git-branch` | 1.0.6 | Git and repository | Manages Git branches; every branch it creates uses a fixed prefix table and name format, keeping the issue's prefix when the work starts from one |
+| `git-pr` | 1.0.5 | Git and repository +1 ref | Prepares, opens and manages pull requests; titles repeat the branch's prefix and everything is written in English |
+| `git-merge` | 1.0.0 | Git and repository +1 ref | Owns the merge standard and remote PR merges: merge commit default, hard gates, explicit authorization, no branch deletion |
+| `git-issues` | 1.0.5 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested; titles carry the workflow prefix |
 | `define-the-outcome` | 1.0.1 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
 | `contract-and-migration` | 1.0.4 | Engineering domains | Guides safe evolution of API, CLI, configuration, schema and persisted contracts |
 | `skill-evaluation` | 1.0.2 | Orchestration +1 ref | Evaluates catalog routing and composition with representative tasks and evidence |
@@ -110,7 +111,7 @@ rest own one responsibility each.
 | `dependency-audit` | 1.0.0 | Engineering domains | Reviews direct and transitive dependencies: versions, licenses, vulnerabilities, provenance |
 | `observability` | 1.0.1 | Engineering domains | Designs and uses structured logs, metrics, traces, correlation identifiers and alerts |
 | `configuration-management` | 1.0.2 | Engineering domains | Manages configuration sources, defaults, validation, precedence and secret references |
-| `release-engineering` | 1.0.2 | Engineering domains | Plans and executes versioned releases, artifacts, tags, publication and rollback |
+| `release-engineering` | 1.0.3 | Engineering domains | Plans and executes versioned releases, artifacts, tags, publication and rollback |
 | `performance-engineering` | 1.0.2 | Engineering domains | Measures and improves performance with profiling, benchmarks and regression checks |
 | `frontend-engineering` | 1.0.3 | Engineering domains | Handles frontend state, rendering, events, forms, loading and error states and API integration |
 | `browser-engineering` | 1.0.1 | Engineering domains | Analyzes the DOM, event loop, rendering pipeline, workers, storage and permissions |
@@ -119,7 +120,7 @@ rest own one responsibility each.
 | `low-level-engineer` | 1.0.0 | Personas | Applies a systems-level perspective to memory, CPU, ABI, compilers, runtimes and operating systems |
 | `database-engineer` | 1.0.0 | Personas | Applies database expertise to modeling, SQL, transactions, indexes, locks and migrations |
 | `performance-engineer` | 1.0.0 | Personas | Focuses on measurement, profiling, benchmarks, latency, throughput and regressions |
-| `release-engineer` | 1.0.0 | Personas | Focuses on versions, changelogs, artifacts, tags, publishing and reproducibility |
+| `release-engineer` | 1.0.1 | Personas | Focuses on versions, changelogs, artifacts, tags, publishing and reproducibility |
 | `platform-engineer` | 1.0.1 | Personas | Focuses on CI/CD, environments, developer tooling and development infrastructure |
 | `project-manager` | 1.0.0 | Personas | Organizes objectives, scope, priorities, dependencies, risks and blockers |
 | `trace-the-call` | 1.0.0 | Utilities | Follows execution from an entry point through calls, events, transformations and side effects |
@@ -136,13 +137,13 @@ frontmatter is the authoritative text and the activation surface.
 `raulmoracode-mode` chooses one primary specialist for a request and may add up to two
 justified support skills; the catalog allows a specialist up to three. `git-workflow`
 composes the three Git stage skills; implementation and verification are handoffs, not
-supports. Composition is operationally shallow: support skills do not load other support
-skills, the maximum composition depth is one, and related skills are not loaded merely
-because they are conceptually adjacent. Each entry declares
-one layer-1 role — `orchestrator`, `specialist`, `support`, or `policy` — plus direct
-invocation, support budget, depth, and explicit operational targets in its compact
-`## Composition` metadata. The `## Interaction with other skills` section remains
-explanatory only.
+supports, and merge is a separate specialist handoff to `git-merge`. Composition is
+operationally shallow: support skills do not load other support skills, the maximum
+composition depth is one, and related skills are not loaded merely because they are
+conceptually adjacent. Each entry declares one layer-1 role — `orchestrator`,
+`specialist`, `support`, or `policy` — plus direct invocation, support budget, depth, and
+explicit operational targets in its compact `## Composition` metadata. The
+`## Interaction with other skills` section remains explanatory only.
 
 ## Repository structure
 

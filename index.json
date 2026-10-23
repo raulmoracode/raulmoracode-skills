@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.31",
+      "version": "1.0.32",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -194,27 +194,32 @@
     },
     {
       "name": "git-workflow",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["git-workflow.md", "references/labels.md"]
     },
     {
       "name": "safe-git",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": ["safe-git.md"]
     },
     {
       "name": "git-branch",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "files": ["git-branch.md"]
     },
     {
       "name": "git-pr",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "files": ["git-pr.md", "references/pr-template.md"]
     },
     {
+      "name": "git-merge",
+      "version": "1.0.0",
+      "files": ["git-merge.md", "references/merge-standard.md"]
+    },
+    {
       "name": "git-issues",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "files": ["git-issues.md", "references/issue-templates.md"]
     },
     {
@@ -269,7 +274,7 @@
     },
     {
       "name": "release-engineering",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "files": ["release-engineering.md"]
     },
     {
@@ -314,7 +319,7 @@
     },
     {
       "name": "release-engineer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "files": ["release-engineer.md"]
     },
     {

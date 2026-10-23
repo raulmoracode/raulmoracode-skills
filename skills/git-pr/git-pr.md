@@ -1,6 +1,6 @@
 ---
 name: git-pr
-description: "Prepares, opens and manages pull requests. Use when asked to create, open, update, describe or check a PR, to push a branch for review, or to interpret CI and review status on one. For the complete code-change flow — issue, branch, implementation and pull request — the reader must use git-workflow; this skill owns the pull request stage only. Inspects the branch and its real diff against the correct base, follows the repository's PR template, writes a title repeating the branch's prefix and a body covering motivation, implementation, testing and risk, both in English, verifies the actual result of the create command, and never merges without explicit authorization."
+description: "Prepares, opens and manages pull requests. Use when asked to create, open, update, describe or check a PR, to push a branch for review, or to interpret CI and review status on one. For the complete code-change flow — issue, branch, implementation and pull request — the reader must use git-workflow; this skill owns the pull request stage only. Inspects the branch and its real diff against the correct base, follows the repository's PR template, writes a title repeating the branch's prefix and a body covering motivation, implementation, testing and risk, both in English, verifies the actual result of the create command, and never merges — merge requests go to `git-merge`, which owns remote PR merges and their authorization."
 ---
 ## Composition
 
@@ -21,7 +21,8 @@ what was checked, here is what is not. Most weak PRs are not weak code; they are
 nobody can verify.
 
 **Core rule:** never claim a PR exists without reading the result of the command that
-created it, and never merge one without explicit authorization.
+created it. This skill never merges; a merge belongs to `git-merge` under explicit
+authorization.
 
 ## When to use
 
@@ -33,9 +34,10 @@ This skill is usable on its own for anything PR-shaped, and as the pull request 
 the full flow. For the complete code-change flow — issue, branch, implementation and pull
 request — use `git-workflow`; this skill covers only the PR at the end of it.
 
-Do not use to: the complete flow → `git-workflow`; branch lifecycle → `git-branch`;
-repository safety → `safe-git`; reviewing the diff for defects → `review-your-work`;
-filing a bug or feature request → `git-issues`.
+Do not use to: the complete flow → `git-workflow`; a merge or its authorization →
+`git-merge`; branch lifecycle → `git-branch`; repository safety → `safe-git`; reviewing
+the diff for defects → `review-your-work`; filing a bug or feature request →
+`git-issues`.
 
 ## Authorization
 
@@ -44,14 +46,21 @@ filing a bug or feature request → `git-issues`.
 - **Label creation and application belong to `git-workflow`.** It owns the 29-label
   policy in `skills/git-workflow/references/labels.md`; this skill does not create labels
   or apply the schema when opening or updating a PR.
-- **Never merge**, enable auto-merge, close, reopen, or convert to draft after review
-  without explicit instruction naming that action. Green checks are not authorization.
+- **Merging and auto-merge are out of scope.** This skill never merges and never enables
+  auto-merge. `git-merge` owns merges and their authorization; green checks are not
+  authorization, and an explicit authorization to merge is routed there, not acted on
+  here. Closing, reopening or converting to draft requires an explicit instruction
+  naming that action.
 - **Never approve your own PR**, request review from someone who did not ask, or edit
   another person's PR.
 - The same rule governs `git-issues`: no external state change without authorization, and
   no status claim without reading the actual result.
 
 ## Process
+
+This skill prepares a PR that must satisfy the merge standard — English title and body,
+prefix, `Closes #N`, scope and testing — but it does not verify the merge gates for
+execution; `git-merge` revalidates them at merge time.
 
 ### 1. Inspect what the PR will actually contain
 
@@ -124,6 +133,9 @@ reconstructing a PR for someone who was not in this session.
 
 - `git-workflow` — owns the complete code-change flow and the label policy; this skill
   owns the pull request stage.
+- `git-merge` — owns remote PR merges and the merge standard. It revalidates the gates
+  and merges under explicit authorization. This skill prepares the PR and leaves it
+  unmerged.
 - `safe-git` — owns repository state and the history behind the branch; force-pushing a
   PR branch is its territory, not this skill's.
 - `git-branch` — owns branch naming and base selection; this skill assumes the branch
@@ -141,7 +153,7 @@ reconstructing a PR for someone who was not in this session.
 - Reporting "PR created" after a command that failed or was never run.
 - Claiming CI is green because the previous run was green.
 - Pushing to a branch someone else owns, or force-pushing a PR branch (`safe-git`).
-- Merging because checks passed.
+- Merging or enabling auto-merge because checks passed; a merge belongs to `git-merge`.
 - Building the body by concatenating commit messages.
 - Using `Fixes` instead of `Closes` to link the issue.
 - Creating labels or applying the 29-label schema here — `git-workflow` owns both.
@@ -161,5 +173,6 @@ The base, the commit list and the diff were read, and the PR carries only this t
 scope; the title repeats the branch's prefix — except a documented post-push type change,
 where the title carries the new type and the body records the old prefix and why it was
 not renamed — the title and body are in English and follow the repository template,
-naming the checks actually run; the body links the closed issue with `Closes #N`; and the
-PR number, URL and CI status in the report all come from real command output.
+naming the checks actually run; the body links the closed issue with `Closes #N`; the PR
+was left unmerged for `git-merge`; and the PR number, URL and CI status in the report all
+come from real command output.

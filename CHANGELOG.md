@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added `git-merge` (`1.0.0`) as the single owner of remote pull request merges and the
+  merge standard. The default is a merge commit whose subject is the pull request title
+  and whose body is the pull request body; a written repository policy is the only
+  documented override.
+  - Hard gates: explicit authorization naming the pull request, an open and non-draft PR,
+    the correct base, passing checks, the required reviews and the verified head SHA.
+  - Catalog gates: the PR title and body follow the prefix and English rules, `Closes #N`
+    is present, and the labels match the 29-label policy.
+  - No branch deletion and no local branch synchronization after the merge; auto-merge is
+    enabled only when the user explicitly asks for it.
 - Added `git-workflow` (`1.0.1`) as the default owner of every change that will be
   committed: issue → branch → implementation handoff → verification gate → pull request,
   with explicit authorization, the 29-label policy and its color palette, `Closes #N` and
@@ -16,6 +26,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Merge is now a separate specialist handoff rather than a stage owned by another flow:
+  - `git-workflow` (`1.0.2`) ends at the pull request and hands merges to `git-merge`.
+  - `git-pr` (`1.0.5`) prepares and verifies the pull request; `git-merge` executes the
+    merge.
+  - `safe-git` (`1.0.3`), `git-branch` (`1.0.6`) and `git-issues` (`1.0.5`) name
+    `git-merge` as the owner of merges without listing it as a support.
+  - `release-engineering` (`1.0.3`) and `release-engineer` (`1.0.1`) separate PR
+    preparation and review (`git-pr`) from merge execution (`git-merge`).
+  - `raulmoracode-mode` (`1.0.32`) routes approved pull requests to `git-merge` and
+    records that a merge is not a committed-change request; `references/skill-selection.md`
+    adds the inventory line and overlap pairs, and `README.md` lists the new skill.
+- `catalog-version.json` moves to `1.0.4` for the inventory change.
 - Reworked `raulmoracode-mode` to cut the task down first and then hand it to a single
   owning skill, and made routing cheap enough to do from the entry alone.
   - The request-shape routing table moved out of `references/skill-selection.md` and into

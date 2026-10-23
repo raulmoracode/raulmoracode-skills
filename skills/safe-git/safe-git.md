@@ -31,11 +31,14 @@ you touch a tree that is not yours:
 - The working tree is dirty and you want to switch branches, rebase, pull or reset.
 - The request contains reset, checkout, restore, clean, rebase, revert, filter-branch,
   branch -D, am -D, force push, or gc/prune.
+- A local `git merge`, pull or rebase left conflicts, or a local sync, reset, rebase or
+  undo must be settled. A remote PR merge belongs to `git-merge`, not here.
 - You are unsure whether a file is tracked, ignored, staged, or safe to overwrite.
 - A destructive command already ran and content is missing.
 
-Do not use to: decide branch lifecycle → `git-branch`; open the PR → `git-pr`; choose
-what to build → `plan-before-coding`; assess what a change breaks → `blast-radius`.
+Do not use to: decide branch lifecycle → `git-branch`; open the PR → `git-pr`; merge a
+remote PR or authorize one → `git-merge`; choose what to build → `plan-before-coding`;
+assess what a change breaks → `blast-radius`.
 
 ## Know the state before you touch it
 
@@ -124,6 +127,9 @@ Work down this list before retyping anything:
 - `git-branch` — owns branch lifecycle; it defers here for any dirty-tree or rewrite step.
 - `git-pr` — owns pull requests and external actions; this skill owns the local state
   underneath them, including force pushes.
+- `git-merge` — owns remote PR merging and its authorization; this skill owns local merge
+  conflicts, local sync, reset/rebase/undo and history recovery. A remote merge is not a
+  local history operation.
 - `minimal-changes` — owns the size of the diff; this skill owns not losing what is
   already in the tree.
 - `understand-before-acting` — inspects the repository before changing it; this is the
@@ -144,6 +150,8 @@ Work down this list before retyping anything:
 - Rewriting published history without checking who else built on it.
 - Declaring work lost or recovered without looking at the reflog.
 - Silently stashing a user's work and never restoring it.
+- Treating a remote PR merge as a local history operation, or a local conflict as
+  `git-merge`'s problem.
 
 ## Definition of done
 

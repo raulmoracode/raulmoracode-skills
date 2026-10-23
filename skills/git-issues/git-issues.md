@@ -145,6 +145,8 @@ obtain it privately instead of pasting it.
   the issue stage inside that flow and every issue-only request outside it.
 - `git-pr` — owns pull requests; this skill owns issues. Both enforce the same rule: no
   external state change and no status claim without authorization and verification.
+- `git-merge` — verifies that `Closes #N` actually closed the issue after the merge;
+  manual close/reopen and issue edits remain here.
 - `git-branch` — owns branch naming; a branch born from an issue keeps the issue's title
   prefix (`feat: User auth` → `feat/user-auth` standalone, `feat/123-user-auth` in the
   full flow).

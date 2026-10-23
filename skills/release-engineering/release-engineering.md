@@ -41,7 +41,7 @@ Use when:
 Do not use to:
 
 - Design or debug the workflow that performs the release → `ci-cd`.
-- Review, merge or authorize the change the release carries → `git-pr`.
+- Review or prepare the pull request for the change → `git-pr`; merge it → `git-merge`.
 - Choose environment values and secret sources → `configuration-management`.
 - Judge licenses and vulnerabilities of what is about to ship → `dependency-audit`.
 - Reconcile package metadata, README and install docs with the release →
@@ -115,8 +115,9 @@ record is what someone reconstructs the release from once memory has moved on.
 
 - `ci-cd` — owns the pipeline that builds, tests and publishes; this skill owns release
   identity, versioning, rollout and rollback.
-- `git-pr` — owns the review, merge and authorization flow that precedes a tagged
-  revision.
+- `git-pr` — owns pull request preparation and review status before the revision is
+  tagged.
+- `git-merge` — owns the merge under the standard once the pull request is ready.
 - `mom-always-say-the-same` — keeps package metadata, README, install docs and the
   changelog agreeing with the shipped version.
 - `configuration-management` — owns environment values and secret references the

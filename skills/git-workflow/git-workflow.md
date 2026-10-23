@@ -1,6 +1,6 @@
 ---
 name: git-workflow
-description: "Default owner of every change that will be committed. Use for any feat, fix, hotfix, bugfix, refactor, chore, docs, test, style, perf, build, ci, revert, release, spike or experiment, even when the request names only the change or the issue. Runs the full flow — issue, branch, implementation handoff, verification gate, pull request and the 29-label policy — with explicit authorization for every external write, `Closes #N`, and no direct commits to main. Never merges. For an explicit single-stage ask use `git-issues`, `git-branch` or `git-pr`; for read-only work, do not use this skill."
+description: "Default owner of every change that will be committed. Use for any feat, fix, hotfix, bugfix, refactor, chore, docs, test, style, perf, build, ci, revert, release, spike or experiment, even when the request names only the change or the issue. Runs the full flow — issue, branch, implementation handoff, verification gate, pull request and the 29-label policy — with explicit authorization for every external write, `Closes #N`, and no direct commits to main. The flow ends at the open or updated PR and never merges: a merge is a separate explicit request routed to `git-merge`. For an explicit single-stage ask use `git-issues`, `git-branch`, `git-pr` or `git-merge`; for read-only work, do not use this skill."
 ---
 ## Composition
 
@@ -22,7 +22,9 @@ stage does not remove the obligation; it moves the cost to whoever reads the his
 later.
 
 **Core rule:** every change that will be committed goes through issue → branch → pull
-request. The process shrinks with risk; the flow does not. This skill never merges.
+request. The process shrinks with risk; the flow does not. The flow ends at the open or
+updated pull request, and this skill never merges: a merge is a separate explicit request
+routed to `git-merge`.
 
 ## When to use
 
@@ -34,8 +36,8 @@ request. The process shrinks with risk; the flow does not. This skill never merg
 
 Do not use to: an explicit issue-only request (`git-issues`), an explicit branch-only
 request (`git-branch`), an explicit pull-request-only request (`git-pr`), read-only work,
-or a merge. A defect whose cause is unknown is diagnosed by `debug-properly` inside this
-flow, not by a separate route around it.
+or a merge request — that goes to `git-merge`. A defect whose cause is unknown is
+diagnosed by `debug-properly` inside this flow, not by a separate route around it.
 
 ## Authorization
 
@@ -45,7 +47,8 @@ request, and creating or applying the labels the flow requires. It does not auth
 anything else.
 
 - Merge, auto-merge, approval, closing, reopening, branch deletion, force-push and
-  repository-settings changes are separate actions with separate authorization.
+  repository-settings changes are separate actions with separate authorization. Merge
+  execution goes to `git-merge`; it is not part of this flow.
 - Creating labels is a repository-configuration write. Every label created is named in the
   final report.
 - Never commit to the default branch. If the change is already there, stop and repair the
@@ -194,6 +197,8 @@ secrets, customer data or internal hostnames in a public issue or pull request.
   issue number and the full-flow format.
 - `git-pr` — owns the pull request stage: base, title, body, CI status and verification.
   This skill owns the flow around it.
+- `git-merge` — owns remote PR merges and their authorization. This flow prepares the PR
+  and applies its labels; `git-merge` verifies the merge standard and merges.
 - `safe-git` — owns repository safety, dirty trees, rebases, resets and history repair.
   Any destructive step in the flow defers to it.
 - `code` — owns implementation for a feature or a behavior change inside this flow.
@@ -221,7 +226,7 @@ secrets, customer data or internal hostnames in a public issue or pull request.
 - Applying `ai-assisted` automatically.
 - Using `Fixes` instead of `Closes`.
 - Claiming an issue or a pull request exists without reading the command output.
-- Merging, enabling auto-merge or approving.
+- Merging, enabling auto-merge or approving — a merge request goes to `git-merge`.
 - Implementing the change inside this skill.
 - Opening a pull request without verification evidence.
 - Renaming a pushed branch to repair a type change.
@@ -236,4 +241,5 @@ implementation was handed to its owner and the diff contains only this change;
 `test-before-finishing` ran and its evidence is named; the
 pull request is open or updated against the correct base, carries `Closes #N` and the
 required labels, and every label created is listed in the report; and nothing was merged,
-approved or closed by this skill.
+approved or closed by this skill — the PR was handed off unmerged to `git-merge`, which
+owns the merge and its authorization.
