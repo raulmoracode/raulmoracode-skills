@@ -118,6 +118,9 @@ Work down this list before retyping anything:
 
 ## Interaction with other skills
 
+- `git-workflow` — owns the full flow for committed changes; this skill owns repository
+  safety, dirty-tree resolution, rebase/reset/undo and destructive operations inside the
+  flow.
 - `git-branch` — owns branch lifecycle; it defers here for any dirty-tree or rewrite step.
 - `git-pr` — owns pull requests and external actions; this skill owns the local state
   underneath them, including force pushes.

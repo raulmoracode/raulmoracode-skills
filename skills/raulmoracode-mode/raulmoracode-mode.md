@@ -67,12 +67,13 @@ not cost an extra read.
 
 | The request is | The owner |
 | --- | --- |
+| Any change that will be committed — feat, fix, hotfix, bugfix, refactor, chore, docs, test, style, perf, build, ci, revert, release, spike, experiment | `git-workflow` |
 | "Show me the structure" / "what does each folder do" | `project-structure` |
 | "How does X work?" / "trace this" / "walk me through it" | `how` |
 | "Why is it like this?" / "why does this exist?" | `why` |
-| "Fix this bug" / "it is broken" / "it crashes" | `debug-properly` |
-| "Add X" / "implement X" / "change this behavior" | `code` |
-| "Refactor" / "clean this up" / "this file is bloated" | `unslop` |
+| "Fix this bug" / "it is broken" / "it crashes" | `debug-properly` — diagnoses and fixes; inside a committed change, `git-workflow` wraps it |
+| "Add X" / "implement X" / "change this behavior" | `code` — implements the change; inside a committed change, `git-workflow` wraps it |
+| "Refactor" / "clean this up" / "this file is bloated" | `unslop` — removes the mess; inside a committed change, `git-workflow` wraps it |
 | An ask that names an activity, not a result / scope is drifting | `define-the-outcome` |
 | "Should we use A or B?" / a design decision | `software-architect` |
 | "What breaks if I change this?" | `blast-radius` |
@@ -117,7 +118,14 @@ not cost an extra read.
 | "It works locally but not in CI" / compare environments | `compare-environments` |
 | "Show me the catalogue" / "what skills are there?" | `raulmoracode-catalogue` |
 | "Does this route work?" / evaluating a skill, its boundaries or its cost | `skill-evaluation` |
-| Routine engineering with no single named concern | `software-engineer` |
+| Routine engineering with no single named concern | `software-engineer` — the working posture; for anything that will be committed, `git-workflow` owns the flow |
+
+The first row takes precedence for any change that will be committed. The rows for `code`,
+`debug-properly`, `unslop` and `software-engineer` are stage owners, not alternate entry
+points for a committed change; `git-workflow` wraps them, and the stage skill does the work
+inside the flow. The `git-issues`, `git-branch` and `git-pr` rows are for explicit
+single-stage asks. Every other row applies only when the user asks for that stage alone or
+the work is read-only.
 
 Read `references/skill-selection.md` only when the table above does not decide: it holds
 the full inventory, the risk tiers, the uncertainty tiers, and the pairs that get
@@ -149,6 +157,11 @@ than an accident. Load a skill when it applies — naming one in prose does noth
   acceptance criteria, consider delegating the independent parts, verify properly.
 
 Effort should match the risk. Most tasks are small; do not inflate them.
+
+The full flow is a deliberate exception to "small task, no ceremony": the process shrinks
+with risk, the flow does not. Even a typo that will be committed goes through issue →
+branch → pull request. Only an explicit single-stage ask (issue only, branch only, PR
+only) or read-only work skips stages.
 
 ### 5. Execute in dependency order
 
@@ -184,8 +197,12 @@ owners of each concern are:
 - `dad-always-say-the-same` — designing tests. `test-before-finishing` — running them.
 - `review-your-work` — inspecting the finished diff. `break-the-edge` — attacking its
   assumptions.
-- `safe-git`, `git-branch`, `git-pr`, `git-issues` — repository and GitHub work, each
-  within its own scope and authorization rules.
+- `git-workflow` — default owner of any change that will be committed: issue → branch →
+  implementation handoff → verification → pull request, with the 29-label policy and no
+  merge.
+- `git-issues`, `git-branch`, `git-pr` — the stages `git-workflow` composes, each within
+  its own scope and authorization rules. `safe-git` — repairing repository state when
+  something has gone wrong.
 
 Standing rules that apply to orchestrated work without loading another skill:
 
@@ -205,10 +222,12 @@ Standing rules that apply to orchestrated work without loading another skill:
 - Delegating work that is faster to do directly.
 - Skipping verification because the change "looks obviously correct".
 - Announcing the process instead of doing the work.
+- Skipping the full flow because the change is small.
 
 ## Definition of done
 
 The task was cut down before it was routed; one owner was chosen and loaded; any second
 skill was justified by risk rather than habit; the process matched the size of the work;
-the applicable checks actually ran; and the report states what happened, including what
-was not verified.
+a committed change went through `git-workflow` without collapsing its stages; the
+applicable checks actually ran; and the report states what happened, including what was
+not verified.
