@@ -2,7 +2,7 @@
   "skills": [
     {
       "name": "raulmoracode-mode",
-      "version": "1.0.30",
+      "version": "1.0.31",
       "files": ["raulmoracode-mode.md", "references/skill-selection.md"]
     },
     {
@@ -193,23 +193,28 @@
       "files": ["clear-final-report.md", "references/report-templates.md"]
     },
     {
+      "name": "git-workflow",
+      "version": "1.0.0",
+      "files": ["git-workflow.md", "references/labels.md"]
+    },
+    {
       "name": "safe-git",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "files": ["safe-git.md"]
     },
     {
       "name": "git-branch",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "files": ["git-branch.md"]
     },
     {
       "name": "git-pr",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "files": ["git-pr.md", "references/pr-template.md"]
     },
     {
       "name": "git-issues",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "files": ["git-issues.md", "references/issue-templates.md"]
     },
     {

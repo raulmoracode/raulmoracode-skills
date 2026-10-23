@@ -473,9 +473,9 @@ if (skills !== null) {
         if (
           supportLimit === null ||
           supportLimit.min < 0 ||
-          supportLimit.max > 2
+          supportLimit.max > 3
         ) {
-          localErrors.push("support-limit must be a range within 0-2");
+          localErrors.push("support-limit must be a range within 0-3");
         }
         if (!Number.isInteger(maxDepth) || maxDepth < 0 || maxDepth > 1) {
           localErrors.push("max-depth must be 0 or 1");

@@ -15,7 +15,7 @@ The default URL always serves the latest catalog. The same site also exposes
 
 ```json
 {
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
 ```
 
@@ -55,12 +55,12 @@ OpenCode then:
 
 ## Skills
 
-65 skills, organized in nine categories. `raulmoracode-mode` is the entry point; the
+66 skills, organized in nine categories. `raulmoracode-mode` is the entry point; the
 rest own one responsibility each.
 
 | Skill | Version | Category | What it does |
 | --- | --- | --- | --- |
-| `raulmoracode-mode` | 1.0.30 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
+| `raulmoracode-mode` | 1.0.31 | Orchestration +1 ref | Central orchestrator for AI-assisted work |
 | `raulmoracode-catalogue` | 1.0.0 | Orchestration | Opens the published catalogue page listing every skill, with install and reload instructions |
 | `understand-before-acting` | 1.0.2 | Understanding and planning | Investigates the environment before any change is made |
 | `plan-before-coding` | 1.0.2 | Understanding and planning | Produces a practical implementation plan before non-trivial code is written |
@@ -93,10 +93,11 @@ rest own one responsibility each.
 | `no-made-up-results` | 1.0.1 | Testing and verification | Forbids fabricating evidence |
 | `verify-before-claiming` | 1.0.2 | Testing and verification +1 ref | Sets the evidence standard a claim must clear before it is stated |
 | `clear-final-report` | 1.0.2 | Testing and verification +1 ref | Produces the final report the user reads |
-| `safe-git` | 1.0.1 | Git and repository | Protects repository state and uncommitted work during any Git operation |
-| `git-branch` | 1.0.4 | Git and repository | Manages Git branches; every branch it creates uses a fixed prefix table and name format, keeping the issue's prefix when the work starts from one |
-| `git-pr` | 1.0.3 | Git and repository +1 ref | Prepares, opens and manages pull requests; titles repeat the branch's prefix and everything is written in English |
-| `git-issues` | 1.0.3 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested; titles carry the workflow prefix |
+| `git-workflow` | 1.0.0 | Git and repository +1 ref | Default owner of every committed change: issue → branch → PR, authorization, labels, never merges |
+| `safe-git` | 1.0.2 | Git and repository | Protects repository state and uncommitted work during any Git operation |
+| `git-branch` | 1.0.5 | Git and repository | Manages Git branches; every branch it creates uses a fixed prefix table and name format, keeping the issue's prefix when the work starts from one |
+| `git-pr` | 1.0.4 | Git and repository +1 ref | Prepares, opens and manages pull requests; titles repeat the branch's prefix and everything is written in English |
+| `git-issues` | 1.0.4 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested; titles carry the workflow prefix |
 | `define-the-outcome` | 1.0.1 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
 | `contract-and-migration` | 1.0.4 | Engineering domains | Guides safe evolution of API, CLI, configuration, schema and persisted contracts |
 | `skill-evaluation` | 1.0.2 | Orchestration +1 ref | Evaluates catalog routing and composition with representative tasks and evidence |
@@ -132,13 +133,16 @@ frontmatter is the authoritative text and the activation surface.
 
 ## Composition model
 
-`raulmoracode-mode` chooses one primary specialist for a request and may add zero to two
-justified support skills. Composition is operationally shallow: support skills do not load
-other support skills, the maximum composition depth is one, and related skills are not
-loaded merely because they are conceptually adjacent. Each entry declares one layer-1
-role — `orchestrator`, `specialist`, `support`, or `policy` — plus direct invocation,
-support budget, depth, and explicit operational targets in its compact `## Composition`
-metadata. The `## Interaction with other skills` section remains explanatory only.
+`raulmoracode-mode` chooses one primary specialist for a request and may add up to two
+justified support skills; the catalog allows a specialist up to three. `git-workflow`
+composes the three Git stage skills; implementation and verification are handoffs, not
+supports. Composition is operationally shallow: support skills do not load other support
+skills, the maximum composition depth is one, and related skills are not loaded merely
+because they are conceptually adjacent. Each entry declares
+one layer-1 role — `orchestrator`, `specialist`, `support`, or `policy` — plus direct
+invocation, support budget, depth, and explicit operational targets in its compact
+`## Composition` metadata. The `## Interaction with other skills` section remains
+explanatory only.
 
 ## Repository structure
 

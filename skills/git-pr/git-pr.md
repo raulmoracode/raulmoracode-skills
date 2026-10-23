@@ -1,6 +1,6 @@
 ---
 name: git-pr
-description: "Prepares, opens and manages pull requests. Use when asked to create, open, update, describe or check a PR, to push a branch for review, or to interpret CI and review status on one. Inspects the branch and its real diff against the correct base, follows the repository's PR template, writes a title repeating the branch's prefix and a body covering motivation, implementation, testing and risk, both in English, verifies the actual result of the create command, and never merges without explicit authorization."
+description: "Prepares, opens and manages pull requests. Use when asked to create, open, update, describe or check a PR, to push a branch for review, or to interpret CI and review status on one. For the complete code-change flow — issue, branch, implementation and pull request — the reader must use git-workflow; this skill owns the pull request stage only. Inspects the branch and its real diff against the correct base, follows the repository's PR template, writes a title repeating the branch's prefix and a body covering motivation, implementation, testing and risk, both in English, verifies the actual result of the create command, and never merges without explicit authorization."
 ---
 ## Composition
 
@@ -29,14 +29,21 @@ created it, and never merge one without explicit authorization.
 - Work is finished and reviewed locally and ready for someone else's eyes.
 - A PR needs its body rewritten, its scope narrowed, or its CI status interpreted.
 
-Do not use to: branch lifecycle → `git-branch`; repository safety → `safe-git`;
-reviewing the diff for defects → `review-your-work`; filing a bug or feature request →
-`git-issues`.
+This skill is usable on its own for anything PR-shaped, and as the pull request stage of
+the full flow. For the complete code-change flow — issue, branch, implementation and pull
+request — use `git-workflow`; this skill covers only the PR at the end of it.
+
+Do not use to: the complete flow → `git-workflow`; branch lifecycle → `git-branch`;
+repository safety → `safe-git`; reviewing the diff for defects → `review-your-work`;
+filing a bug or feature request → `git-issues`.
 
 ## Authorization
 
 - **Pushing a branch and opening a PR are external actions.** The user asking for a PR
   authorizes those. It does not authorize anything beyond them.
+- **Label creation and application belong to `git-workflow`.** It owns the 29-label
+  policy in `skills/git-workflow/references/labels.md`; this skill does not create labels
+  or apply the schema when opening or updating a PR.
 - **Never merge**, enable auto-merge, close, reopen, or convert to draft after review
   without explicit instruction naming that action. Green checks are not authorization.
 - **Never approve your own PR**, request review from someone who did not ask, or edit
@@ -82,9 +89,14 @@ reconstructing a PR for someone who was not in this session.
 - The title repeats the branch's prefix — `feat/...` gets `feat: ...` — and states the
   outcome, around 70 characters or fewer. The table of prefixes is in
   `references/pr-template.md`.
+- One exception: if the change type changed after the branch was pushed, the branch keeps
+  its published prefix and the title carries the new type. Record the old branch prefix
+  and why it was not renamed in the body. Before the push, rename the branch instead.
 - The title and the body are written in English — always.
 - The body is not a commit-message generator. It answers why this change exists, what it
   does, what was actually verified, and what a reviewer should be careful about.
+- Link the issue the PR closes with `Closes #N`, never `Fixes`, and name only issues this
+  PR actually closes.
 - Name the checks you really ran, as commands, with their real results.
 - State limitations plainly. A known gap disclosed in the body is information; the same
   gap found in review costs the team's trust.
@@ -110,6 +122,8 @@ reconstructing a PR for someone who was not in this session.
 
 ## Interaction with other skills
 
+- `git-workflow` — owns the complete code-change flow and the label policy; this skill
+  owns the pull request stage.
 - `safe-git` — owns repository state and the history behind the branch; force-pushing a
   PR branch is its territory, not this skill's.
 - `git-branch` — owns branch naming and base selection; this skill assumes the branch
@@ -129,7 +143,11 @@ reconstructing a PR for someone who was not in this session.
 - Pushing to a branch someone else owns, or force-pushing a PR branch (`safe-git`).
 - Merging because checks passed.
 - Building the body by concatenating commit messages.
-- A title whose prefix does not match the branch, or a title or body not in English.
+- Using `Fixes` instead of `Closes` to link the issue.
+- Creating labels or applying the 29-label schema here — `git-workflow` owns both.
+- A title whose prefix does not match the branch, or a title or body not in English. The
+  one exception is a documented post-push type change: the branch keeps its published
+  prefix, the title carries the new type, and the body records the mismatch.
 - A 3,000-line diff described as a small refactor.
 - Opening a duplicate PR without checking for an existing one.
 - A stacked PR pointed at the default branch while its sibling is unmerged, or still
@@ -140,6 +158,8 @@ reconstructing a PR for someone who was not in this session.
 ## Definition of done
 
 The base, the commit list and the diff were read, and the PR carries only this task's
-scope; the title repeats the branch's prefix, the title and body are in English and
-follow the repository template, naming the checks actually run; and the PR number, URL
-and CI status in the report all come from real command output.
+scope; the title repeats the branch's prefix — except a documented post-push type change,
+where the title carries the new type and the body records the old prefix and why it was
+not renamed — the title and body are in English and follow the repository template,
+naming the checks actually run; the body links the closed issue with `Closes #N`; and the
+PR number, URL and CI status in the report all come from real command output.

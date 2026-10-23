@@ -1,6 +1,6 @@
 ---
 name: git-branch
-description: "Manages Git branches: creates, switches, renames, rebases and deletes them, following the repository's workflow for the base branch. Every branch it creates is named from a mandatory prefix table — feat/, fix/, hotfix/, bugfix/, chore/, refactor/, docs/, test/, style/, perf/, build/, ci/, revert/, release/, spike/, experiment/ — followed by a short, descriptive name in a fixed, checkable format. Use when asked to create or move work onto a branch, to isolate a change, to start from an up-to-date base, or to clean branches up. Keeps one logical change per branch and avoids creating branches the task or repository does not require."
+description: "Manages Git branches: creates, switches, renames, rebases and deletes them, following the repository's workflow for the base branch. Every branch it creates is named from a mandatory prefix table — feat/, fix/, hotfix/, bugfix/, chore/, refactor/, docs/, test/, style/, perf/, build/, ci/, revert/, release/, spike/, experiment/ — followed by a short, descriptive name in a fixed, checkable format: `<prefix>/<slug>` standalone, `<prefix>/<number>-<slug>` inside the full flow. Use when asked to create or move work onto a branch, to isolate a change, to start from an up-to-date base, or to clean branches up. For the complete code-change flow use `git-workflow`. Keeps one logical change per branch and avoids creating branches the task or repository does not require."
 ---
 ## Composition
 
@@ -26,6 +26,8 @@ repository's workflow requires it. Every extra branch is permanent bookkeeping.
 ## When to use
 
 - The user asked for a branch, or the change must be isolated from the current one.
+- A `git-workflow` run reaches the branch stage: the issue number is mandatory in the
+  name, `<prefix>/<number>-<slug>`.
 - The repository's policy requires working on a branch: the default branch is protected,
   CI runs per PR, CONTRIBUTING says so.
 - Work must be moved, split, or rebased onto a different line of development.
@@ -107,16 +109,35 @@ chosen by what the branch contains, followed by a short, descriptive name:
 | `spike/` | Research or feasibility investigation | `spike/new-search-engine` |
 | `experiment/` | Experimenting with a new approach | `experiment/new-cache-strategy` |
 
-The format is fixed and checkable — a name either matches it or is wrong:
+The table shows the standalone form; inside `git-workflow` the issue number follows the
+prefix, for example `feat/123-user-authentication`, `fix/45-login-error` and
+`docs/7-update-readme`.
+
+The format is fixed and checkable — a name either matches the format for its context or
+it is wrong:
 
 ```text
-^(feat|fix|hotfix|bugfix|chore|refactor|docs|test|style|perf|build|ci|revert|release|spike|experiment)/[a-z0-9]+(-[a-z0-9]+)*$
+standalone: ^(feat|fix|hotfix|bugfix|chore|refactor|docs|test|style|perf|build|ci|revert|release|spike|experiment)/[a-z0-9]+(-[a-z0-9]+)*$
+full flow:  ^(feat|fix|hotfix|bugfix|chore|refactor|docs|test|style|perf|build|ci|revert|release|spike|experiment)/[0-9]+-[a-z0-9]+(-[a-z0-9]+)*$
 ```
 
-The one variation: a release version keeps its dots — `release/1.2.0`.
+The one exception is a release version, which keeps its dots and takes the issue number
+the same way:
 
-When the work starts from an issue, keep the issue's prefix and take the description
-from its title, in the format above: `feat: User auth` → `feat/user-auth`.
+```text
+^release/([0-9]+-)?[0-9]+\.[0-9]+\.[0-9]+$
+```
+
+`release/1.2.0` is the standalone form and `release/123-1.2.0` is the full-flow form. The
+general slug patterns do not allow dots; release is the explicit exception. The context
+decides which pattern applies: a name is standalone only when no issue exists. A
+standalone description must not begin with a number-only segment; that shape is reserved
+for the issue number in the full flow.
+
+When the work starts from an issue, the issue title gives the prefix and the slug, and the
+number is inserted after the prefix: `feat: User auth` + #123 → `feat/123-user-auth`. If
+the full flow cannot create the issue — no permissions, issues disabled — stop and report;
+never fall back silently to a branch without a number.
 
 Rules that never bend:
 
@@ -124,9 +145,10 @@ Rules that never bend:
   (`feat/fix/...` is not a name), and the description is mandatory.
 - Characters: lowercase `a-z`, digits and hyphens only — no uppercase, underscores,
   spaces, accents or emojis, and no double or edge hyphens (`feat/user--auth` is out).
-- Length: keep the whole name at 50 characters or fewer, with the description in two to
-  four words. A longer name is usually the pull request's job, or two branches wearing
-  one name.
+  Release versions keep their dots; nothing else does.
+- Length: keep the whole name at 50 characters or fewer, including the issue number in
+  the full flow, with the description in two to four words. A longer name is usually the
+  pull request's job, or two branches wearing one name.
 - Names that mean nothing are banned: `wip`, `misc`, `changes`, `updates`, `fixes`,
   `stuff`, `tmp`, `final`, `new`, `-v2`-style suffixes, dates, personal names. If the
   name would fit almost any branch, it is not descriptive.
@@ -173,12 +195,15 @@ touch your working tree, or a repro that needs to stay runnable:
 
 ## Interaction with other skills
 
+- `git-workflow` — owns the full flow and supplies the issue number; this skill owns branch
+  lifecycle. A branch created inside that flow carries the number in its name.
 - `safe-git` — owns repository safety and history recovery; every dirty-tree and rewrite
   step here defers to it. This skill owns branch lifecycle; safe-git owns what the
   repository state may be destroyed by.
 - `git-pr` — owns opening and updating the pull request once the branch is ready.
 - `git-issues` — owns the ticket itself and the prefix on its title; a branch born from
-  one keeps it. Putting an issue number in a branch name is convention, not a reason to
+  one keeps it. In the full flow the number is mandatory and comes from `git-workflow`;
+  outside it, putting an issue number in a branch name is convention, not a reason to
   create an issue.
 - `follow-project-conventions` — owns discovering repository conventions at large; here
   it is applied to the base branch and the workflow, not to naming — the prefix table
@@ -193,6 +218,8 @@ touch your working tree, or a repro that needs to stay runnable:
 - Creating a branch because it feels safer, then abandoning it half-finished.
 - Inventing a prefix outside the table, or stacking two, instead of the one that matches
   the change.
+- Creating a branch in the full flow without the issue number.
+- Falling back silently to the standalone format when the issue cannot be created.
 - Settling for `wip`, `misc` or `changes` as the description; a name that fits any branch
   describes none.
 - Branching off another branch when the work does not depend on it; updated `main` is the
@@ -206,9 +233,11 @@ touch your working tree, or a repro that needs to stay runnable:
 
 ## Definition of done
 
-The branch name matches the fixed format — one prefix from the mandatory table (kept
-from the issue title when the work starts from one), then a short, descriptive name —
-and was verified free before creation; it starts from an updated `main` — the
-repository's verified default branch — or from the sibling branch it genuinely depends
-on, with the dependency stated; there are no unaccounted working-tree changes; and
+The branch name matches the format for its context — standalone `<prefix>/<slug>`, or
+`<prefix>/<number>-<slug>` in the full flow, with the release pattern as the only
+exception. The report states which format was used, the name includes the issue number
+when the full flow requires it, was checked against the 50-character limit, and was
+verified free before creation; it starts from an updated `main` — the repository's
+verified default branch — or from the sibling branch it genuinely depends on, with the
+dependency stated; there are no unaccounted working-tree changes; and
 `git log <base>..HEAD` contains exactly the commits this change is meant to contain.

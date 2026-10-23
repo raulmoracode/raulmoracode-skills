@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `git-workflow` (`1.0.0`) as the default owner of every change that will be
+  committed: issue → branch → implementation handoff → verification gate → pull request,
+  with explicit authorization, the 29-label policy, `Closes #N` and no merge. Its label
+  policy lives in `skills/git-workflow/references/labels.md`.
+
 ### Changed
 
 - Reworked `raulmoracode-mode` to cut the task down first and then hand it to a single
@@ -91,6 +98,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `references/skill-selection.md`.
 - `skill-evaluation` (`1.0.1`) gains the `## Anti-patterns` section the rest of the
   catalog already had.
+- `git-issues` (`1.0.4`), `git-branch` (`1.0.5`) and `git-pr` (`1.0.4`) now scope
+  themselves to their single stage and point the complete flow at `git-workflow`;
+  `git-branch` names branches `<prefix>/<number>-<slug>` in the full flow and keeps
+  `<prefix>/<slug>` standalone; `git-pr` documents the post-push type-change exception
+  and uses `Closes`.
+- `safe-git` (`1.0.2`) names `git-workflow` as the owner of the committed-change flow.
+- `raulmoracode-mode` (`1.0.31`) routes any committed change to `git-workflow` first,
+  keeps the stage skills for explicit single-stage asks, and records that the full flow
+  is a deliberate exception to small-task minimalism.
+- The composition cap for a specialist rises from two to three supports in
+  `scripts/validate.mjs`; `catalog-version.json` moves to `1.0.3`.
+- The PR template uses `Closes #N` instead of `Fixes #N`.
 
 ### Fixed
 

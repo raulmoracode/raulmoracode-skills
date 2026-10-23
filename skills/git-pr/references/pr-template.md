@@ -18,7 +18,7 @@ One paragraph: what changes and what a reviewer will see. No "this PR refactors.
 ## Motivation
 
 The problem, the failing case, the request, or the incident. Link the issue:
-Fixes #123. Say why the obvious alternative was rejected.
+Closes #123. Say why the obvious alternative was rejected.
 
 ## Implementation
 
@@ -67,6 +67,8 @@ pull requests this builds on or supersedes may be referenced by number (`See #48
 
 The title repeats the branch's prefix: `feat/...` gets `feat: ...`, `fix/...` gets
 `fix: ...`. The prefix is mandatory and never chosen freely — it comes from the branch.
+If the change type changed after the branch was pushed, the branch keeps its published
+prefix and the title carries the new type; record the mismatch in the body.
 
 | Prefix | Purpose | Example PR title |
 | --- | --- | --- |
@@ -113,6 +115,7 @@ applies.
 Issue #482: a container image that exports `PORT=` for templating fails at startup
 with `ValueError: invalid port`. The docs say an unset variable falls back to 8080,
 which is what the code does for a missing variable but not for an empty one.
+Closes #482.
 
 ## Implementation
 
@@ -156,14 +159,16 @@ explicit rather than applied by reflection. Full integration suite not run local
 
 ## Related work
 
-Fixes #482. Supersedes the first attempt, #479. Follow-up for the coercion behavior:
+Closes #482. Supersedes the first attempt, #479. Follow-up for the coercion behavior:
 #485.
 ```
 
 ## Before you submit
 
-- Title carries the branch's prefix; the title and the body are in English.
+- Title carries the branch's prefix; after a post-push type change, it carries the new
+  type and the body records the old prefix. The title and the body are in English.
 - Summary says what a reviewer will see, not what you intend to do.
 - Body claims match the diff and the command output you actually have.
+- `Closes #N` names only issues this PR actually closes; `Fixes` is not used.
 - Every checklist item is either checked or the reason it is not.
 - No secrets, internal hostnames or customer data in examples.
