@@ -9,10 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added `git-workflow` (`1.0.0`) as the default owner of every change that will be
+- Added `git-workflow` (`1.0.1`) as the default owner of every change that will be
   committed: issue → branch → implementation handoff → verification gate → pull request,
-  with explicit authorization, the 29-label policy, `Closes #N` and no merge. Its label
-  policy lives in `skills/git-workflow/references/labels.md`.
+  with explicit authorization, the 29-label policy and its color palette, `Closes #N` and
+  no merge. Its label policy lives in `skills/git-workflow/references/labels.md`.
 
 ### Changed
 
