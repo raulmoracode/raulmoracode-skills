@@ -85,78 +85,139 @@ persisted-data change that requires a migration, backfill or dual-write. Apply
 `ai-assisted` only when the user asks for it or declares it, or when `CONTRIBUTING.md`
 requires declaring agent use; it is off by default.
 
-## New repository or existing schema
+## Precedence
 
-A repository is new when all three conditions hold:
+The catalog schema is authoritative. A repository that already uses `bug`, `enhancement`
+or a vocabulary of its own does not change what this policy applies. A schema that defers
+to each repository's existing labels never converges: every repository keeps a different
+set and nothing can be filtered across them.
 
-1. It has no labels, or every label it has appears in the fixed list below.
-2. None of its labels starts with `type:`, `area:` or `risk:`.
-3. None of the fixed-list labels is applied to an issue or a pull request.
+1. **Apply the catalog label, never an equivalent.** `type:fix`, not `bug`; `type:feat`,
+   not `enhancement`. An equivalent is not used — it is retired by Convergence below.
+2. **Replace, do not add.** Remove the labels outside the 29 from the issue or pull
+   request being worked, then apply the catalog labels. An object carrying `bug` and
+   `type:fix` at the same time is a parallel schema, which is what this rule exists to
+   prevent.
+3. **Create the missing definitions so the vocabulary is complete.** On first contact with
+   a repository, create every label of the 29 it lacks, not only the two or three this
+   change needs. A repository with half the vocabulary cannot be filtered like the others.
+4. **Never delete a label definition as a side effect.** Deleting a definition is not a
+   change to one issue: GitHub strips it from every issue and pull request in the
+   repository, including closed history, and recreating the label does not restore those
+   assignments. Convergence retires definitions as its own authorized action, and only
+   after the objects have been rewritten.
+5. **Report what you could not do.** A label that automation re-adds, a definition the
+   token cannot create, a removal the API rejected — say so. A report claiming the
+   vocabulary converged when it did not is worse than one that shows the gap.
 
-The fixed list is deliberately explicit:
+## Convergence
 
-```text
-accessibility
-bug
-documentation
-duplicate
-enhancement
-good first issue
-help wanted
-invalid
-question
-wontfix
+Convergence makes a repository match the catalog: every label of the 29 present, and
+nothing outside them in use. It covers existing issues and pull requests too — an old
+object still carrying `bug` keeps the old vocabulary alive in every filter and every
+report. It is a repository-wide write, separate from opening one issue or one pull
+request, and it runs only when the user asks for it.
+
+**Order is not optional.** Snapshot, inventory, rewrite the objects, verify, and only then
+retire the definitions. Deleting a definition first destroys the only record of which
+objects carried it, and the new labels can no longer be derived from anything.
+
+### 1. Snapshot before the first write
+
+```sh
+gh api --paginate "repos/{owner}/{repo}/issues?state=all&per_page=100" \
+  --jq '[.[] | {number, isPR: has("pull_request"), labels: [.labels[].name]}]' \
+  > labels-backup.json
 ```
 
-`accessibility` is included because it is present in this catalog's repository and is not
-a custom schema by itself. Presence is not use: a repository that still has the default
-labels unused is new and gets all 29. As soon as one of those labels is applied to an
-issue or a pull request, the repository has an existing schema; follow it.
+This file is the only undo record. Keep it until the user accepts the result. Without it a
+wrong mapping cannot be reversed, because the original assignments are gone.
 
-Read the labels and their usage with:
+### 2. Inventory and mapping
 
 ```sh
 gh label list --limit 200 --json name,color,description
 gh api --paginate "repos/{owner}/{repo}/issues?state=all&per_page=100" \
-  --jq '.[].labels[].name' | sort -u
+  --jq '.[].labels[].name' | sort | uniq -c | sort -rn
 ```
 
-The second command includes pull requests because GitHub's issues endpoint returns them.
+The second command counts issues and pull requests together, because GitHub's issues
+endpoint returns both. Build an explicit table and show it to the user:
 
-### Existing schema
-
-Do not create a parallel system. If the repository already uses `bug` and `enhancement`,
-a fix gets `bug` and a feature gets `enhancement`; do not add `type:fix` and `type:feat`
-beside them. The same rule applies to area, risk and mark labels.
-
-Known equivalents:
-
-| Catalog label | Existing equivalent | Rule |
+| Existing | Becomes | Note |
 | --- | --- | --- |
-| `type:feat` | `enhancement`, `feature` | Use the existing label |
-| `type:fix`, `type:bugfix`, `type:hotfix` | `bug` | Use `bug`; describe urgency in the title and body |
-| `type:docs` | `documentation` | Use `documentation` |
-| `type:test` | `tests` | Use only when the repository documents it as the test type |
-| `area:*` | A label with the same meaning | Read its description; use it instead of a parallel label |
-| `risk:*` | A label with the same meaning | Read its description; do not map severity labels by name alone |
-| Marks | A label with the same meaning | Use it only when the description matches |
+| `bug` | `type:fix` | released defects; `type:bugfix` only for unreleased work |
+| `enhancement` | `type:feat` | |
+| `documentation` | `type:docs` | |
+| `duplicate`, `invalid`, `question`, `wontfix`, `help wanted`, `good first issue` | — | no catalog equivalent; see below |
 
-An equivalent counts only when the label's description or `CONTRIBUTING.md` declares it.
-If the meaning is ambiguous, ask instead of creating a second label. Create only the
-labels this issue and this pull request need and that have no equivalent.
+- **Do not infer a type the object never had.** An object with no type label stays without
+  one and is reported as untyped. Inventing `type:feat` from a title rewrites a record
+  nobody classified.
+- **`area:`, `risk:` and marks are never derived from an old label.** They require the
+  diff, the title prefix or a declaration. A migration carries across the type only.
+- **State labels are not schema.** `duplicate`, `invalid`, `wontfix`, `question`,
+  `help wanted` and `good first issue` record what happened to an object, not what kind of
+  change it is. Dropping them loses the reason an issue was closed. Keep them unless the
+  user explicitly asks for exactly the 29; if they do, name what will be lost first.
+
+### 3. Dry run
+
+Report before writing: the mapping table, the number of objects per old label, the objects
+that would end up with no type, and the old labels that would be left with no object. Get
+explicit confirmation. A migration over thousands of objects is not something to discover
+halfway through.
+
+### 4. Rewrite the objects
+
+`PUT /repos/{owner}/{repo}/issues/{n}/labels` replaces the whole label set in one call,
+which is atomic per object and idempotent: running the migration twice produces the same
+result. The endpoint covers pull requests too, because GitHub models them as issues. Do
+not use add/remove pairs, which can half-apply.
+
+```sh
+gh api -X PUT "repos/{owner}/{repo}/issues/<n>/labels" --input - <<'JSON'
+{"labels":["type:fix","duplicate"]}
+JSON
+```
+
+- One request per object, sequential, about one per second. A burst trips GitHub's
+  secondary rate limits and leaves the migration half done.
+- Retry `403` and `429` with backoff; report objects that still failed instead of claiming
+  a clean run.
+- Re-read the objects at the end and compare counts against the plan.
+- Never rewrite an object whose labels already equal the target set; that is what makes the
+  run resumable.
+
+### 5. Retire the definitions, last
+
+Only after step 4 verified:
+
+- **Rename** when the meaning matches and the user wants the assignments preserved.
+- **Delete** when nothing maps. This is the step that strips the label from every object,
+  and by now nothing depends on it: the objects were already rewritten.
+- **Never retire a label whose name suggests automation** — `dependencies`, `stale`,
+  `release`, `automerge`, `do-not-merge` — without finding the workflow that consumes it.
+  Search `.github/workflows/`, `.github/labeler.yml`, `release-drafter.yml` and `stale.yml`
+  for the name, and report every hit.
+
+A repository is converged when `gh label list` shows the 29, every issue and pull request
+carries only catalog labels (or the state labels the user chose to keep), and the report
+names every definition left outside the 29 with its usage count.
 
 ## Creating labels
 
 Creating a label is a repository-configuration write. The full flow authorizes it; the
 final report names every label created.
 
-- New repository: create all 29.
-- Existing repository: create only the missing labels needed by this issue and this pull
-  request.
-- Never modify or delete an existing label. If its color or description differs from the
-  table, report the difference and leave it alone.
+- Create every label of the 29 that is missing, in any repository, on first contact.
+  Uniform vocabulary is the point; a repository that receives only this change's labels
+  stays unsearchable next to the others.
+- Never modify or delete an existing definition here. If a catalog label exists with a
+  different color or description, report the difference and leave it alone; retiring it is
+  Convergence's decision, not this step's.
 - Never use `--force`.
-- Never create a label outside the 29 or an equivalent already in use.
+- Never create a label outside the 29.
 
 Create one label at a time and read the result:
 
@@ -193,6 +254,25 @@ gh pr edit <number> --add-label "type:feat" --add-label "risk:consequential"
 gh issue view <number> --json labels,title,url
 gh pr view <number> --json labels,title,url,baseRefName
 ```
+
+### Removing the repository's labels from the object
+
+Removal here is an assignment change on one issue or pull request, not a definition
+change:
+
+```sh
+gh issue edit <number> --remove-label "bug" --remove-label "enhancement"
+gh pr edit <number> --remove-label "bug"
+```
+
+Remove every label outside the 29 from the object, add the catalog labels, then re-read
+`labels` and confirm. A label still present was not removed. If repository automation
+re-adds it, report that instead of claiming it is gone: the label counts as removed only
+when a later read still shows it absent.
+
+Never run `gh label delete` from here. Removing the definition would strip the label from
+every other issue and pull request in the repository; that is Convergence's authorized
+action, not a step in applying labels to one object.
 
 Changing a label assignment on an issue or a pull request is allowed when the type or the
 scope changes; removing the label definition from the repository is not. If the issue has
@@ -237,7 +317,12 @@ The report names:
 
 - `Labels created: ...` or `Labels created: none`.
 - `Labels applied: ...` for the issue and for the pull request.
+- `Labels removed: ...` or `Labels removed: none`, and any label still present because
+  automation re-added it.
 - Any existing label whose color or description differs from this table, with the
   difference and the fact that it was left unchanged.
+- For a Convergence run: the mapping table, how many objects were rewritten, how many were
+  already correct, how many failed, and every definition left outside the 29 with its
+  usage count.
 
 A label is reported as applied only after `gh issue view` or `gh pr view` returned it.

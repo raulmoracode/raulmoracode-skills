@@ -26,6 +26,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Inverted the label policy's precedence: the catalog schema now wins over the
+  repository's instead of deferring to it. `labels.md` loses the "existing schema" branch
+  and its equivalence table and gains Convergence — snapshot, mapping dry run, rewrite of
+  the existing issues and pull requests through `PUT .../labels`, and only then retirement
+  of the definitions, in that order.
+  - `git-workflow` (`1.1.0`) applies `type:` labels instead of equivalents, removes
+    non-catalog labels from the issue and pull request it works, creates every missing
+    label of the 29 on first contact, and leaves definition changes to Convergence.
+  - `git-issues` (`1.0.6`) no longer substitutes an equivalent that already exists; a
+    missing catalog label is reported and its creation routed to `git-workflow`.
+  - `git-merge` (`1.0.1`) stops accepting a repository's older vocabulary as an
+    equivalent gate: an unconverged repository is a gap for `git-workflow` to close.
+- `catalog-version.json` moves to `1.0.5` for the policy change.
 - Merge is now a separate specialist handoff rather than a stage owned by another flow:
   - `git-workflow` (`1.0.2`) ends at the pull request and hands merges to `git-merge`.
   - `git-pr` (`1.0.5`) prepares and verifies the pull request; `git-merge` executes the

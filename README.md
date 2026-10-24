@@ -93,12 +93,12 @@ rest own one responsibility each.
 | `no-made-up-results` | 1.0.1 | Testing and verification | Forbids fabricating evidence |
 | `verify-before-claiming` | 1.0.2 | Testing and verification +1 ref | Sets the evidence standard a claim must clear before it is stated |
 | `clear-final-report` | 1.0.2 | Testing and verification +1 ref | Produces the final report the user reads |
-| `git-workflow` | 1.0.2 | Git and repository +1 ref | Default owner of every committed change: issue → branch → PR, authorization, labels; the flow ends at the PR |
+| `git-workflow` | 1.1.0 | Git and repository +1 ref | Default owner of every committed change: issue → branch → PR, authorization, labels; the flow ends at the PR |
 | `safe-git` | 1.0.3 | Git and repository | Protects repository state and uncommitted work during any Git operation |
 | `git-branch` | 1.0.6 | Git and repository | Manages Git branches; every branch it creates uses a fixed prefix table and name format, keeping the issue's prefix when the work starts from one |
 | `git-pr` | 1.0.5 | Git and repository +1 ref | Prepares, opens and manages pull requests; titles repeat the branch's prefix and everything is written in English |
-| `git-merge` | 1.0.0 | Git and repository +1 ref | Owns the merge standard and remote PR merges: merge commit default, hard gates, explicit authorization, no branch deletion |
-| `git-issues` | 1.0.5 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested; titles carry the workflow prefix |
+| `git-merge` | 1.0.1 | Git and repository +1 ref | Owns the merge standard and remote PR merges: merge commit default, hard gates, explicit authorization, no branch deletion |
+| `git-issues` | 1.0.6 | Git and repository +1 ref | Creates, triages and updates repository issues when explicitly requested; titles carry the workflow prefix |
 | `define-the-outcome` | 1.0.1 | Understanding and planning | Turns an ambiguous request into a precise, testable outcome before implementation |
 | `contract-and-migration` | 1.0.4 | Engineering domains | Guides safe evolution of API, CLI, configuration, schema and persisted contracts |
 | `skill-evaluation` | 1.0.2 | Orchestration +1 ref | Evaluates catalog routing and composition with representative tasks and evidence |

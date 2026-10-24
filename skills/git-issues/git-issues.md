@@ -119,12 +119,14 @@ adjacent concern, or names other people. When they say create it:
 - Confirm with `gh issue view <number> --json number,url,state,title` if the link
   matters.
 
-This skill does not create labels. The 29-label policy, its creation and its application
-belong to `git-workflow` and its `references/labels.md`; when the full flow is running,
-label application happens in the label stage of `git-workflow`. In an explicit issue-only
-task, if the user asks for an existing label, apply only labels that already exist
-(`gh label list`) and that you are authorized to apply. Never create a label, and never
-invent a parallel schema. Never assign, close or reopen without being asked.
+This skill does not create labels. The 29-label policy, its precedence rules, creation and
+application belong to `git-workflow` and its `references/labels.md`; when the full flow is
+running, label application happens in the label stage of `git-workflow`. In an explicit
+issue-only task, if the user asks for a label, use the catalog label when it exists
+(`gh label list`) and you are authorized to apply it. If it does not exist, do not
+substitute an equivalent the repository already has — report the missing definition and
+route its creation to `git-workflow`. Never create a label here, and never invent a
+parallel schema. Never assign, close or reopen without being asked.
 
 ### 6. Triage and update deliberately
 

@@ -146,9 +146,10 @@ When the catalog profile applies:
 
 Verify labels; never create or apply them. A missing or contradictory label stops the
 merge and is routed to `git-workflow`, not repaired here. The same applies to a title or
-body that fails the gate: `git-pr` owns the edit, and this skill does not make it. When
-the catalog profile does not apply, verify the repository's documented equivalent gates
-and state that the catalog gates were not applied.
+body that fails the gate: `git-pr` owns the edit, and this skill does not make it. A
+repository still using an older vocabulary has not converged: the catalog gates apply as
+written, and the gap is what `git-workflow` fixes with `references/labels.md`'s Convergence
+step, not a reason to verify against the old labels.
 
 ### 5. Select the method
 
