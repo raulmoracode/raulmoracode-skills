@@ -144,18 +144,22 @@ Load `git-pr` for the pull-request stage.
 
 ### 7. Apply the labels
 
-Read `references/labels.md` for the complete policy, the 29 labels, creation and
-application rules.
+Read `references/labels.md` for the complete policy: the 29 labels, precedence, convergence,
+creation and application rules.
 
 - Issue: one `type:` label and zero to two `area:` labels.
 - Pull request: the issue's `type:`, the applicable `area:` labels, a `risk:` label only
   at level 2 or 3, and marks only when the diff proves them.
-- A new repository gets all 29 labels. An existing repository keeps its own schema and
-  gets only the labels this issue and pull request need and do not already have an
-  equivalent for.
-- Apply the labels, verify them with `gh issue view` and `gh pr view`, and report every
-  label created. Never modify or delete an existing label definition, and never use
-  `--force`.
+- The catalog schema wins over the repository's. Apply `type:fix`, never an equivalent
+  `bug`; remove the repository's labels from the issue and the pull request instead of
+  adding the catalog labels beside them.
+- Create every missing label of the 29 on first contact with a repository, so the
+  vocabulary is the same everywhere.
+- Apply, remove and verify with `gh issue view <n> --json labels` and
+  `gh pr view <n> --json labels`, and report what was applied, removed and created.
+- Never delete a label definition here and never use `--force`. Retiring definitions is
+  `references/labels.md`'s Convergence step: it runs after the objects are rewritten, and
+  it needs explicit authorization.
 
 ### 8. Report
 
@@ -220,8 +224,11 @@ secrets, customer data or internal hostnames in a public issue or pull request.
 - Treating the full flow as optional because the change is small.
 - Creating a branch without the issue number in the full flow.
 - Falling back silently when the issue cannot be created.
-- Inventing labels, adding a dimension, or creating a parallel schema next to an existing
-  one.
+- Inventing labels, adding a dimension, or creating a parallel schema.
+- Falling back to the repository's existing labels instead of applying the catalog schema.
+- Rewriting history before taking the snapshot, or deleting a definition before the
+  objects are rewritten.
+- Claiming a Convergence run was clean when objects failed mid-migration.
 - Applying a `risk:` label to an issue, or both risk labels at level 3.
 - Applying `ai-assisted` automatically.
 - Using `Fixes` instead of `Closes`.
